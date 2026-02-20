@@ -1,3 +1,5 @@
+'use client';
+
 import gamesData from '@/data/games.json';
 import GameCard from '@/components/GameCard';
 import FilterChips from '@/components/FilterChips';
