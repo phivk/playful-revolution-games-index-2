@@ -50,7 +50,8 @@
 4. Users can search by game name or keyword in description
 5. Users can tap "Surprise Me" to get a random game suggestion
 
-**Plans:** TBD
+**Plans:** 1 plan
+- [ ] 02-01-PLAN.md — Search, filter chips, and random picker
 
 ---
 
@@ -99,7 +100,7 @@
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Core Display | 1/1 | Planned | - |
-| 2. Search & Filter | 0/1 | Not started | - |
+| 2. Search & Filter | 1/1 | Planned | - |
 | 3. Design & CMS | 0/1 | Not started | - |
 | 4. Deployment | 0/1 | Not started | - |
 
