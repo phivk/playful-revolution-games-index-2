@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "games"
+    label: "Games"
+    folder: "content/games"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ID", name: "id", widget: "uuid" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field:
+          { label: "Tag", name: "tag", widget: "select", options: ["Social Spontaneity", "Group Circle Games", "Collaborative", "Competitive", "Ball Games", "Theatre Sports", "Movement", "Table Games"] }
+      - label: "Pillars"
+        name: "pillars"
+        widget: "select"
+        multiple: true
+        options: ["Intellectual", "Social", "Physical"]
+      - { label: "Energy Level", name: "energyLevel", widget: "select", options: ["Low", "Medium", "High"] }
+      - { label: "Materials", name: "materials", widget: "list", field: { label: "Material", name: "material", widget: "string" } }
+      - { label: "Setup", name: "setup", widget: "text" }
+      - { label: "How to Play", name: "howToPlay", widget: "list", field: { label: "Step", name: "step", widget: "text" } }

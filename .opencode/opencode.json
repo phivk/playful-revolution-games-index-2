@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "read": {
+      "/Users/phivk/Documents/Philo Personal/projects/playful-revolution-games-index-2/.opencode/get-shit-done/*": "allow"
+    },
+    "external_directory": {
+      "/Users/phivk/Documents/Philo Personal/projects/playful-revolution-games-index-2/.opencode/get-shit-done/*": "allow"
+    }
+  }
+}
