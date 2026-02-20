@@ -60,32 +60,32 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CORE-01 | | Pending |
-| CORE-02 | | Pending |
-| CORE-03 | | Pending |
-| CORE-04 | | Pending |
-| FILT-01 | | Pending |
-| FILT-02 | | Pending |
-| FILT-03 | | Pending |
-| FILT-04 | | Pending |
-| FILT-05 | | Pending |
-| DESN-01 | | Pending |
-| DESN-02 | | Pending |
-| DESN-03 | | Pending |
-| DESN-04 | | Pending |
-| DESN-05 | | Pending |
-| DESN-06 | | Pending |
-| DESN-07 | | Pending |
-| CMS-01 | | Pending |
-| CMS-02 | | Pending |
-| CMS-03 | | Pending |
-| DEPL-01 | | Pending |
-| DEPL-02 | | Pending |
+| CORE-01 | Phase 1 | Pending |
+| CORE-02 | Phase 1 | Pending |
+| CORE-03 | Phase 1 | Pending |
+| CORE-04 | Phase 1 | Pending |
+| FILT-01 | Phase 2 | Pending |
+| FILT-02 | Phase 2 | Pending |
+| FILT-03 | Phase 2 | Pending |
+| FILT-04 | Phase 2 | Pending |
+| FILT-05 | Phase 2 | Pending |
+| DESN-01 | Phase 3 | Pending |
+| DESN-02 | Phase 3 | Pending |
+| DESN-03 | Phase 3 | Pending |
+| DESN-04 | Phase 3 | Pending |
+| DESN-05 | Phase 3 | Pending |
+| DESN-06 | Phase 3 | Pending |
+| DESN-07 | Phase 3 | Pending |
+| CMS-01 | Phase 3 | Pending |
+| CMS-02 | Phase 3 | Pending |
+| CMS-03 | Phase 3 | Pending |
+| DEPL-01 | Phase 4 | Pending |
+| DEPL-02 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 21 total
-- Mapped to phases: 0
-- Unmapped: 21 ⚠️
+- Mapped to phases: 21 ✓
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-02-20*
