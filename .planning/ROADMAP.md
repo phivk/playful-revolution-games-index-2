@@ -75,7 +75,9 @@
 9. Admin can edit existing games via Decap CMS
 10. Admin can delete games via Decap CMS
 
-**Plans:** TBD
+**Plans:** 2 plans
+- [ ] 03-01-PLAN.md — Apply brand identity (colors, typography, styling)
+- [ ] 03-02-PLAN.md — Set up Decap CMS admin interface
 
 ---
 
@@ -101,7 +103,7 @@
 |-------|----------------|--------|-----------|
 | 1. Core Display | 1/1 | Planned | - |
 | 2. Search & Filter | 1/1 | Planned | - |
-| 3. Design & CMS | 0/1 | Not started | - |
+| 3. Design & CMS | 2/2 | Planned | - |
 | 4. Deployment | 0/1 | Not started | - |
 
 ---
