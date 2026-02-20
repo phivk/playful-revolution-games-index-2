@@ -65,14 +65,14 @@ function Chip({
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-150 transform hover:scale-105 active:scale-95 ${
+      className={`px-4 py-2 rounded-lg text-sm font-bold uppercase tracking-wider transition-all duration-100 transform hover:scale-105 active:scale-95 min-h-[44px] ${
         selected
-          ? 'text-white shadow-md'
-          : 'bg-transparent border-2 border-gray-400 text-gray-700 hover:border-gray-600'
+          ? 'text-white shadow-[3px_3px_0px_0px_#111111] border-2 border-[#111111]'
+          : 'bg-transparent border-3 border-[#111111] text-[#111111] hover:border-[#E53935] hover:text-[#E53935]'
       }`}
       style={
         selected && color
-          ? { backgroundColor: color, borderColor: color }
+          ? { backgroundColor: color, borderColor: '#111111' }
           : undefined
       }
     >
@@ -97,18 +97,18 @@ function ChipGroup({
   const count = selectedValues.length;
 
   return (
-    <div className="mb-4">
-      <div className="flex items-center gap-2 mb-2">
-        <h3 className="text-sm font-bold text-gray-700 uppercase tracking-wide">
+    <div className="mb-6">
+      <div className="flex items-center gap-3 mb-3">
+        <h3 className="text-base font-display font-bold text-[#111111] uppercase tracking-wider">
           {title}
         </h3>
         {count > 0 && (
-          <span className="bg-[#111111] text-white text-xs font-bold px-2 py-0.5 rounded-full">
+          <span className="bg-[#E53935] text-white text-xs font-bold px-3 py-1 rounded-full">
             {count}
           </span>
         )}
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-3">
         {chips.map((chip) => (
           <Chip
             key={chip}
@@ -138,12 +138,12 @@ export default function FilterChips({
     selectedEnergyLevels.length > 0;
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-4">
+    <div className="bg-white rounded-xl border-3 border-[#111111] p-5 mb-6 shadow-[4px_4px_0px_0px_#111111]">
       {hasAnyFilters && (
-        <div className="flex justify-end mb-3">
+        <div className="flex justify-end mb-4">
           <button
             onClick={onClearAll}
-            className="text-sm font-medium text-gray-500 hover:text-[#E53935] transition-colors underline underline-offset-2"
+            className="text-sm font-bold uppercase tracking-wider text-[#E53935] hover:text-[#111111] transition-colors underline underline-offset-4"
           >
             Clear all
           </button>

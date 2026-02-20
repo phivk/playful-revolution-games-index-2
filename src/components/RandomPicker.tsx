@@ -23,11 +23,11 @@ export default function RandomPicker({ games }: RandomPickerProps) {
   return (
     <button
       onClick={handleRandomPick}
-      className="w-full sm:w-auto px-6 py-3 bg-[#FDD835] text-[#111111] font-bold text-lg rounded-lg shadow-md transform hover:scale-105 active:scale-95 transition-all duration-150 hover:shadow-lg border-2 border-[#111111]"
+      className="w-full sm:w-auto px-8 py-4 bg-[#FDD835] text-[#111111] font-display font-bold text-xl rounded-xl shadow-[4px_4px_0px_0px_#111111] transform hover:scale-105 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100 border-3 border-[#111111] min-h-[56px]"
     >
-      <span className="flex items-center justify-center gap-2">
+      <span className="flex items-center justify-center gap-3">
         <svg
-          className="h-5 w-5"
+          className="h-6 w-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -35,17 +35,17 @@ export default function RandomPicker({ games }: RandomPickerProps) {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
+            strokeWidth={3}
             d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
           />
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
+            strokeWidth={3}
             d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        Surprise Me!
+        SURPRISE ME!
       </span>
     </button>
   );
