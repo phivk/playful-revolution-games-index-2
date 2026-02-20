@@ -76,8 +76,8 @@
 10. Admin can delete games via Decap CMS
 
 **Plans:** 2 plans
-- [ ] 03-01-PLAN.md — Apply brand identity (colors, typography, styling)
-- [ ] 03-02-PLAN.md — Set up Decap CMS admin interface
+- [x] 03-01-PLAN.md — Apply brand identity (colors, typography, styling)
+- [x] 03-02-PLAN.md — Set up Decap CMS admin interface
 
 ---
 
@@ -101,9 +101,9 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Display | 1/1 | Planned | - |
-| 2. Search & Filter | 1/1 | Planned | - |
-| 3. Design & CMS | 2/2 | Planned | - |
+| 1. Core Display | 1/1 | Complete | - |
+| 2. Search & Filter | 1/1 | Complete | - |
+| 3. Design & CMS | 2/2 | Complete | 2026-02-20 |
 | 4. Deployment | 0/1 | Not started | - |
 
 ---
