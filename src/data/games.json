@@ -1,0 +1,625 @@
+{
+  "games": [
+    {
+      "id": "1",
+      "slug": "human-knot",
+      "title": "Human Knot",
+      "description": "A group of people stand in a circle, each person grabs the right hand of someone across from them, then the left hand of a different person. The challenge is to untangle the knot without letting go of hands.",
+      "tags": ["Group Circle Games", "Collaborative", "Movement"],
+      "pillars": ["Social", "Physical"],
+      "energyLevel": "Medium",
+      "materials": [],
+      "setup": "Everyone stands in a circle. Close your eyes (for fairness) and reach across with your right hand to grab someone else's right hand. Then reach across with your left hand to grab a different person's left hand.",
+      "howToPlay": [
+        "Form a circle with 6-12 people",
+        "Everyone closes their eyes",
+        "Reach across and grab someone's right hand with your right hand",
+        "Now grab a different person's left hand with your left hand",
+        "Open eyes and try to untangle the knot",
+        "No one can let go of hands",
+        "The group works together to step over or under arms to untangle",
+        "Success when everyone is standing in a circle holding hands"
+      ]
+    },
+    {
+      "id": "2",
+      "slug": "exquisite-corpse",
+      "title": "Exquisite Corpse",
+      "description": "A collaborative drawing game where each person draws part of a figure on a folded piece of paper, only seeing the previous person's final line.",
+      "tags": ["Social Spontaneity", "Collaborative", "Table Games"],
+      "pillars": ["Intellectual", "Social"],
+      "energyLevel": "Low",
+      "materials": ["Paper", "Pens or pencils"],
+      "setup": "Fold a piece of paper into 3 or 4 sections. Each person will draw in one section.",
+      "howToPlay": [
+        "Fold paper into equal sections",
+        "First person draws a head in the top section, extending a line to the fold",
+        "Fold down to hide the drawing, revealing only the line",
+        "Next person draws a body connected to that line",
+        "Repeat until all sections are filled",
+        "Unfold to reveal the hilarious combined creature",
+        "Take turns being the 'artist' for each section"
+      ]
+    },
+    {
+      "id": "3",
+      "slug": "blob-tag",
+      "title": "Blob Tag",
+      "description": "When tagged, players must freeze and hold their position. Other players can 'rescue' them by high-fiving while the blob isn't looking.",
+      "tags": ["Movement", "Competitive", "Group Circle Games"],
+      "pillars": ["Social", "Physical"],
+      "energyLevel": "High",
+      "materials": [],
+      "setup": "Designate one person as 'It' and one area as the safe zone.",
+      "howToPlay": [
+        "One person is 'It' and tries to tag others",
+        "When tagged, players become frozen statues",
+        "Frozen players stand still with arms out",
+        "Other players can rescue frozen players with a high-five",
+        "The blob (person who is It) cannot tag while looking at rescuers",
+        "If caught looking away from rescuers, the blob must freeze",
+        "Game continues until all players are frozen or time runs out"
+      ]
+    },
+    {
+      "id": "4",
+      "slug": "word-at-once",
+      "title": "Word at Once",
+      "description": "Players simultaneously speak a word related to a given category. If two players say the same word, they score a point. If all say different words, no points.",
+      "tags": ["Social Spontaneity", "Competitive", "Table Games"],
+      "pillars": ["Intellectual", "Social"],
+      "energyLevel": "Low",
+      "materials": ["Category prompts (optional: timer, scorecard)"],
+      "setup": "Gather 3-8 players. Decide on a scoring system (first to X points wins, or most points in X rounds).",
+      "howToPlay": [
+        "One person calls out a category (e.g., 'Breakfast foods', 'Superheroes', 'Countries')",
+        "On the count of three, everyone says ONE word from that category",
+        "If two or more people say the same word, those players score a point",
+        "If everyone says different words, no points (or the caller loses a point)",
+        "The person who said the unique word can be the next caller",
+        "Play continues until someone reaches the winning score"
+      ]
+    },
+    {
+      "id": "5",
+      "slug": "crowd-sculpture",
+      "title": "Crowd Sculpture",
+      "description": "A group collaborates to create living statues that represent concepts, emotions, or scenes, with each person contributing part of the sculpture.",
+      "tags": ["Theatre Sports", "Collaborative", "Group Circle Games"],
+      "pillars": ["Social", "Intellectual"],
+      "energyLevel": "Medium",
+      "materials": ["Optional: Music, props"],
+      "setup": "One person is the 'sculptor' who will arrange the 'clay' (other players) into statues.",
+      "howToPlay": [
+        "Designate one person as the sculptor",
+        "Other players are the clay, standing ready to be posed",
+        "The sculptor announces a theme (e.g., 'Joy', 'Rush hour', 'First date')",
+        "The sculptor physically poses each player into a frozen scene",
+        "The sculpture can be literal, abstract, or metaphorical",
+        "After creating, everyone holds the pose for 10-30 seconds",
+        "Audience (or the sculptor) can walk around and observe",
+        "New sculptor is chosen and game continues"
+      ]
+    },
+    {
+      "id": "6",
+      "slug": "poison-ball",
+      "title": "Poison Ball",
+      "description": "A ball is passed around a circle. When 'Poison!' is called, the person holding the ball is out. But the caller might be bluffing!",
+      "tags": ["Ball Games", "Competitive", "Group Circle Games"],
+      "pillars": ["Social", "Physical"],
+      "energyLevel": "Medium",
+      "materials": ["One soft ball"],
+      "setup": "All players stand or sit in a circle.",
+      "howToPlay": [
+        "One person starts with the ball and passes it to someone else",
+        "Players pass the ball around the circle",
+        "At any moment, someone can yell 'Poison!'",
+        "The person holding the ball when 'Poison!' is called is out",
+        "But—if the caller was bluffing (there was no actual poison), they are out instead",
+        "If no one calls poison after a set time, the ball 'explodes' and the holder is out",
+        "Last person standing wins"
+      ]
+    },
+    {
+      "id": "7",
+      "slug": "emotion-robots",
+      "title": "Emotion Robots",
+      "description": "Players are 'robots' who can only express one emotion. Participants guess which emotion each robot is feeling.",
+      "tags": ["Theatre Sports", "Social Spontaneity", "Group Circle Games"],
+      "pillars": ["Social", "Intellectual"],
+      "energyLevel": "Medium",
+      "materials": ["Emotion cards (optional)"],
+      "setup": "One person leaves the room while others choose an emotion.",
+      "howToPlay": [
+        "One person is the 'guesser' and leaves the room",
+        "The group secretly chooses an emotion (or picks from cards)",
+        "All players become 'robots' expressing that same emotion",
+        "The guesser returns and must identify the shared emotion",
+        "The robots can only use facial expressions and body language",
+        "No speaking allowed!",
+        "After guessing, a new person becomes the guesser",
+        "For more challenge: each robot has a different intensity of the emotion"
+      ]
+    },
+    {
+      "id": "8",
+      "slug": "standing-line",
+      "title": "Standing Line",
+      "description": "The group must arrange themselves in a line (by birthday, by height, by a secret number) without speaking.",
+      "tags": ["Group Circle Games", "Collaborative", "Movement"],
+      "pillars": ["Social", "Intellectual"],
+      "energyLevel": "Low",
+      "materials": [],
+      "setup": "Give each player a secret number or attribute (or use real attributes like height, birthday month).",
+      "howToPlay": [
+        "Everyone receives a secret number or attribute (or just use real ones)",
+        "No speaking allowed—use gestures, facial expressions, writing in air",
+        "The group must arrange themselves in order (1-2-3... or Jan-Dec for birthdays)",
+        "When the group thinks they're done, they freeze",
+        "If correct, celebrate! If not, keep working",
+        "Try different variations: reverse order, by shoe size, by alphabet letter of name"
+      ]
+    },
+    {
+      "id": "9",
+      "slug": "zip-zap-bong",
+      "title": "Zip Zap Bong",
+      "description": "A fast-paced circle game where players pass energy using 'Zip' (point to someone), 'Zap' (clap toward someone), or 'Bong' (touch head to self).",
+      "tags": ["Group Circle Games", "Social Spontaneity", "Movement"],
+      "pillars": ["Social", "Physical"],
+      "energyLevel": "High",
+      "materials": [],
+      "setup": "Everyone stands or sits in a circle.",
+      "howToPlay": [
+        "One person starts with an imaginary ball of energy",
+        "They choose a target and say either 'Zip', 'Zap', or 'Bong'",
+        "'Zip' = point to someone, they catch and pass to next person",
+        "'Zap' = clap toward someone, they catch and pass on",
+        "'Bong' = touch head, they keep the energy and choose new direction",
+        "Keep the energy moving as fast as possible",
+        "If someone hesitates, drops the energy, or does wrong action, they're out",
+        "Last person standing wins"
+      ]
+    },
+    {
+      "id": "10",
+      "slug": "one-word-story",
+      "title": "One Word Story",
+      "description": "A collaborative storytelling game where each person adds one word at a time to create a coherent (or hilariously incoherent) story.",
+      "tags": ["Social Spontaneity", "Collaborative", "Group Circle Games"],
+      "pillars": ["Intellectual", "Social"],
+      "energyLevel": "Low",
+      "materials": [],
+      "setup": "Gather 4-10 players in a circle.",
+      "howToPlay": [
+        "First person starts the story with one word",
+        "Next person adds one word to continue the story",
+        "Continue around the circle",
+        "Each person can only say ONE word at a time",
+        "The goal is to create a coherent (or intentionally hilarious) story",
+        "If someone repeats a word already used in the story, they're out",
+        "If someone can't add a word after 5 seconds, they're out",
+        "Last person standing wins, or play for a set number of rounds"
+      ]
+    },
+    {
+      "id": "11",
+      "slug": "sardines",
+      "title": "Sardines",
+      "description": "Like hide and seek, but in reverse! One person hides, others seek. When someone finds the hiders, they hide with them.",
+      "tags": ["Movement", "Group Circle Games", "Competitive"],
+      "pillars": ["Social", "Physical"],
+      "energyLevel": "High",
+      "materials": [],
+      "setup": "Designate a hiding area (indoors or outdoors) with plenty of hiding spots.",
+      "howToPlay": [
+        "One person is 'It' and goes to hide",
+        "Everyone counts to 20 (or 50) with eyes closed",
+        "Everyone seeks the hidden person",
+        "When someone finds the hiders, they quietly join them",
+        "The last person to find the group is the loser/next It",
+        "Everyone must hide together—no running off alone",
+        "The hiders can try to sneak to new hiding spots"
+      ]
+    },
+    {
+      "id": "12",
+      "slug": "charades",
+      "title": "Charades",
+      "description": "Players act out words or phrases without speaking while their team guesses within a time limit.",
+      "tags": ["Theatre Sports", "Competitive", "Group Circle Games"],
+      "pillars": ["Intellectual", "Social"],
+      "energyLevel": "Medium",
+      "materials": ["Word/phrase cards", "Timer", "Scorecard"],
+      "setup": "Divide into teams. Prepare word cards or use a charades app.",
+      "howToPlay": [
+        "Teams take turns—one actor, one guesser at a time",
+        "The actor draws a card and has 60 seconds to act it out",
+        "The actor can use: gestures, facial expressions, sound effects (no words!)",
+        "The team guesses as many as possible in the time limit",
+        "Different categories might have different point values",
+        "Teams switch: new actor, new guesser",
+        "Most points after all rounds wins"
+      ]
+    },
+    {
+      "id": "13",
+      "slug": "fruit-basket",
+      "title": "Fruit Basket",
+      "description": "Players sit in chairs arranged in a circle, each assigned a fruit. One person stands in the middle. When their fruit is called, they must switch seats!",
+      "tags": ["Movement", "Group Circle Games", "Competitive"],
+      "pillars": ["Social", "Physical"],
+      "energyLevel": "High",
+      "materials": ["Chairs (one fewer than players)"],
+      "setup": "Arrange chairs in a circle, one fewer than the number of players.",
+      "howToPlay": [
+        "Each player is assigned a fruit (e.g., apple, banana, orange)",
+        "One person stands in the middle (the 'basket')",
+        "The person in the middle calls out fruits (e.g., 'Apples swap!')",
+        "All 'apples' must stand and find a new chair",
+        "The person in the middle also tries to grab a seat",
+        "The person left without a chair becomes the new middle person",
+        "Can call 'Fruit Basket' (everyone swaps) for chaos!"
+      ]
+    },
+    {
+      "id": "14",
+      "slug": "wink-murder",
+      "title": "Wink Murder",
+      "description": "A deduction game where one person is secretly the 'murderer' who can 'kill' with a wink. The detective must catch them!",
+      "tags": ["Group Circle Games", "Competitive", "Social Spontaneity"],
+      "pillars": ["Intellectual", "Social"],
+      "energyLevel": "Low",
+      "materials": [],
+      "setup": "Divide into two groups: observers and players (3-6 players work best).",
+      "howToPlay": [
+        "One person is chosen as the Detective and leaves the room",
+        "The group secretly chooses one person as the Murderer",
+        "The Detective returns and stays in the room",
+        "The Murderer 'kills' by winking at another player",
+        "The killed player dramatically falls/dies after being winked at",
+        "The Detective has 3 guesses to identify the Murderer",
+        "If the Detective guesses correctly, the Murderer is revealed",
+        "If guesses run out, Murderer wins and chooses next Detective"
+      ]
+    },
+    {
+      "id": "15",
+      "slug": "Categories",
+      "title": "Categories (Scattergories-style)",
+      "description": "Players fill in categories with words starting with a given letter. Creative answers score points!",
+      "tags": ["Table Games", "Competitive", "Intellectual"],
+      "pillars": ["Intellectual", "Social"],
+      "energyLevel": "Low",
+      "materials": ["Paper and pens", "Category list", "Letter dice or random letter"],
+      "setup": "Prepare categories and a way to randomly select a letter.",
+      "howToPlay": [
+        "Choose categories (e.g., Country, Animal, Food, Famous Person, Color)",
+        "Roll a letter or randomly select one",
+        "Everyone writes one word per category starting with that letter",
+        "Set a timer (2-3 minutes)",
+        "When time is up, go around and reveal answers",
+        "Unique answers score 2 points, common answers score 1",
+        "Same answer = no points for either",
+        "Letter must match exactly (no nicknames!)"
+      ]
+    },
+    {
+      "id": "16",
+      "slug": "sharks-and-minnows",
+      "title": "Sharks and Minnows",
+      "description": "One person is the 'shark' in the middle. Minnows try to cross from one side to the other without being tagged.",
+      "tags": ["Movement", "Competitive", "Ball Games"],
+      "pillars": ["Physical", "Social"],
+      "energyLevel": "High",
+      "materials": ["Cones or lines to mark boundaries"],
+      "setup": "Set up two parallel lines about 30 feet apart. One is the start, one is the finish.",
+      "howToPlay": [
+        "One person is the Shark and stands in the middle",
+        "Minnows line up at one end",
+        "On 'Go!', minnows run to the other side",
+        "The Shark tries to tag minnows with two hands",
+        "Tagged minnows become sharks in the next round",
+        "The game continues until only one minnow remains",
+        "That minnow becomes the shark for the next game",
+        "For more fun: sharks can only move sideways, or have one foot anchored"
+      ]
+    },
+    {
+      "id": "17",
+      "slug": "concentration",
+      "title": "Concentration (Memory)",
+      "description": "A card-matching game where players flip cards to find pairs. The player with the most pairs wins.",
+      "tags": ["Table Games", "Competitive", "Intellectual"],
+      "pillars": ["Intellectual"],
+      "energyLevel": "Low",
+      "materials": ["Deck of cards (pairs)"],
+      "setup": "Spread all cards face-down in a grid.",
+      "howToPlay": [
+        "All players stand around the card grid",
+        "First player flips two cards face-up",
+        "If they match, the player keeps the pair and goes again",
+        "If they don't match, flip them back over in place",
+        "Next player flips two cards",
+        "Remember where cards are located!",
+        "Game ends when all pairs are found",
+        "Player with most pairs wins"
+      ]
+    },
+    {
+      "id": "18",
+      "slug": "yes-lets",
+      "title": "Yes, Let's!",
+      "description": "One person suggests an action, everyone responds 'Yes, let's!' and does it together. Then someone else suggests the next action.",
+      "tags": ["Social Spontaneity", "Group Circle Games", "Movement"],
+      "pillars": ["Social"],
+      "energyLevel": "Medium",
+      "materials": [],
+      "setup": "Everyone stands or sits in a circle.",
+      "howToPlay": [
+        "One person starts by saying an action (e.g., 'Let's jump!')",
+        "Everyone responds 'Yes, let's!' and does the action together",
+        "After the action, another person says a new action",
+        "Everyone responds 'Yes, let's!' and does the new action",
+        "Keep the energy going fast!",
+        "Play until the group winds down or runs out of ideas",
+        "For variety: can add constraints (only animal actions, only quiet actions)"
+      ]
+    },
+    {
+      "id": "19",
+      "slug": "telephone-pictionary",
+      "title": "Telephone Pictionary",
+      "description": "A combination of Telephone and Pictionary. One person writes a phrase, the next draws it, the next writes what they see, and so on.",
+      "tags": ["Table Games", "Collaborative", "Social Spontaneity"],
+      "pillars": ["Intellectual", "Social"],
+      "energyLevel": "Low",
+      "materials": ["Paper", "Pens", "Long strip of paper or separate sheets"],
+      "setup": "Each player needs a piece of paper and pen. Form a line or circle.",
+      "howToPlay": [
+        "First person writes a phrase and folds to hide it",
+        "Pass to the next person who draws what they read",
+        "Fold to hide the drawing, pass to next",
+        "Next person writes what they think the drawing represents",
+        "Continue alternating: draw, write, draw, write...",
+        "After all players have contributed, unfold the whole chain",
+        "Read through and laugh at the transformation!",
+        "Compare final result to the original phrase"
+      ]
+    },
+    {
+      "id": "20",
+      "slug": "four-corners",
+      "title": "Four Corners",
+      "description": "One person counts while others hide in corners of the room. The 'seeker' tries to guess who's in which corner.",
+      "tags": ["Movement", "Group Circle Games", "Competitive"],
+      "pillars": ["Social", "Intellectual"],
+      "energyLevel": "Medium",
+      "materials": [],
+      "setup": "Identify the four corners of the room.",
+      "howToPlay": [
+        "One person is 'It' and stands in the middle, facing away",
+        "Others quietly choose a corner and go there",
+        "Everyone signals they're ready (e.g., 'Ready!')",
+        "It counts to 10 (or 20) loudly",
+        "At 'Ready, set, go!', It turns around",
+        "Everyone must freeze in their corner",
+        "It tries to identify who is in each corner",
+        "If It correctly names someone in a corner, that person is out",
+        "If wrong, the corner group stays in play",
+        "Play continues until It correctly identifies all or time runs out"
+      ]
+    },
+    {
+      "id": "21",
+      "slug": "alien-language",
+      "title": "Alien Language",
+      "description": "Players must communicate using only made-up sounds and gestures, trying to complete simple tasks together.",
+      "tags": ["Social Spontaneity", "Collaborative", "Theatre Sports"],
+      "pillars": ["Social", "Intellectual"],
+      "energyLevel": "Low",
+      "materials": ["Simple objects to move", "Barrier (optional)"],
+      "setup": "Create pairs or small groups. Give them a task to accomplish together.",
+      "howToPlay": [
+        "Partners face each other or are divided by a barrier",
+        "Give them a task (e.g., stack these blocks, arrange these cards)",
+        "They can ONLY use sounds and gestures—no words!",
+        "They must figure out how to work together using only alien language",
+        "No pointing directly at objects or the barrier",
+        "After a few minutes, see how much they accomplished",
+        "Discuss: What worked? What was confusing?",
+        "Try again with a different task"
+      ]
+    },
+    {
+      "id": "22",
+      "slug": "dodgeball",
+      "title": "Dodgeball",
+      "description": "Two teams throw balls at each other. Get hit and you're out. Catch a ball and your team gets a player back!",
+      "tags": ["Ball Games", "Competitive", "Movement"],
+      "pillars": ["Physical"],
+      "energyLevel": "High",
+      "materials": ["Multiple soft balls (4-8)", "Boundary lines"],
+      "setup": "Divide into two teams. Set up boundaries (gym or field lines).",
+      "howToPlay": [
+        "Teams line up on opposite sides of the court",
+        "All balls start in the center",
+        "On 'Go!', players run to grab balls",
+        "Players throw balls to hit opponents below the neck",
+        "If hit, player is out and goes to the sidelines",
+        "If you catch a ball (before it hits ground), your team gets one player back",
+        "If a ball is caught, the thrower is out",
+        "Last team with players standing wins"
+      ]
+    },
+    {
+      "id": "23",
+      "slug": "line-up-silence",
+      "title": "Line Up in Silence",
+      "description": "The group must arrange themselves in a specific order (by birthday, height, etc.) without speaking. First team to finish wins.",
+      "tags": ["Group Circle Games", "Collaborative", "Competitive"],
+      "pillars": ["Social", "Intellectual"],
+      "energyLevel": "Low",
+      "materials": [],
+      "setup": "Divide into teams of 4-8. Give each team their own space.",
+      "howToPlay": [
+        "Explain the order to achieve (e.g., by birthday month and day, by alphabetical name order)",
+        "Set a timer",
+        "Teams must arrange themselves in the correct order",
+        "NO TALKING allowed—use gestures only",
+        "When finished, the team says 'Done!' and freezes",
+        "Verify correctness—if wrong, they must fix it",
+        "First team to correctly line up wins",
+        "Play multiple rounds with different criteria"
+      ]
+    },
+    {
+      "id": "24",
+      "slug": "gibberish",
+      "title": "Gibberish",
+      "description": "Players speak in made-up languages while their partner tries to guess what they're saying from context and gestures.",
+      "tags": ["Theatre Sports", "Social Spontaneity", "Group Circle Games"],
+      "pillars": ["Social", "Intellectual"],
+      "energyLevel": "Medium",
+      "materials": ["Phrase cards (optional)"],
+      "setup": "Divide into pairs. One person is the speaker, one is the guesser.",
+      "howToPlay": [
+        "The speaker gets a phrase to communicate",
+        "The speaker must convey the phrase WITHOUT using real words",
+        "They can: use gestures, facial expressions, made-up sounds and words",
+        "The speaker is NOT allowed to speak actual words",
+        "The partner tries to guess the phrase",
+        "Set a timer (60 seconds per round)",
+        "Score points for correct guesses",
+        "Switch roles and continue"
+      ]
+    },
+    {
+      "id": "25",
+      "slug": "ninja",
+      "title": "Ninja",
+      "description": "Players act as ninjas in a circle. On your turn, do a swift ninja move and try to 'kill' others. Last one standing wins!",
+      "tags": ["Movement", "Group Circle Games", "Competitive", "Social Spontaneity"],
+      "pillars": ["Social", "Physical"],
+      "energyLevel": "Medium",
+      "materials": [],
+      "setup": "Everyone stands in a tight circle facing inward.",
+      "howToPlay": [
+        "Everyone starts in a ready ninja stance",
+        "On your turn, do a swift ninja move (punch, kick, sword strike)",
+        "Aim at another player—if they react (flinch, move), they're out",
+        "If you complete your move without them reacting, they're still in",
+        "You have only ONE attempt per turn",
+        "If you miss or get hit, you're out",
+        "Play continues until one person remains",
+        "Last ninja standing wins!"
+      ]
+    },
+    {
+      "id": "26",
+      "slug": "movie-pitch",
+      "title": "Movie Pitch",
+      "description": "Teams create movie pitches in 2 minutes. One person presents while others act out scenes. Most creative wins!",
+      "tags": ["Theatre Sports", "Collaborative", "Social Spontaneity"],
+      "pillars": ["Intellectual", "Social"],
+      "energyLevel": "Medium",
+      "materials": ["Genre cards", "Timer", "Paper for notes"],
+      "setup": "Divide into teams of 3-6. Prepare genre cards.",
+      "howToPlay": [
+        "Each team draws a genre (horror, rom-com, sci-fi, etc.)",
+        "They have 2 minutes to create a movie pitch",
+        "The pitch must include: title, main characters, conflict, ending",
+        "Each team presents their pitch to the group",
+        "They can use as many team members as they want in the presentation",
+        "Teams can act out short scenes to illustrate",
+        "Audience votes on most creative, funniest, most bizarre",
+        "Winners get bragging rights!"
+      ]
+    },
+    {
+      "id": "27",
+      "slug": "switch-sides",
+      "title": "Switch Sides",
+      "description": "Two lines face each other. When a category is called, those who fit must cross to the other side. No matching allowed!",
+      "tags": ["Group Circle Games", "Movement", "Competitive"],
+      "pillars": ["Social", "Physical"],
+      "energyLevel": "Medium",
+      "materials": [],
+      "setup": "Create two lines facing each other, about 10 feet apart.",
+      "howToPlay": [
+        "Divide players into two teams, each standing on opposite sides",
+        "Facilitator calls a category (e.g., 'Everyone wearing blue!')",
+        "Players who fit that category must cross to the other side",
+        "But—no two people can occupy the same spot!",
+        "Players already on that side can push others back",
+        "The last person to reach a spot (or no spot available) is out",
+        "Play continues with new categories",
+        "Last person standing wins"
+      ]
+    },
+    {
+      "id": "28",
+      "slug": "story-cubes",
+      "title": "Story Cubes",
+      "description": "Roll dice with pictures and create a story using all the images. Take turns adding to the narrative.",
+      "tags": ["Table Games", "Social Spontaneity", "Collaborative"],
+      "pillars": ["Intellectual", "Social"],
+      "energyLevel": "Low",
+      "materials": ["Picture dice (or use apps like StoryCubes)", "Optional: timer"],
+      "setup": "Use 3-9 story cubes, depending on group size and complexity desired.",
+      "howToPlay": [
+        "Roll all the dice",
+        "First player starts a story that incorporates at least one image",
+        "Next player continues the story, adding a new image",
+        "Keep going until all images are used",
+        "Try to make a coherent story, or embrace the chaos!",
+        "For competition: each player has 30 seconds to add their part",
+        "If they hesitate too long, they're out",
+        "Last player telling a complete story wins"
+      ]
+    },
+    {
+      "id": "29",
+      "slug": "opposite-day",
+      "title": "Opposite Day",
+      "description": "Everything is reversed! When you say 'Go', players must do the opposite of what you command.",
+      "tags": ["Social Spontaneity", "Movement", "Group Circle Games"],
+      "pillars": ["Social", "Intellectual"],
+      "energyLevel": "Medium",
+      "materials": [],
+      "setup": "One person is the leader. Everyone else stands in a group.",
+      "howToPlay": [
+        "Leader establishes: 'When I say GO, you must do the OPPOSITE of what I say!'",
+        "Leader gives commands: 'Touch your nose!' (players should touch something else)",
+        "Leader says 'Go!' to activate the rule",
+        "After 'Go!', any correct commands work normally",
+        "But 'Stop!' deactivates the rule",
+        "Anyone who follows a command during 'Go' phase is out",
+        "Last player standing becomes the new leader",
+        "Variation: 'Reverse Day' where everything is backward in the game"
+      ]
+    },
+    {
+      "id": "30",
+      "slug": "rock-paper-scissors-tournament",
+      "title": "Rock Paper Scissors Tournament",
+      "description": "A tournament style game where you play Rock Paper Scissors against opponents. Winners advance, losers become cheerleaders.",
+      "tags": ["Competitive", "Group Circle Games", "Social Spontaneity"],
+      "pillars": ["Social"],
+      "energyLevel": "High",
+      "materials": [],
+      "setup": "Gather 8-30 players. Clear space for a tournament bracket or just open area.",
+      "howToPlay": [
+        "Everyone finds a partner",
+        "Partners play Rock Paper Scissors",
+        "Winners find other winners, losers find other losers",
+        "Losers become cheerleaders for the winners they matched with",
+        "Continue pairing up—winners advance, losers cheer",
+        "Eventually two finalists face off",
+        "The entire group cheers for each side",
+        "The winner is crowned champion!"
+      ]
+    }
+  ]
+}
