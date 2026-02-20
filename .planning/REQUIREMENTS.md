@@ -7,10 +7,10 @@
 
 ### Core (Game Display)
 
-- [ ] **CORE-01**: Display game catalog with ~30 games
-- [ ] **CORE-02**: Game detail view shows title, description, tags, pillars, energy level
-- [ ] **CORE-03**: Game detail view shows facilitation instructions (materials, setup, how to play)
-- [ ] **CORE-04**: Mobile-friendly layout for viewing on phones
+- [x] **CORE-01**: Display game catalog with ~30 games
+- [x] **CORE-02**: Game detail view shows title, description, tags, pillars, energy level
+- [x] **CORE-03**: Game detail view shows facilitation instructions (materials, setup, how to play)
+- [x] **CORE-04**: Mobile-friendly layout for viewing on phones
 
 ### Search & Filter
 
@@ -60,10 +60,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CORE-01 | Phase 1 | Pending |
-| CORE-02 | Phase 1 | Pending |
-| CORE-03 | Phase 1 | Pending |
-| CORE-04 | Phase 1 | Pending |
+| CORE-01 | Phase 1 | Complete |
+| CORE-02 | Phase 1 | Complete |
+| CORE-03 | Phase 1 | Complete |
+| CORE-04 | Phase 1 | Complete |
 | FILT-01 | Phase 2 | Pending |
 | FILT-02 | Phase 2 | Pending |
 | FILT-03 | Phase 2 | Pending |
