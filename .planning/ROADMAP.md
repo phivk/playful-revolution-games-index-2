@@ -30,7 +30,8 @@
 3. Tapping a game opens detail view with full facilitation instructions (materials, setup, how to play)
 4. Detail view is readable on mobile without horizontal scrolling
 
-**Plans:** TBD
+**Plans:** 1 plan
+- [ ] 01-01-PLAN.md — Set up Next.js with game catalog and detail views
 
 ---
 
@@ -97,7 +98,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Core Display | 0/1 | Not started | - |
+| 1. Core Display | 1/1 | Planned | - |
 | 2. Search & Filter | 0/1 | Not started | - |
 | 3. Design & CMS | 0/1 | Not started | - |
 | 4. Deployment | 0/1 | Not started | - |
