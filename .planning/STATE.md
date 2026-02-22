@@ -1,6 +1,6 @@
 # STATE: Playful Revolution Games Index
 
-**Last Updated:** 2026-02-22
+**Last Updated:** 2026-02-22 (Quick Task 1 complete)
 
 ---
 
@@ -60,7 +60,7 @@
 - Embedded CMS via iframe for seamless Next.js integration
 - Used static export (output: 'export') approach for Vercel deployment — already configured in next.config.ts
 - Added !.env.local.example gitignore exception so env var docs are committable
-- vercel.json kept minimal (buildCommand + outputDirectory + headers, no rewrites) — OAuth routes handled in Plan 02
+- vercel.json kept minimal (buildCommand + headers, no rewrites) — OAuth routes handled in Plan 02; outputDirectory override removed (Quick Task 1) to fix routes-manifest.json error
 - Switched Decap CMS backend from git-gateway to github (name: github) — git-gateway requires Netlify Identity, not available on Vercel
 - Root-level api/ directory for Vercel serverless functions — independent of Next.js output: export static build
 - GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET stored in env vars only — never hardcoded
@@ -79,7 +79,7 @@
 
 ## Session Continuity
 
-**Next Action:** User must complete manual deployment steps (GitHub OAuth App + Vercel project connect + verify)
+**Next Action:** User must complete manual deployment steps (GitHub OAuth App + Vercel project connect + verify). vercel.json routes-manifest.json fix has been pushed — re-deploy to Vercel.
 
 **Stopped At:** 04-03-PLAN.md Task 1 (checkpoint:human-action — Vercel deployment)
 
