@@ -1,6 +1,11 @@
+# IMPORTANT: Before deploying, replace YOUR-GITHUB-USERNAME below with your actual GitHub username.
+# The repo field must match your GitHub repository (e.g., phivk/playful-revolution-games-index-2).
 backend:
-  name: git-gateway
+  name: github
+  repo: YOUR-GITHUB-USERNAME/playful-revolution-games-index-2
   branch: main
+  base_url: /
+  auth_endpoint: api/oauth/authorize
 
 media_folder: "public/images"
 public_folder: "/images"
