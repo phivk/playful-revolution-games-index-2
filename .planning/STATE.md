@@ -8,7 +8,7 @@
 
 **Core Value:** Facilitators can quickly find and view game instructions on mobile devices during sessions.
 
-**Current Focus:** Phase 4 Plan 2 (GitHub OAuth for Decap CMS) completed
+**Current Focus:** Phase 4 Plan 3 (Vercel deployment + CMS verification) — awaiting user manual steps
 
 ---
 
@@ -17,9 +17,9 @@
 | Field | Value |
 |-------|-------|
 | Phase | 4 - Deployment |
-| Plan | 02 - GitHub OAuth for Decap CMS |
-| Status | Complete |
-| Progress | 100% (2/2 plans) |
+| Plan | 03 - Vercel Deployment & CMS Verification |
+| Status | Checkpoint — awaiting human-action |
+| Progress | In progress |
 
 ---
 
@@ -79,9 +79,9 @@
 
 ## Session Continuity
 
-**Next Action:** Phase 4 complete — deploy to Vercel and configure GitHub OAuth env vars
+**Next Action:** User must complete manual deployment steps (GitHub OAuth App + Vercel project connect + verify)
 
-**Stopped At:** Completed 04-02-PLAN.md
+**Stopped At:** 04-03-PLAN.md Task 1 (checkpoint:human-action — Vercel deployment)
 
 ---
 
