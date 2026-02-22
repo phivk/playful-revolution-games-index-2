@@ -8,7 +8,7 @@
 
 **Core Value:** Facilitators can quickly find and view game instructions on mobile devices during sessions.
 
-**Current Focus:** Phase 4 Plan 1 (Vercel Deployment Config) completed
+**Current Focus:** Phase 4 Plan 2 (GitHub OAuth for Decap CMS) completed
 
 ---
 
@@ -17,9 +17,9 @@
 | Field | Value |
 |-------|-------|
 | Phase | 4 - Deployment |
-| Plan | 01 - Vercel Deployment Config |
+| Plan | 02 - GitHub OAuth for Decap CMS |
 | Status | Complete |
-| Progress | 50% (1/2 plans) |
+| Progress | 100% (2/2 plans) |
 
 ---
 
@@ -48,6 +48,7 @@
 | Phase 3 Requirements Complete | 3/10 |
 
 ---
+| Phase 04-deployment P02 | 1 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -55,11 +56,14 @@
 - 4-phase structure for "quick" depth delivery
 - Combined Design & CMS into single phase (both depend on core display)
 - Deployment as final phase (depends on complete content management)
-- Used git-gateway backend for Netlify/Vercel compatibility
+- Used git-gateway backend for Netlify/Vercel compatibility (superseded by Plan 02 decision)
 - Embedded CMS via iframe for seamless Next.js integration
 - Used static export (output: 'export') approach for Vercel deployment — already configured in next.config.ts
 - Added !.env.local.example gitignore exception so env var docs are committable
 - vercel.json kept minimal (buildCommand + outputDirectory + headers, no rewrites) — OAuth routes handled in Plan 02
+- Switched Decap CMS backend from git-gateway to github (name: github) — git-gateway requires Netlify Identity, not available on Vercel
+- Root-level api/ directory for Vercel serverless functions — independent of Next.js output: export static build
+- GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET stored in env vars only — never hardcoded
 
 ### Blockers
 - None
@@ -75,9 +79,9 @@
 
 ## Session Continuity
 
-**Next Action:** Execute Phase 4 Plan 02 (GitHub OAuth serverless handlers for Decap CMS)
+**Next Action:** Phase 4 complete — deploy to Vercel and configure GitHub OAuth env vars
 
-**Stopped At:** Completed 04-01-PLAN.md
+**Stopped At:** Completed 04-02-PLAN.md
 
 ---
 
