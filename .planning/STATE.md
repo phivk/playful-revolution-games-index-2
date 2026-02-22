@@ -75,6 +75,12 @@
 - vercel.json created with security headers for /admin/* and all routes
 - .env.local.example documents GitHub OAuth credentials for Vercel dashboard setup
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 1 | Fix Vercel deployment error: missing routes-manifest.json | 2026-02-22 | fa1b4ad | [1-fix-vercel-deployment-error-missing-rout](./quick/1-fix-vercel-deployment-error-missing-rout/) |
+
 ---
 
 ## Session Continuity
