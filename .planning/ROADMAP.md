@@ -96,7 +96,7 @@
 **Plans:** 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Verify static build and create Vercel deployment config
+- [x] 04-01-PLAN.md — Verify static build and create Vercel deployment config
 - [ ] 04-02-PLAN.md — GitHub OAuth serverless functions and Decap CMS config update
 - [ ] 04-03-PLAN.md — Manual Vercel setup and end-to-end deployment verification
 
@@ -109,7 +109,7 @@ Plans:
 | 1. Core Display | 1/1 | Complete | - |
 | 2. Search & Filter | 1/1 | Complete | - |
 | 3. Design & CMS | 2/2 | Complete | 2026-02-20 |
-| 4. Deployment | 0/3 | Planned | - |
+| 4. Deployment | 1/3 | In Progress | - |
 
 ---
 

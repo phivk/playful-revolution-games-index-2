@@ -38,8 +38,8 @@
 
 ### Deployment
 
-- [ ] **DEPL-01**: Static site build/export
-- [ ] **DEPL-02**: Deploy to Vercel or GH Pages
+- [x] **DEPL-01**: Static site build/export
+- [x] **DEPL-02**: Deploy to Vercel or GH Pages
 
 ## v2 Requirements
 
@@ -79,8 +79,8 @@
 | CMS-01 | Phase 3 | Pending |
 | CMS-02 | Phase 3 | Pending |
 | CMS-03 | Phase 3 | Pending |
-| DEPL-01 | Phase 4 | Pending |
-| DEPL-02 | Phase 4 | Pending |
+| DEPL-01 | Phase 4 | Complete |
+| DEPL-02 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 21 total

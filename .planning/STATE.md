@@ -1,6 +1,6 @@
 # STATE: Playful Revolution Games Index
 
-**Last Updated:** 2026-02-20
+**Last Updated:** 2026-02-22
 
 ---
 
@@ -8,7 +8,7 @@
 
 **Core Value:** Facilitators can quickly find and view game instructions on mobile devices during sessions.
 
-**Current Focus:** Phase 3 Plan 2 (Decap CMS Admin) completed
+**Current Focus:** Phase 4 Plan 1 (Vercel Deployment Config) completed
 
 ---
 
@@ -16,10 +16,10 @@
 
 | Field | Value |
 |-------|-------|
-| Phase | 3 - Design & CMS |
-| Plan | 02 - Decap CMS Admin |
+| Phase | 4 - Deployment |
+| Plan | 01 - Vercel Deployment Config |
 | Status | Complete |
-| Progress | 100% (2/2 plans) |
+| Progress | 50% (1/2 plans) |
 
 ---
 
@@ -57,6 +57,9 @@
 - Deployment as final phase (depends on complete content management)
 - Used git-gateway backend for Netlify/Vercel compatibility
 - Embedded CMS via iframe for seamless Next.js integration
+- Used static export (output: 'export') approach for Vercel deployment — already configured in next.config.ts
+- Added !.env.local.example gitignore exception so env var docs are committable
+- vercel.json kept minimal (buildCommand + outputDirectory + headers, no rewrites) — OAuth routes handled in Plan 02
 
 ### Blockers
 - None
@@ -65,14 +68,16 @@
 - Mobile-first design critical for facilitator use case
 - Static site export required for Vercel/GH Pages deployment
 - Decap CMS provides git-based admin without external database
+- vercel.json created with security headers for /admin/* and all routes
+- .env.local.example documents GitHub OAuth credentials for Vercel dashboard setup
 
 ---
 
 ## Session Continuity
 
-**Next Action:** Begin Phase 4 (Deployment)
+**Next Action:** Execute Phase 4 Plan 02 (GitHub OAuth serverless handlers for Decap CMS)
 
-**To Continue:** `/gsd-plan-phase 4`
+**Stopped At:** Completed 04-01-PLAN.md
 
 ---
 
