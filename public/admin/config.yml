@@ -2,7 +2,8 @@ backend:
   name: github
   repo: phivk/playful-revolution-games-index-2
   branch: main
-  base_url: /
+  # Required for GitHub OAuth on Vercel: override Netlify default so login uses our API routes
+  base_url: https://playful-revolution-games-index-2.vercel.app
   auth_endpoint: api/oauth/authorize
 
 media_folder: "public/images"
