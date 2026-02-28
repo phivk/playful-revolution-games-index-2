@@ -1,26 +1,40 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
   const clientId = process.env.GITHUB_CLIENT_ID;
 
   if (!clientId) {
-    res.status(500).json({ error: 'GITHUB_CLIENT_ID environment variable is not set' });
+    res.status(500).json({
+      error: "GITHUB_CLIENT_ID environment variable is not set",
+      hint: "Add GITHUB_CLIENT_ID in Vercel → Project → Settings → Environment Variables (Production), then redeploy.",
+    });
     return;
   }
 
   // Determine the redirect URI based on the request host
-  const proto = req.headers['x-forwarded-proto'] || 'https';
-  const host = req.headers['x-forwarded-host'] || req.headers.host;
+  const proto = req.headers["x-forwarded-proto"] || "https";
+  const host = req.headers["x-forwarded-host"] || req.headers.host;
+  if (!host) {
+    res
+      .status(500)
+      .json({
+        error:
+          "Could not determine request host (missing Host / X-Forwarded-Host)",
+      });
+    return;
+  }
+
   const redirectUri = `${proto}://${host}/api/auth/callback`;
 
   // Simple random state for basic CSRF protection
   const state = Math.random().toString(36).substring(2, 15);
 
-  const authorizeUrl = new URL('https://github.com/login/oauth/authorize');
-  authorizeUrl.searchParams.append('client_id', clientId);
-  authorizeUrl.searchParams.append('redirect_uri', redirectUri);
-  authorizeUrl.searchParams.append('scope', 'repo user:email');
-  authorizeUrl.searchParams.append('state', state);
+  const authorizeUrl = new URL("https://github.com/login/oauth/authorize");
+  authorizeUrl.searchParams.append("client_id", clientId);
+  authorizeUrl.searchParams.append("redirect_uri", redirectUri);
+  authorizeUrl.searchParams.append("scope", "repo user:email");
+  authorizeUrl.searchParams.append("state", state);
 
   res.redirect(302, authorizeUrl.toString());
+  return;
 }
