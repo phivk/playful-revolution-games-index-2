@@ -54,18 +54,6 @@ export default async function GamePage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-[#FAFAF7]">
-      <header className="bg-[#E53935] text-white py-4 px-4 shadow-md">
-        <div className="max-w-4xl mx-auto flex items-center gap-4">
-          <Link 
-            href="/" 
-            className="text-white hover:bg-white/20 rounded-lg px-3 py-2 transition-colors"
-          >
-            ← Back
-          </Link>
-          <h1 className="text-2xl font-bold tracking-tight">Playful Revolution</h1>
-        </div>
-      </header>
-
       <main className="max-w-4xl mx-auto px-4 py-6">
         <article className="bg-white rounded-xl border-2 border-gray-200 p-6">
           <h1 className="text-3xl font-bold text-[#111111] mb-4">{game.title}</h1>

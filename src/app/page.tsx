@@ -4,7 +4,6 @@ import gamesData from '@/data/games.json';
 import GameCard from '@/components/GameCard';
 import FilterChips from '@/components/FilterChips';
 import SearchBar from '@/components/SearchBar';
-import RandomPicker from '@/components/RandomPicker';
 import { useGameFilters } from '@/hooks/useGameFilters';
 import { Game, Tag, Pillar, EnergyLevel } from '@/types/game';
 
@@ -56,20 +55,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FAFAF7]">
-      <header className="bg-[#E53935] text-white py-6 px-4 shadow-md">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold tracking-tight">Playful Revolution</h1>
-          <p className="mt-2 text-lg opacity-90">Games for workshops, events, and community</p>
-        </div>
-      </header>
-
       <main className="max-w-4xl mx-auto px-4 py-6">
-        {/* Search and Random Picker */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-4">
-          <div className="flex-grow">
-            <SearchBar value={filters.searchQuery} onChange={setSearchQuery} />
-          </div>
-          <RandomPicker games={games} />
+        {/* Search */}
+        <div className="mb-4">
+          <SearchBar value={filters.searchQuery} onChange={setSearchQuery} />
         </div>
 
         {/* Filter Chips */}
