@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import RandomPicker from '@/components/RandomPicker';
-import { Game } from '@/types/game';
+import RandomPicker from "@/components/RandomPicker";
+import { Game } from "@/types/game";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface NavBarProps {
   games: Game[];
@@ -11,24 +12,25 @@ interface NavBarProps {
 
 export default function NavBar({ games }: NavBarProps) {
   const pathname = usePathname();
-  const isHome = pathname === '/';
+  const isHome = pathname === "/";
 
   return (
     <header className="bg-revolution-red text-white py-4 px-4 shadow-md">
       <div className="max-w-4xl mx-auto flex flex-wrap items-center gap-3 gap-y-2">
-        {!isHome && (
-          <Link
-            href="/"
-            className="text-white hover:bg-white/20 rounded-lg px-3 py-2 transition-colors"
-          >
-            ← Back
-          </Link>
-        )}
         <Link
           href="/"
-          className="font-bold tracking-tight hover:opacity-90 transition-opacity"
+          className="font-bold tracking-tight hover:opacity-90 transition-opacity flex items-center gap-3"
         >
-          <h1 className={isHome ? 'text-4xl' : 'text-2xl'}>
+          <div className="w-10 h-10 shrink-0 rounded-full overflow-hidden border-2 border-white">
+            <Image
+              src="/logo-playful-revolution.png"
+              alt="Playful Revolution"
+              width={40}
+              height={40}
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <h1 className={isHome ? "text-4xl" : "text-2xl"}>
             Playful Revolution
           </h1>
         </Link>
