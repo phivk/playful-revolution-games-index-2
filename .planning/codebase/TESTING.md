@@ -55,7 +55,7 @@
 - Not applicable
 
 **Location:**
-- `src/data/games.json` contains game data used in development, but not structured as test fixtures
+- Game data lives in `content/games/*.md`; loader in `src/lib/games.ts`. Tests can use `getGames()` or fixture markdown files.
 
 ## Coverage
 

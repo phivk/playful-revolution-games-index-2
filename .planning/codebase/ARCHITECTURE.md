@@ -10,7 +10,7 @@
 - Static export configured for production (no server runtime)
 - Client-side component interactivity for filtering and search
 - Decap CMS integration for content management
-- Content stored as JSON in source code
+- Content stored as markdown in content/games
 - Multi-dimensional filtering system (tags, pillars, energy levels, search)
 
 ## Layers
@@ -19,15 +19,15 @@
 - Purpose: Render user interface and handle user interactions
 - Location: `src/app/` (Next.js App Router) and `src/components/`
 - Contains: Page components (`page.tsx`), UI components (cards, filters, search)
-- Depends on: Type definitions from `src/types/`, game data from `src/data/`, custom hooks from `src/hooks/`
+- Depends on: Type definitions from `src/types/`, game data from `src/lib/games` (loaded from content/games), custom hooks from `src/hooks/`
 - Used by: Browser/Next.js rendering engine
 
 **Data Layer:**
 - Purpose: Provide game content and catalog
-- Location: `src/data/games.json`
-- Contains: Structured JSON array with game definitions (title, description, tags, pillars, energy levels, setup, instructions)
-- Depends on: None
-- Used by: Page components that import and cast data
+- Location: `src/lib/games.ts` and `content/games/`
+- Contains: Markdown files with YAML frontmatter, parsed by gray-matter; exports `getGames()`, `getGameBySlug(slug)`; normalizes tags, pillars, energy, resources
+- Depends on: None (reads from filesystem at build/server time)
+- Used by: Layout, home page (via GamesCatalog), game detail page
 
 **Logic Layer (Custom Hooks):**
 - Purpose: Encapsulate filter state management and game filtering logic
@@ -39,7 +39,7 @@
 **Type Layer:**
 - Purpose: Define domain types and interfaces
 - Location: `src/types/game.ts`
-- Contains: Game interface, EnergyLevel union type, Tag union type, Pillar union type
+- Contains: Game interface, Tag union type, Pillar union type, numeric energy (1–5)
 - Depends on: None
 - Used by: All other layers for type safety
 
@@ -47,8 +47,8 @@
 
 **Home Page (Browse & Filter):**
 
-1. Server loads `games.json` as raw data
-2. Page component casts data to `Game[]` type
+1. Server calls `getGames()` (reads content/games/*.md), passes games to client
+2. `GamesCatalog` receives games as props and casts to `Game[]`
 3. `useGameFilters` hook initialized with all games
 4. User interacts with `FilterChips`, `SearchBar`, or `RandomPicker`
 5. Hook updates filter state via `setTag()`, `setPillar()`, `setEnergyLevel()`, `setSearchQuery()`
@@ -59,8 +59,8 @@
 **Game Detail Page:**
 
 1. Server receives slug parameter at build time
-2. `generateStaticParams()` pre-generates all game detail pages
-3. Hook finds game by slug from loaded JSON
+2. `generateStaticParams()` pre-generates all game detail pages from `getGames()`
+3. Page calls `getGameBySlug(slug)` to load game from markdown
 4. `notFound()` returns 404 if slug doesn't match
 5. Page renders game details with styling and navigation
 6. User clicks back link or browse button to return to home
@@ -75,7 +75,7 @@
 
 - **Filter State:** Managed by `useGameFilters` hook using React `useState`
 - **Search State:** Local debounce buffer in `SearchBar` (150ms debounce) synced to filter state
-- **Server State:** Static JSON data loaded at build time, no runtime mutations
+- **Server State:** Markdown content loaded at build/server time via getGames(), no runtime mutations
 - **Navigation State:** Next.js client router manages page transitions
 
 ## Key Abstractions
@@ -147,7 +147,7 @@
 
 **Styling:** Tailwind CSS v4 with custom theme colors in `src/app/globals.css`. All interactive elements follow snappy transition pattern (100ms cubic-bezier). Bold typography via Bebas Neue and Anton fonts.
 
-**Content Management:** Decap CMS reads/writes to `src/data/games.json` and `config.yml` controls collection schema
+**Content Management:** Decap CMS reads/writes markdown files in `content/games/`; `config.yml` controls collection schema
 
 ---
 

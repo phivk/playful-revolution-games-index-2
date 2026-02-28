@@ -9,6 +9,8 @@ playful-revolution-games-index-2/
 ├── .next/                          # Next.js build output (generated)
 ├── .planning/                      # GSD planning documents
 │   └── codebase/                   # Architecture and structure analysis
+├── content/                        # Content source (markdown)
+│   └── games/                      # Game entries (one .md per game)
 ├── out/                            # Static export output (generated)
 ├── node_modules/                   # Dependencies (generated)
 ├── public/                         # Static assets and CMS
@@ -30,11 +32,12 @@ playful-revolution-games-index-2/
 │   ├── components/                 # Reusable React components
 │   │   ├── FilterChips.tsx         # Multi-filter UI with chip groups
 │   │   ├── GameCard.tsx            # Game grid card component
+│   │   ├── GamesCatalog.tsx        # Home catalog (client) with filters
 │   │   ├── RandomPicker.tsx        # Random game selector button
 │   │   └── SearchBar.tsx           # Debounced search input
-│   ├── data/                       # Content/data files
-│   │   └── games.json              # Game catalog (content source)
 │   ├── hooks/                      # Custom React hooks
+│   ├── lib/                        # Data loaders and utilities
+│   │   └── games.ts                # getGames(), getGameBySlug() from content/games
 │   │   └── useGameFilters.ts       # Filter state management logic
 │   └── types/                      # TypeScript type definitions
 │       └── game.ts                 # Game interface and type unions
@@ -71,10 +74,15 @@ playful-revolution-games-index-2/
 - Contains: Domain types for games, filters, and validation types
 - Key files: `game.ts` (Game interface, tag/pillar/energy enums as unions)
 
-**src/data:**
-- Purpose: Content and data files (source of truth for CMS)
-- Contains: JSON files managed by Decap CMS
-- Key files: `games.json` (catalog of all games with metadata)
+**src/lib:**
+- Purpose: Load and normalize game data from markdown
+- Contains: Utilities that read from the filesystem (Server Components / build time)
+- Key files: `games.ts` (getGames, getGameBySlug; reads content/games/*.md)
+
+**content/games:**
+- Purpose: Source of truth for game content (markdown with YAML frontmatter)
+- Contains: One `.md` file per game; frontmatter (title, slug, tags, pillars, energy, duration, resources) and body (markdown)
+- Managed by: Decap CMS at `/admin` or by editing files directly
 
 **public/admin:**
 - Purpose: Decap CMS static files and configuration
@@ -101,6 +109,7 @@ playful-revolution-games-index-2/
 - `public/admin/config.yml`: Defines Decap CMS collections and fields
 
 **Core Logic:**
+- `src/lib/games.ts`: Loads games from `content/games/*.md` (getGames, getGameBySlug); used by layout, home page, game detail page
 - `src/hooks/useGameFilters.ts`: Manages filter state and multi-dimensional filtering with OR logic for tags/pillars, AND logic between filter types
 - `src/types/game.ts`: Game interface and type unions for valid tag/pillar/energy values
 
@@ -124,7 +133,7 @@ playful-revolution-games-index-2/
 **Directories:**
 - Feature directories: lowercase, plural when containing multiple files, e.g., `components/`, `hooks/`, `types/`
 - Route directories: lowercase, semantic names, e.g., `game/`, `admin/`
-- Data directories: lowercase `data/`
+- Content: `content/` for markdown source; `src/lib/` for loaders
 
 **Variables & Functions:**
 - React components: PascalCase (first letter capitalized)
@@ -157,11 +166,11 @@ playful-revolution-games-index-2/
 - Layout: Share root layout from `src/app/layout.tsx` or create nested layout
 
 **New Game Data:**
-- Format: Add entry to `src/data/games.json` array with Game interface shape (id, slug, title, description, tags[], pillars[], energyLevel, materials[], setup, howToPlay[])
-- Tags: Use only values from `src/types/game.ts` Tag type
-- Pillars: Use only values from `src/types/game.ts` Pillar type
-- Energy: Use only values from `src/types/game.ts` EnergyLevel type
-- Management: Edit via Decap CMS at `/admin` (preferred) or directly in `src/data/games.json`
+- Format: Add a new `.md` file in `content/games/` with YAML frontmatter (title, slug, tags, pillars, energy 1–5, duration, resources) and a markdown body (description + instructions)
+- Tags: Use only values from `src/types/game.ts` Tag type (e.g. theatre, collaborative, movement)
+- Pillars: Use only values from `src/types/game.ts` Pillar type (intellectual, social, physical)
+- Energy: Number 1–5
+- Management: Edit via Decap CMS at `/admin` (preferred) or directly in `content/games/*.md`; app loads via `getGames()` from `src/lib/games.ts` at build/server time
 
 **Utilities/Helpers:**
 - Shared helpers: Create in `src/utils/` folder (not yet present - create if needed)

@@ -9,7 +9,7 @@
 - Pages: PascalCase (e.g., `page.tsx` as convention, but routes are slug-based like `[slug]/page.tsx`)
 - Hooks: camelCase with `use` prefix (e.g., `useGameFilters.ts`)
 - Types: PascalCase (e.g., `game.ts`)
-- Data files: lowercase with hyphens or camelCase (e.g., `games.json`)
+- Content: markdown in `content/games/`; loaders in `src/lib/` (e.g., `games.ts`)
 
 **Functions:**
 - Components: PascalCase for React component exports (e.g., `export default function GameCard()`)
@@ -25,8 +25,8 @@
 
 **Types:**
 - Interfaces: PascalCase (e.g., `Game`, `GameCardProps`, `FilterState`)
-- Type unions: PascalCase (e.g., `EnergyLevel = 'Low' | 'Medium' | 'High'`)
-- Branded/discriminated types use string literals (e.g., `type Tag = 'Social Spontaneity' | 'Group Circle Games'`)
+- Type unions: PascalCase (e.g., `Tag`, `Pillar`; energy is numeric 1–5)
+- Branded/discriminated types use string literals (e.g., `type Tag = 'theatre' | 'collaborative' | ...`)
 
 ## Code Style
 
@@ -52,7 +52,7 @@
 3. Application type imports (e.g., `import { Game } from '@/types/game'`)
 4. Component imports (e.g., `import GameCard from '@/components/GameCard'`)
 5. Hook imports (e.g., `import { useGameFilters } from '@/hooks/useGameFilters'`)
-6. Data imports (e.g., `import gamesData from '@/data/games.json'`)
+6. Data/loader imports in server components (e.g., `import { getGames } from '@/lib/games'`)
 
 **Path Aliases:**
 - `@/*` maps to `./src/*` (configured in `tsconfig.json`)

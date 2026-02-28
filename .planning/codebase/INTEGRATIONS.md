@@ -18,11 +18,11 @@
 ## Data Storage
 
 **Databases:**
-- None - Application uses static JSON data file
+- None - Application uses static markdown content
 
 **File Storage:**
 - Local filesystem only
-  - Content data: `src/data/games.json` (static JSON file with game collection)
+  - Content data: `content/games/*.md` (markdown with frontmatter), loaded by `src/lib/games.ts` (getGames, getGameBySlug)
   - Media folder configured for CMS uploads: `public/images/` (configured in `public/admin/config.yml`)
   - Backup media folder for publishing: `/images` (public URL path)
 

@@ -16,12 +16,6 @@
 - Current mitigation: None
 - Recommendations: Create centralized color constants file (e.g., `src/constants/colors.ts`) to ensure consistency and maintainability.
 
-**Data Format Mismatch Between CMS and Application:**
-- Risk: `public/admin/config.yml` defines a `tags` field as list of objects with `tag` property, but `src/data/games.json` stores tags as simple string array. If CMS content is generated, there could be data structure conflicts.
-- Files: `public/admin/config.yml`, `src/data/games.json`, `src/types/game.ts`
-- Current mitigation: Manual data management; no automated sync between CMS and JSON file
-- Recommendations: Document the data pipeline clearly; implement validation schema that accepts both formats or standardize CMS output format.
-
 ## Fragile Areas
 
 **Admin Page IFrame Design:**
@@ -50,11 +44,8 @@
 
 ## Performance Bottlenecks
 
-**Static Game Data Loading on Every Page Load:**
-- Problem: `games.json` is imported and parsed on every page render in both `/` and `/game/[slug]` pages.
-- Files: `src/app/page.tsx`, `src/app/game/[slug]/page.tsx`
-- Cause: Direct JSON import used twice independently rather than centralized data source
-- Improvement path: Create `src/lib/gameData.ts` that exports games once; use in both places. Consider static generation if data doesn't change frequently.
+**Data Loading:**
+- Current: Data is loaded server-side via `getGames()` from `src/lib/games.ts` in layout and home page; game detail uses `getGameBySlug(slug)`. No duplicate JSON import; single markdown source in `content/games/`.
 
 **No Debounce Refinement in Search:**
 - Problem: Search debounce set to 150ms. For large datasets (100+ games), filtering on every keystroke could cause janky UI.
@@ -78,12 +69,11 @@
 **No Error Boundaries:**
 - Problem: No React error boundaries or error pages if game data fails to load or is malformed
 - Files: `src/app/page.tsx`, `src/app/game/[slug]/page.tsx`
-- Blocks: Parsing error in `games.json` would crash entire page
+- Blocks: Uncaught errors in loader or components could crash the page
 
-**No Data Validation:**
-- Problem: No runtime validation that games.json conforms to Game type before use
-- Files: `src/app/page.tsx`, `src/app/game/[slug]/page.tsx`
-- Blocks: Malformed data from CMS could silently break filtering and display
+**Data Validation:**
+- Current: The loader in `src/lib/games.ts` normalizes and validates frontmatter (tags, pillars, energy, resources). Malformed frontmatter or missing required fields could still cause runtime issues or incorrect display.
+- Recommendations: Add explicit schema validation (e.g. zod) in the loader for stricter failure modes.
 
 **No 404 Handling for Missing Images:**
 - Problem: Game cards can contain image references in CMS but no image handling in component
@@ -123,9 +113,9 @@
 - Limit: Static export means build time grows with game count; pre-generation of all game pages happens at build time
 - Scaling path: If games grow to 1000+, consider dynamic route segments or serverless functions instead of static export.
 
-**JSON File as Data Source:**
-- Current capacity: Games loaded into memory on every render
-- Limit: With 10,000+ games, initial JSON parse could lag. No pagination or lazy loading.
+**Markdown as Data Source:**
+- Current capacity: Games loaded via getGames() (reads all content/games/*.md) at build/server time
+- Limit: With 10,000+ games, reading and parsing all markdown files could lag. No pagination or lazy loading.
 - Scaling path: Switch to database with API; implement pagination; add virtual scrolling for large lists.
 
 **Color Map Duplication:**
@@ -170,8 +160,8 @@
 **Random Picker Could Fail Silently:**
 - Symptoms: "Surprise Me" button does nothing if games array is empty
 - Files: `src/components/RandomPicker.tsx` (line 18)
-- Trigger: Navigate to home when gamesData.games is empty array
-- Workaround: Check console for errors; ensure games.json is not empty
+- Trigger: Navigate to home when getGames() returns empty array
+- Workaround: Check console for errors; ensure content/games has at least one .md file
 
 **SearchBar State Sync Issues:**
 - Symptoms: Clearing search in SearchBar doesn't immediately update parent state if onChange callback is slow
@@ -180,10 +170,10 @@
 - Workaround: Wait for debounce timer before typing new query
 
 **Game Detail Page Missing Error Handling:**
-- Symptoms: If games.json is malformed or missing game entry, notFound() redirects but no clear error message
+- Symptoms: If getGameBySlug returns null (missing slug), notFound() redirects but no clear error message
 - Files: `src/app/game/[slug]/page.tsx`
 - Trigger: Manually navigate to `/game/nonexistent-slug`
-- Workaround: Check browser network tab to verify games.json loads correctly
+- Workaround: Verify slug exists in content/games (e.g. a file with matching slug in frontmatter)
 
 ---
 
