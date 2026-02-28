@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { getGames } from '@/lib/games';
 import NavBar from '@/components/NavBar';
+import { PlaylistProvider } from '@/contexts/PlaylistContext';
 
 export const metadata: Metadata = {
   title: 'Playful Revolution Games',
@@ -18,8 +19,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <NavBar games={games} />
-        {children}
+        <PlaylistProvider>
+          <NavBar games={games} />
+          {children}
+        </PlaylistProvider>
       </body>
     </html>
   );

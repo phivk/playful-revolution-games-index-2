@@ -1,8 +1,11 @@
 'use client';
 
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
 import GameCard from '@/components/GameCard';
 import FilterChips from '@/components/FilterChips';
 import SearchBar from '@/components/SearchBar';
+import { usePlaylist } from '@/contexts/PlaylistContext';
 import { useGameFilters } from '@/hooks/useGameFilters';
 import { Game, Tag, Pillar } from '@/types/game';
 
@@ -11,6 +14,9 @@ interface GamesCatalogProps {
 }
 
 export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const { slugs, add, remove, clear, initializeFromSlugs } = usePlaylist();
   const {
     filters,
     filteredGames,
@@ -23,6 +29,17 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
     setSearchQuery,
     clearAll,
   } = useGameFilters(initialGames);
+
+  useEffect(() => {
+    const playlistParam = searchParams.get('playlist');
+    if (playlistParam) {
+      const initialSlugs = playlistParam
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean);
+      initializeFromSlugs(initialSlugs);
+    }
+  }, [searchParams, initializeFromSlugs]);
 
   const handleTagToggle = (tag: Tag) => {
     if (filters.tags.includes(tag)) {
@@ -71,7 +88,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
           onClearAll={clearAll}
         />
 
-        <div className="mb-4">
+        <div className="mb-4 flex flex-wrap items-center gap-3">
           <h2 className="text-2xl font-bold text-[#111111]">
             Games ({filteredGames.length})
             {hasActiveFilters && (
@@ -80,12 +97,43 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
               </span>
             )}
           </h2>
+          {slugs.length > 0 && (
+            <>
+              <button
+                type="button"
+                onClick={() => {
+                  const q = slugs.join(',');
+                  router.replace(`/?playlist=${q}`);
+                  router.push(`/playlist?g=${q}`);
+                }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#E53935] text-white font-bold rounded-lg border-2 border-[#111111] hover:bg-[#C62828] transition-colors uppercase tracking-wide text-sm"
+              >
+                View playlist ({slugs.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  clear();
+                  router.replace('/');
+                }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white font-bold rounded-lg border-2 border-[#111111] hover:bg-gray-100 transition-colors uppercase tracking-wide text-sm"
+              >
+                Clear playlist
+              </button>
+            </>
+          )}
         </div>
 
         {filteredGames.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {filteredGames.map((game) => (
-              <GameCard key={game.slug} game={game} />
+              <GameCard
+                key={game.slug}
+                game={game}
+                inPlaylist={slugs.includes(game.slug)}
+                onAddToPlaylist={() => add(game.slug)}
+                onRemoveFromPlaylist={() => remove(game.slug)}
+              />
             ))}
           </div>
         ) : (
