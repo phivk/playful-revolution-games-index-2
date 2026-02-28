@@ -1,10 +1,10 @@
 import { useState, useMemo } from 'react';
-import { Game, Tag, Pillar, EnergyLevel } from '@/types/game';
+import { Game, Tag, Pillar } from '@/types/game';
 
 export interface FilterState {
   tags: Tag[];
   pillars: Pillar[];
-  energyLevels: EnergyLevel[];
+  energyLevels: number[];
   searchQuery: string;
 }
 
@@ -15,8 +15,8 @@ export interface UseGameFiltersReturn {
   removeTag: (tag: Tag) => void;
   setPillar: (pillar: Pillar) => void;
   removePillar: (pillar: Pillar) => void;
-  setEnergyLevel: (level: EnergyLevel) => void;
-  removeEnergyLevel: (level: EnergyLevel) => void;
+  setEnergyLevel: (level: number) => void;
+  removeEnergyLevel: (level: number) => void;
   setSearchQuery: (query: string) => void;
   clearAll: () => void;
   hasActiveFilters: boolean;
@@ -59,7 +59,7 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
     }));
   };
 
-  const setEnergyLevel = (level: EnergyLevel) => {
+  const setEnergyLevel = (level: number) => {
     setFilters((prev) => ({
       ...prev,
       energyLevels: prev.energyLevels.includes(level)
@@ -68,7 +68,7 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
     }));
   };
 
-  const removeEnergyLevel = (level: EnergyLevel) => {
+  const removeEnergyLevel = (level: number) => {
     setFilters((prev) => ({
       ...prev,
       energyLevels: prev.energyLevels.filter((e) => e !== level),
@@ -93,13 +93,11 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
 
   const filteredGames = useMemo(() => {
     return games.filter((game) => {
-      // Tag filter: game must have at least one of the selected tags (OR within tags)
       if (filters.tags.length > 0) {
         const hasMatchingTag = filters.tags.some((tag) => game.tags.includes(tag));
         if (!hasMatchingTag) return false;
       }
 
-      // Pillar filter: game must have at least one of the selected pillars
       if (filters.pillars.length > 0) {
         const hasMatchingPillar = filters.pillars.some((pillar) =>
           game.pillars.includes(pillar)
@@ -107,14 +105,12 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
         if (!hasMatchingPillar) return false;
       }
 
-      // Energy level filter: game must have one of the selected energy levels
       if (filters.energyLevels.length > 0) {
-        if (!filters.energyLevels.includes(game.energyLevel)) {
+        if (!filters.energyLevels.includes(game.energy)) {
           return false;
         }
       }
 
-      // Search query: case-insensitive match on title OR description
       if (filters.searchQuery.trim()) {
         const query = filters.searchQuery.toLowerCase().trim();
         const titleMatch = game.title.toLowerCase().includes(query);

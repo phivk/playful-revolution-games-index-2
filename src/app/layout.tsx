@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import gamesData from "@/data/games.json";
-import NavBar from "@/components/NavBar";
-import { Game } from "@/types/game";
+import type { Metadata } from 'next';
+import './globals.css';
+import { getGames } from '@/lib/games';
+import NavBar from '@/components/NavBar';
 
 export const metadata: Metadata = {
-  title: "Playful Revolution Games",
-  description: "A living collection of physical, social, and spontaneous games with facilitation instructions",
+  title: 'Playful Revolution Games',
+  description:
+    'A living collection of physical, social, and spontaneous games with facilitation instructions',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const games = gamesData.games as Game[];
+  const games = await getGames();
   return (
     <html lang="en">
       <body className="antialiased">

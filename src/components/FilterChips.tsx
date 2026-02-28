@@ -1,54 +1,55 @@
 'use client';
 
-import { Tag, Pillar, EnergyLevel } from '@/types/game';
+import { Tag, Pillar } from '@/types/game';
 
 interface FilterChipsProps {
   selectedTags: Tag[];
   selectedPillars: Pillar[];
-  selectedEnergyLevels: EnergyLevel[];
+  selectedEnergyLevels: number[];
   onTagToggle: (tag: Tag) => void;
   onPillarToggle: (pillar: Pillar) => void;
-  onEnergyToggle: (level: EnergyLevel) => void;
+  onEnergyToggle: (level: number) => void;
   onClearAll: () => void;
 }
 
 const ALL_TAGS: Tag[] = [
-  'Social Spontaneity',
-  'Group Circle Games',
-  'Collaborative',
-  'Competitive',
-  'Ball Games',
-  'Theatre Sports',
-  'Movement',
-  'Table Games',
+  'theatre',
+  'collaborative',
+  'movement',
+  'circle',
+  'ball',
+  'table',
+  'competitive',
+  'social',
 ];
 
-const ALL_PILLARS: Pillar[] = ['Intellectual', 'Social', 'Physical'];
+const ALL_PILLARS: Pillar[] = ['intellectual', 'social', 'physical'];
 
-const ALL_ENERGY_LEVELS: EnergyLevel[] = ['Low', 'Medium', 'High'];
+const ALL_ENERGY_LEVELS = [1, 2, 3, 4, 5] as const;
 
-// Brand colors per design brief
 const TAG_COLORS: Record<string, string> = {
-  'Social Spontaneity': '#E53935', // Revolution Red
-  'Group Circle Games': '#43A047', // Play Green
-  Collaborative: '#FDD835', // Joy Yellow
-  Competitive: '#1E3A8A', // Deep Blue
-  'Ball Games': '#E53935',
-  'Theatre Sports': '#43A047',
-  Movement: '#FDD835',
-  'Table Games': '#1E3A8A',
+  theatre: '#E53935',
+  collaborative: '#43A047',
+  movement: '#FDD835',
+  circle: '#1E3A8A',
+  ball: '#E53935',
+  table: '#1E3A8A',
+  competitive: '#1E3A8A',
+  social: '#E53935',
 };
 
 const PILLAR_COLORS: Record<Pillar, string> = {
-  Intellectual: '#1E3A8A',
-  Social: '#E53935',
-  Physical: '#43A047',
+  intellectual: '#1E3A8A',
+  social: '#E53935',
+  physical: '#43A047',
 };
 
-const ENERGY_COLORS: Record<EnergyLevel, string> = {
-  Low: '#1E3A8A',
-  Medium: '#FDD835',
-  High: '#E53935',
+const ENERGY_COLORS: Record<number, string> = {
+  1: '#1E3A8A',
+  2: '#2563EB',
+  3: '#FDD835',
+  4: '#E53935',
+  5: '#B71C1C',
 };
 
 function Chip({
@@ -89,10 +90,10 @@ function ChipGroup({
   colors,
 }: {
   title: string;
-  chips: string[];
-  selectedValues: string[];
-  onToggle: (value: string) => void;
-  colors?: Record<string, string>;
+  chips: readonly string[] | readonly number[];
+  selectedValues: (string | number)[];
+  onToggle: (value: string | number) => void;
+  colors?: Record<string, string> | Record<number, string>;
 }) {
   const count = selectedValues.length;
 
@@ -111,11 +112,11 @@ function ChipGroup({
       <div className="flex flex-wrap gap-3">
         {chips.map((chip) => (
           <Chip
-            key={chip}
-            label={chip}
+            key={String(chip)}
+            label={String(chip)}
             selected={selectedValues.includes(chip)}
             onClick={() => onToggle(chip)}
-            color={colors?.[chip]}
+            color={colors?.[chip as keyof typeof colors] as string | undefined}
           />
         ))}
       </div>
@@ -170,7 +171,7 @@ export default function FilterChips({
         title="Energy"
         chips={ALL_ENERGY_LEVELS}
         selectedValues={selectedEnergyLevels}
-        onToggle={(level) => onEnergyToggle(level as EnergyLevel)}
+        onToggle={(level) => onEnergyToggle(level as number)}
         colors={ENERGY_COLORS}
       />
     </div>

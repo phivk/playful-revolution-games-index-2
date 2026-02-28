@@ -1,26 +1,23 @@
-export type EnergyLevel = 'Low' | 'Medium' | 'High';
+export type Tag =
+  | 'theatre'
+  | 'collaborative'
+  | 'movement'
+  | 'circle'
+  | 'ball'
+  | 'table'
+  | 'competitive'
+  | 'social';
 
-export type Tag = 
-  | 'Social Spontaneity'
-  | 'Group Circle Games'
-  | 'Collaborative'
-  | 'Competitive'
-  | 'Ball Games'
-  | 'Theatre Sports'
-  | 'Movement'
-  | 'Table Games';
-
-export type Pillar = 'Intellectual' | 'Social' | 'Physical';
+export type Pillar = 'intellectual' | 'social' | 'physical';
 
 export interface Game {
-  id: string;
   slug: string;
   title: string;
   description: string;
+  body: string;
   tags: Tag[];
   pillars: Pillar[];
-  energyLevel: EnergyLevel;
-  materials: string[];
-  setup: string;
-  howToPlay: string[];
+  energy: number;
+  duration: number;
+  resources: string[];
 }
