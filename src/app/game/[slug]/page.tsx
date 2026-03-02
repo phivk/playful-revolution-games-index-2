@@ -1,5 +1,6 @@
-import EnergyBars from "@/components/EnergyBars";
+import EnergyChip from "@/components/EnergyChip";
 import PillarChip from "@/components/PillarChip";
+import TagChip from "@/components/TagChip";
 import { getGameBySlug, getGames } from "@/lib/games";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,17 +9,6 @@ import ReactMarkdown from "react-markdown";
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
-
-const tagColors: Record<string, string> = {
-  theatre: "bg-purple-100 text-purple-800",
-  collaborative: "bg-emerald-100 text-emerald-800",
-  movement: "bg-cyan-100 text-cyan-800",
-  circle: "bg-indigo-100 text-indigo-800",
-  ball: "bg-amber-100 text-amber-800",
-  table: "bg-stone-100 text-stone-800",
-  competitive: "bg-rose-100 text-rose-800",
-  social: "bg-pink-100 text-pink-800",
-};
 
 export async function generateStaticParams() {
   const games = await getGames();
@@ -47,12 +37,7 @@ export default async function GamePage({ params }: PageProps) {
 
           <div className="flex flex-wrap gap-2 mb-6">
             {game.tags.map((tag) => (
-              <span
-                key={tag}
-                className={`text-sm px-3 py-1 rounded-full ${tagColors[tag] ?? "bg-gray-100 text-gray-800"}`}
-              >
-                {tag}
-              </span>
+              <TagChip key={tag} tag={tag} />
             ))}
           </div>
 
@@ -63,10 +48,7 @@ export default async function GamePage({ params }: PageProps) {
               ))}
             </div>
 
-            <div className="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded">
-              <span className="text-sm text-gray-600">Energy:</span>
-              <EnergyBars level={(game.energy as 1 | 2 | 3) || 1} size="sm" />
-            </div>
+            <EnergyChip level={(game.energy as 1 | 2 | 3) || 1} />
 
             {game.duration > 0 && (
               <div className="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded">

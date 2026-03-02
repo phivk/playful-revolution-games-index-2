@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Game } from '@/types/game';
 import EnergyBars from '@/components/EnergyBars';
 import PillarChip from '@/components/PillarChip';
+import TagChip from '@/components/TagChip';
 
 interface GameCardProps {
   game: Game;
@@ -9,17 +10,6 @@ interface GameCardProps {
   onAddToPlaylist?: () => void;
   onRemoveFromPlaylist?: () => void;
 }
-
-const tagColors: Record<string, string> = {
-  theatre: 'bg-[#E53935] text-white',
-  collaborative: 'bg-[#43A047] text-white',
-  movement: 'bg-[#FDD835] text-[#111111]',
-  circle: 'bg-[#1E3A8A] text-white',
-  ball: 'bg-[#E53935] text-white',
-  table: 'bg-[#1E3A8A] text-white',
-  competitive: 'bg-[#1E3A8A] text-white',
-  social: 'bg-[#E53935] text-white',
-};
 
 export default function GameCard({
   game,
@@ -76,12 +66,7 @@ export default function GameCard({
 
       <div className="flex flex-wrap gap-2 mb-4">
         {game.tags.map((tag) => (
-          <span
-            key={tag}
-            className={`text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider ${tagColors[tag] ?? 'bg-gray-200 text-gray-800'}`}
-          >
-            {tag}
-          </span>
+          <TagChip key={tag} tag={tag} />
         ))}
       </div>
 
