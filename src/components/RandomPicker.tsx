@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { Dices } from 'lucide-react';
 import { Game } from '@/types/game';
 
 interface RandomPickerProps {
@@ -33,9 +34,7 @@ export default function RandomPicker({ games, variant = 'default' }: RandomPicke
       className={buttonClass[variant]}
     >
       <span className="flex items-center justify-center gap-3">
-        <span className={variant === "nav" ? "text-base" : "text-2xl"} aria-hidden>
-          🎲
-        </span>
+        <Dices className={variant === "nav" ? "size-4" : "size-7"} aria-hidden />
         SURPRISE ME!
       </span>
     </button>
