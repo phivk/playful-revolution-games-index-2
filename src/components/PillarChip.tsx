@@ -17,12 +17,25 @@ interface PillarChipProps {
   pillar: Pillar;
   selected?: boolean;
   onClick?: () => void;
+  iconOnly?: boolean;
 }
 
-export default function PillarChip({ pillar, selected, onClick }: PillarChipProps) {
+export default function PillarChip({ pillar, selected, onClick, iconOnly }: PillarChipProps) {
   const { color, Icon } = PILLAR_CONFIG[pillar];
   const isInteractive = typeof onClick === "function";
   const isActive = isInteractive ? !!selected : true;
+
+  if (iconOnly) {
+    return (
+      <span
+        className="inline-flex items-center justify-center w-8 h-8 rounded-lg text-white"
+        style={{ backgroundColor: color }}
+        title={pillar}
+      >
+        <Icon size={16} />
+      </span>
+    );
+  }
 
   const Tag = isInteractive ? "button" : "span";
 

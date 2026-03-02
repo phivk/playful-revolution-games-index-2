@@ -67,14 +67,14 @@ export default function GameCard({
 
       <div className="flex flex-wrap gap-2 mb-4">
         {game.tags.map((tag) => (
-          <TagChip key={tag} tag={tag} />
+          <TagChip key={tag} tag={tag} flat />
         ))}
       </div>
 
       <div className="border-t-2 border-gray-200 pt-4 space-y-6">
         <div className="flex flex-wrap gap-2">
           {game.pillars.map((pillar) => (
-            <PillarChip key={pillar} pillar={pillar} />
+            <PillarChip key={pillar} pillar={pillar} iconOnly />
           ))}
         </div>
 
