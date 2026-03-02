@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import GameCard from '@/components/GameCard';
 import FilterChips from '@/components/FilterChips';
 import SearchBar from '@/components/SearchBar';
+import { X } from 'lucide-react';
 import { usePlaylist } from '@/contexts/PlaylistContext';
 import { useGameFilters } from '@/hooks/useGameFilters';
 import { Game, Tag, Pillar } from '@/types/game';
@@ -111,7 +112,18 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
             )}
           </h2>
           {slugs.length > 0 && (
-            <>
+            <div className="ml-auto flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  clear();
+                  router.replace('/');
+                }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white font-bold rounded-lg border-2 border-transparent hover:border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
+              >
+                <X className="w-4 h-4 shrink-0" strokeWidth={2.5} aria-hidden />
+                Clear playlist
+              </button>
               <button
                 type="button"
                 onClick={() => {
@@ -123,17 +135,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
               >
                 View playlist ({slugs.length})
               </button>
-              <button
-                type="button"
-                onClick={() => {
-                  clear();
-                  router.replace('/');
-                }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
-              >
-                Clear playlist
-              </button>
-            </>
+            </div>
           )}
         </div>
 
