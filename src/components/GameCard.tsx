@@ -3,6 +3,7 @@ import { Clock } from 'lucide-react';
 import { Game } from '@/types/game';
 import EnergyBars from '@/components/EnergyBars';
 import PillarChip from '@/components/PillarChip';
+import PlaylistButton from '@/components/PlaylistButton';
 import TagChip from '@/components/TagChip';
 
 interface GameCardProps {
@@ -30,43 +31,12 @@ export default function GameCard({
         <h3 className="text-2xl font-display font-bold text-foreground uppercase tracking-wide flex-1 min-w-0">
           {game.title}
         </h3>
-        {hasPlaylistActions && (
-          <span
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              if (inPlaylist) {
-                onRemoveFromPlaylist?.();
-              } else {
-                onAddToPlaylist?.();
-              }
-            }}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                if (inPlaylist) onRemoveFromPlaylist?.();
-                else onAddToPlaylist?.();
-              }
-            }}
-            className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-foreground ${
-              inPlaylist
-                ? 'bg-playlist-amber text-foreground scale-110'
-                : 'bg-background text-foreground hover-icon'
-            }`}
-            aria-label={inPlaylist ? 'Remove from playlist' : 'Add to playlist'}
-          >
-            {inPlaylist ? (
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M2 7.5L5.5 11L12 3" />
-              </svg>
-            ) : (
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M7 1v12M1 7h12" />
-              </svg>
-            )}
-          </span>
+        {hasPlaylistActions && onAddToPlaylist && onRemoveFromPlaylist && (
+          <PlaylistButton
+            inPlaylist={inPlaylist}
+            onAddToPlaylist={onAddToPlaylist}
+            onRemoveFromPlaylist={onRemoveFromPlaylist}
+          />
         )}
       </div>
 

@@ -51,9 +51,7 @@ export default async function GamePage({ params }: PageProps) {
           <div className="flex flex-wrap gap-4 mb-8">
             <EnergyChip level={(game.energy as 1 | 2 | 3) || 1} />
 
-            {game.duration > 0 && (
-              <DurationChip duration={game.duration} />
-            )}
+            {game.duration > 0 && <DurationChip duration={game.duration} />}
           </div>
 
           <hr className="my-6 border-gray-200" />

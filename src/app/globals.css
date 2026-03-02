@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
 :root {
-  --color-revolution-red: #E53935;
-  --color-play-green: #43A047;
-  --color-joy-yellow: #FDD835;
-  --color-deep-blue: #1E3A8A;
-  --color-playlist-amber: #F9A825;
-  --color-duration-purple: #8E24AA;
-  --color-amber-light: #FFF8E1;
-  --background: #FAFAF7;
+  --color-revolution-red: #e53935;
+  --color-play-green: #43a047;
+  --color-joy-yellow: #fdd835;
+  --color-deep-blue: #1e3a8a;
+  --color-playlist-amber: #f9a825;
+  --color-duration-purple: #8e24aa;
+  --color-amber-light: #fff8e1;
+  --background: #fafaf7;
   --foreground: #111111;
 }
 
@@ -32,8 +32,8 @@
   --shadow-brutal-accent: 3px 3px 0px 0px var(--color-revolution-red);
   --shadow-brutal-accent-lg: 4px 4px 0px 0px var(--color-revolution-red);
 
-  --font-display: 'Bebas Neue', 'Anton', sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: "Bebas Neue", "Anton", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
   --font-sans: var(--font-body);
 }
 
@@ -46,7 +46,12 @@ body {
 }
 
 /* Headline typography - bold, condensed, poster-style */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -54,7 +59,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Snappy transitions for all interactive elements */
 * {
-  transition-property: transform, box-shadow, background-color, border-color, color, opacity;
+  transition-property:
+    transform, box-shadow, background-color, border-color, color, opacity;
   transition-duration: 100ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -110,4 +116,9 @@ html {
       scale: 0.9;
     }
   }
+}
+
+/* Playlist add/remove icon: draw/undraw morph (unlayered so it overrides * transition) */
+.playlist-icon-morph path {
+  transition: stroke-dashoffset 320ms cubic-bezier(0.4, 0, 0.2, 1);
 }
