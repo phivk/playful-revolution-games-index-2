@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import GameCard from '@/components/GameCard';
 import FilterPanel from '@/components/FilterPanel';
 import FilterBottomSheet from '@/components/FilterBottomSheet';
-import { X, SlidersHorizontal } from 'lucide-react';
+import { SlidersHorizontal } from 'lucide-react';
 import { usePlaylist } from '@/contexts/PlaylistContext';
 import { useGameFilters } from '@/hooks/useGameFilters';
 import { Game, Tag, Pillar } from '@/types/game';
@@ -86,6 +86,17 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
     filters.durations.length > 0 ||
     filters.searchQuery.trim() !== '';
 
+  const handleClearPlaylist = () => {
+    clear();
+    router.replace('/');
+  };
+
+  const handleViewPlaylist = () => {
+    const q = slugs.join(',');
+    router.replace(`/?playlist=${q}`);
+    router.push(`/playlist?g=${q}`);
+  };
+
   const filterPanelProps = {
     searchQuery: filters.searchQuery,
     onSearchChange: setSearchQuery,
@@ -98,13 +109,16 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
     onEnergyToggle: handleEnergyToggle,
     onDurationToggle: handleDurationToggle,
     onClearAll: clearAll,
+    playlistCount: slugs.length,
+    onClearPlaylist: handleClearPlaylist,
+    onViewPlaylist: handleViewPlaylist,
   };
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-4 py-6 lg:flex lg:gap-6">
+      <div className="px-4 py-6 lg:flex lg:gap-6">
         {/* Desktop sidebar */}
-        <aside className="hidden lg:block w-80 xl:w-96 shrink-0">
+        <aside className="hidden lg:block w-md xl:w-lg shrink-0">
           <div className="sticky top-6 max-h-[calc(100vh-3rem)] overflow-y-auto sidebar-scroll pr-1">
             <FilterPanel {...filterPanelProps} />
           </div>
@@ -130,32 +144,6 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
                 </span>
               )}
             </h2>
-            {slugs.length > 0 && (
-              <div className="ml-auto flex items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    clear();
-                    router.replace('/');
-                  }}
-                  className="inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-transparent hover:border-foreground uppercase tracking-wide text-sm"
-                >
-                  <X className="w-4 h-4 shrink-0" strokeWidth={2.5} aria-hidden />
-                  Clear playlist
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const q = slugs.join(',');
-                    router.replace(`/?playlist=${q}`);
-                    router.push(`/playlist?g=${q}`);
-                  }}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm hover-btn"
-                >
-                  View playlist ({slugs.length})
-                </button>
-              </div>
-            )}
           </div>
 
           {filteredGames.length > 0 ? (
@@ -206,7 +194,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
       </div>
 
       <footer className="bg-foreground text-white py-6 px-4 mt-8">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="text-center">
           <p className="text-sm opacity-70">
             A collection of physical, social, and spontaneous games
           </p>

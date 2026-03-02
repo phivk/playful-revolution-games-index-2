@@ -42,7 +42,7 @@ export default function PillarChip({ pillar, selected, onClick, iconOnly }: Pill
   return (
     <Tag
       {...(isInteractive ? { onClick, type: "button" as const } : {})}
-      className={`inline-flex items-center gap-1.5 text-sm px-3 py-2 rounded-lg font-bold uppercase tracking-wider border-3 border-foreground transition-all duration-100 ${
+      className={`inline-flex items-center gap-1.5 text-xs px-3 py-2 rounded-lg font-bold uppercase tracking-wider border-3 border-foreground transition-all duration-100 ${
         isInteractive
           ? "transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
           : ""
