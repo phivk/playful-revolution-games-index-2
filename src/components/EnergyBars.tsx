@@ -26,9 +26,9 @@ export default function EnergyBars({
       {[0, 1, 2].map((i) => (
         <Zap
           key={i}
-          className={`${iconClass} text-[#111111]`}
+          className={`${iconClass} text-current`}
           strokeWidth={2}
-          fill={level > i ? "#111111" : "white"}
+          fill={level > i ? "currentColor" : "transparent"}
         />
       ))}
     </span>

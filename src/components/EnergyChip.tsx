@@ -21,7 +21,7 @@ export default function EnergyChip({ level, selected, onClick }: EnergyChipProps
         isInteractive
           ? "transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
           : ""
-      } ${
+      }       ${
         isActive
           ? "bg-[#FDD835] text-[#111111] shadow-[3px_3px_0px_0px_#111111]"
           : "bg-transparent text-[#111111] hover:border-[#E53935] hover:text-[#E53935]"
