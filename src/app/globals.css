@@ -3,13 +3,13 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors from Design Brief */
   --color-revolution-red: #E53935;
   --color-play-green: #43A047;
   --color-joy-yellow: #FDD835;
   --color-deep-blue: #1E3A8A;
-  
-  /* Paper Background */
+  --color-playlist-amber: #F9A825;
+  --color-duration-purple: #8E24AA;
+  --color-amber-light: #FFF8E1;
   --background: #FAFAF7;
   --foreground: #111111;
 }
@@ -17,15 +17,23 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-revolution-red: #E53935;
-  --color-play-green: #43A047;
-  --color-joy-yellow: #FDD835;
-  --color-deep-blue: #1E3A8A;
-  
-  /* Typography - Bold condensed sans-serif for headlines */
+  --color-revolution-red: var(--color-revolution-red);
+  --color-play-green: var(--color-play-green);
+  --color-joy-yellow: var(--color-joy-yellow);
+  --color-deep-blue: var(--color-deep-blue);
+  --color-playlist-amber: var(--color-playlist-amber);
+  --color-duration-purple: var(--color-duration-purple);
+  --color-amber-light: var(--color-amber-light);
+
+  --shadow-brutal-sm: 2px 2px 0px 0px var(--foreground);
+  --shadow-brutal: 3px 3px 0px 0px var(--foreground);
+  --shadow-brutal-lg: 4px 4px 0px 0px var(--foreground);
+  --shadow-brutal-accent-sm: 2px 2px 0px 0px var(--color-revolution-red);
+  --shadow-brutal-accent: 3px 3px 0px 0px var(--color-revolution-red);
+  --shadow-brutal-accent-lg: 4px 4px 0px 0px var(--color-revolution-red);
+
   --font-display: 'Bebas Neue', 'Anton', sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
-  
   --font-sans: var(--font-body);
 }
 

@@ -17,7 +17,7 @@ export default function PillarChart({ pillarMinutes }: PillarChartProps) {
 
   return (
     <div className="space-y-3">
-      <h3 className="text-lg font-bold text-[#111111] uppercase tracking-wide">
+      <h3 className="text-lg font-bold text-foreground uppercase tracking-wide">
         Pillar coverage
       </h3>
       <div className="space-y-2">
@@ -29,7 +29,7 @@ export default function PillarChart({ pillarMinutes }: PillarChartProps) {
               <span className="w-24 text-sm font-medium text-gray-800 shrink-0">
                 {PILLAR_LABELS[pillar]}
               </span>
-              <div className="flex-1 h-6 bg-gray-200 rounded-md overflow-hidden border-2 border-[#111111]">
+              <div className="flex-1 h-6 bg-gray-200 rounded-md overflow-hidden border-2 border-foreground">
                 <div
                   className="h-full rounded transition-[width] duration-300"
                   style={{
@@ -38,7 +38,7 @@ export default function PillarChart({ pillarMinutes }: PillarChartProps) {
                   }}
                 />
               </div>
-              <span className="text-sm font-bold text-[#111111] w-12 shrink-0">
+              <span className="text-sm font-bold text-foreground w-12 shrink-0">
                 {minutes} min
               </span>
             </div>

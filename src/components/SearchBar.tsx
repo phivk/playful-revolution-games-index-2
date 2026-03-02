@@ -33,7 +33,7 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
     <div className="relative mb-6">
       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
         <svg
-          className="h-6 w-6 text-[#E53935]"
+          className="h-6 w-6 text-revolution-red"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -51,12 +51,12 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
         value={localValue}
         onChange={(e) => setLocalValue(e.target.value)}
         placeholder="SEARCH GAMES..."
-        className="block w-full pl-12 pr-12 py-4 border-3 border-[#111111] rounded-xl bg-white text-[#111111] placeholder-gray-400 font-bold uppercase tracking-wider focus:outline-none focus:border-[#E53935] focus:shadow-[3px_3px_0px_0px_#E53935] transition-all duration-100"
+        className="block w-full pl-12 pr-12 py-4 border-3 border-foreground rounded-xl bg-white text-foreground placeholder-gray-400 font-bold uppercase tracking-wider focus:outline-none focus:border-revolution-red focus:shadow-brutal-accent transition-all duration-100"
       />
       {localValue && (
         <button
           onClick={handleClear}
-          className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-[#E53935] transition-colors"
+          className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-revolution-red transition-colors"
         >
           <svg
             className="h-6 w-6"

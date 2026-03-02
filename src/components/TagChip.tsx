@@ -3,14 +3,14 @@
 import { Tag } from "@/types/game";
 
 const TAG_CONFIG: Record<Tag, { bg: string; text: string }> = {
-  theatre: { bg: "#E53935", text: "white" },
-  collaborative: { bg: "#43A047", text: "white" },
-  movement: { bg: "#FDD835", text: "#111111" },
-  circle: { bg: "#1E3A8A", text: "white" },
-  ball: { bg: "#E53935", text: "white" },
-  table: { bg: "#1E3A8A", text: "white" },
-  competitive: { bg: "#1E3A8A", text: "white" },
-  social: { bg: "#E53935", text: "white" },
+  theatre: { bg: "var(--color-revolution-red)", text: "white" },
+  collaborative: { bg: "var(--color-play-green)", text: "white" },
+  movement: { bg: "var(--color-joy-yellow)", text: "var(--foreground)" },
+  circle: { bg: "var(--color-deep-blue)", text: "white" },
+  ball: { bg: "var(--color-revolution-red)", text: "white" },
+  table: { bg: "var(--color-deep-blue)", text: "white" },
+  competitive: { bg: "var(--color-deep-blue)", text: "white" },
+  social: { bg: "var(--color-revolution-red)", text: "white" },
 };
 
 interface TagChipProps {
@@ -31,15 +31,15 @@ export default function TagChip({ tag, selected, onClick, flat }: TagChipProps) 
     <Element
       {...(isInteractive ? { onClick, type: "button" as const } : {})}
       className={`inline-flex items-center text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider transition-all duration-100 ${
-        flat ? "border-0" : "border-3 border-[#111111]"
+        flat ? "border-0" : "border-3 border-foreground"
       } ${
         isInteractive
           ? "transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
           : ""
       } ${
         isActive
-          ? flat ? "" : "shadow-[3px_3px_0px_0px_#111111]"
-          : "bg-transparent text-[#111111] hover:border-[#E53935] hover:text-[#E53935]"
+          ? flat ? "" : "shadow-brutal"
+          : "bg-transparent text-foreground hover:border-revolution-red hover:text-revolution-red"
       }`}
       style={
         isActive ? { backgroundColor: bg, color: text } : undefined

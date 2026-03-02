@@ -39,11 +39,11 @@ const ALL_DURATIONS = [5, 10, 15] as const;
 function SectionHeader({ title, count }: { title: string; count: number }) {
   return (
     <div className="flex items-center gap-3 mb-3">
-      <h3 className="text-base font-display font-bold text-[#111111] uppercase tracking-wider">
+      <h3 className="text-base font-display font-bold text-foreground uppercase tracking-wider">
         {title}
       </h3>
       {count > 0 && (
-        <span className="bg-[#E53935] text-white text-xs font-bold px-3 py-1 rounded-full">
+        <span className="bg-revolution-red text-white text-xs font-bold px-3 py-1 rounded-full">
           {count}
         </span>
       )}
@@ -69,7 +69,7 @@ export default function FilterChips({
     selectedDurations.length > 0;
 
   return (
-    <div className="bg-white rounded-xl border-3 border-[#111111] p-5 mb-6 shadow-[4px_4px_0px_0px_#111111]">
+    <div className="bg-white rounded-xl border-3 border-foreground p-5 mb-6 shadow-brutal-lg">
       <div className="mb-6">
         <SectionHeader title="Tags" count={selectedTags.length} />
         <div className="flex flex-wrap gap-3">
@@ -127,7 +127,7 @@ export default function FilterChips({
           </div>
           <button
             onClick={onClearAll}
-            className={`ml-auto shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider whitespace-nowrap text-[#E53935] hover:ring-2 hover:ring-[#E53935] transition-all ${hasAnyFilters ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+            className={`ml-auto shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider whitespace-nowrap text-revolution-red hover:ring-2 hover:ring-revolution-red transition-all ${hasAnyFilters ? "opacity-100" : "opacity-0 pointer-events-none"}`}
           >
             <X size={14} strokeWidth={3} />
             Clear all

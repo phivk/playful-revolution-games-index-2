@@ -115,10 +115,10 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
 
   if (sequenceGames.length === 0) {
     return (
-      <div className="min-h-screen bg-[#FAFAF7]">
+      <div className="min-h-screen bg-background">
         <main className="max-w-4xl mx-auto px-4 py-6">
           <div className="text-center py-12 bg-white rounded-xl border-2 border-dashed border-gray-300">
-            <h2 className="text-xl font-bold text-[#111111] mb-2">
+            <h2 className="text-xl font-bold text-foreground mb-2">
               Your playlist is empty
             </h2>
             <p className="text-gray-600 mb-4">
@@ -126,7 +126,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             </p>
             <Link
               href="/"
-              className="inline-flex px-4 py-2 bg-[#E53935] text-white font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide"
+              className="inline-flex px-4 py-2 bg-revolution-red text-white font-bold rounded-lg border-2 border-foreground hover:shadow-brutal transition-all uppercase tracking-wide"
             >
               Browse games
             </Link>
@@ -137,20 +137,20 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7]">
+    <div className="min-h-screen bg-background">
       <main className="max-w-4xl mx-auto px-4 py-6">
         <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <h1 className="text-2xl font-bold text-[#111111] uppercase tracking-wide">
+          <h1 className="text-2xl font-bold text-foreground uppercase tracking-wide">
             Playlist ({sequenceGames.length} games)
           </h1>
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
               onClick={copyLink}
-              className={`inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-[#111111] uppercase tracking-wide text-sm transition-all duration-200 ${
+              className={`inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm transition-all duration-200 ${
                 linkCopied
-                  ? 'bg-[#F9A825] text-[#111111] scale-105 shadow-[3px_3px_0_0_#111111]'
-                  : 'bg-white hover:shadow-[3px_3px_0_0_#111111] active:scale-[0.98]'
+                  ? 'bg-playlist-amber text-foreground scale-105 shadow-brutal'
+                  : 'bg-white hover:shadow-brutal active:scale-[0.98]'
               }`}
             >
               {linkCopied ? (
@@ -166,22 +166,22 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             </button>
             <Link
               href={addMoreHref}
-              className="inline-flex px-4 py-2 bg-[#F9A825] text-[#111111] font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
+              className="inline-flex px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground hover:shadow-brutal transition-all uppercase tracking-wide text-sm"
             >
               Add more games
             </Link>
             <button
               type="button"
               onClick={clearPlaylist}
-              className="inline-flex px-4 py-2 bg-white font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
+              className="inline-flex px-4 py-2 bg-white font-bold rounded-lg border-2 border-foreground hover:shadow-brutal transition-all uppercase tracking-wide text-sm"
             >
               Clear playlist
             </button>
           </div>
         </div>
 
-        <div className="mb-6 p-4 bg-white rounded-xl border-2 border-[#111111]">
-          <p className="text-lg font-bold text-[#111111]">
+        <div className="mb-6 p-4 bg-white rounded-xl border-2 border-foreground">
+          <p className="text-lg font-bold text-foreground">
             Total duration: {totalDurationMinutes} min
           </p>
         </div>
@@ -194,14 +194,14 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
           {sequenceGames.map((game, index) => (
             <li
               key={game.slug}
-              className="flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-[#111111]"
+              className="flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-foreground"
             >
               <div className="flex flex-col gap-1 shrink-0">
                 <button
                   type="button"
                   onClick={() => move(index, 'up')}
                   disabled={index === 0}
-                  className="p-1 rounded border-2 border-[#111111] disabled:opacity-40 disabled:cursor-not-allowed hover:border-[#E53935] hover:text-[#E53935] transition-colors"
+                  className="p-1 rounded border-2 border-foreground disabled:opacity-40 disabled:cursor-not-allowed hover:border-revolution-red hover:text-revolution-red transition-colors"
                   aria-label="Move up"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,7 +212,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
                   type="button"
                   onClick={() => move(index, 'down')}
                   disabled={index === sequenceGames.length - 1}
-                  className="p-1 rounded border-2 border-[#111111] disabled:opacity-40 disabled:cursor-not-allowed hover:border-[#E53935] hover:text-[#E53935] transition-colors"
+                  className="p-1 rounded border-2 border-foreground disabled:opacity-40 disabled:cursor-not-allowed hover:border-revolution-red hover:text-revolution-red transition-colors"
                   aria-label="Move down"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -223,7 +223,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
               <div className="flex-1 min-w-0">
                 <Link
                   href={`/game/${game.slug}`}
-                  className="font-bold text-[#111111] hover:text-[#E53935] uppercase tracking-wide"
+                  className="font-bold text-foreground hover:text-revolution-red uppercase tracking-wide"
                 >
                   {game.title}
                 </Link>
@@ -234,7 +234,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
               <button
                 type="button"
                 onClick={() => remove(game.slug)}
-                className="shrink-0 px-3 py-1.5 text-sm font-bold rounded-lg border-2 border-[#111111] bg-[#FAFAF7] hover:border-[#E53935] hover:text-[#E53935] hover:shadow-[2px_2px_0_0_#E53935] transition-all uppercase"
+                className="shrink-0 px-3 py-1.5 text-sm font-bold rounded-lg border-2 border-foreground bg-background hover:border-revolution-red hover:text-revolution-red hover:shadow-brutal-accent-sm transition-all uppercase"
               >
                 Remove
               </button>
@@ -242,7 +242,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
           ))}
         </ul>
 
-        <footer className="bg-[#111111] text-white py-6 px-4 mt-8 rounded-xl">
+        <footer className="bg-foreground text-white py-6 px-4 mt-8 rounded-xl">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm opacity-70">
               A collection of physical, social, and spontaneous games

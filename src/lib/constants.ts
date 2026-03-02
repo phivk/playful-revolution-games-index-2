@@ -1,9 +1,9 @@
 import type { Pillar } from '@/types/game';
 
 export const PILLAR_COLORS: Record<Pillar, string> = {
-  intellectual: '#1E3A8A',
-  social: '#E53935',
-  physical: '#43A047',
+  intellectual: 'var(--color-deep-blue)',
+  social: 'var(--color-revolution-red)',
+  physical: 'var(--color-play-green)',
 };
 
 export const PILLAR_LABELS: Record<Pillar, string> = {

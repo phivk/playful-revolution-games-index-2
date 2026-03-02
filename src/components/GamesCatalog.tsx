@@ -84,7 +84,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
     filters.searchQuery.trim() !== '';
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7]">
+    <div className="min-h-screen bg-background">
       <main className="max-w-4xl mx-auto px-4 py-6">
         <div className="mb-4">
           <SearchBar value={filters.searchQuery} onChange={setSearchQuery} />
@@ -103,7 +103,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
         />
 
         <div className="mb-4 flex flex-wrap items-center gap-3 min-h-10">
-          <h2 className="text-2xl font-bold text-[#111111]">
+          <h2 className="text-2xl font-bold text-foreground">
             Games ({filteredGames.length})
             {hasActiveFilters && (
               <span className="text-sm font-normal text-gray-500 ml-2">
@@ -119,7 +119,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
                   clear();
                   router.replace('/');
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white font-bold rounded-lg border-2 border-transparent hover:border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white font-bold rounded-lg border-2 border-transparent hover:border-foreground hover:shadow-brutal transition-all uppercase tracking-wide text-sm"
               >
                 <X className="w-4 h-4 shrink-0" strokeWidth={2.5} aria-hidden />
                 Clear playlist
@@ -131,7 +131,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
                   router.replace(`/?playlist=${q}`);
                   router.push(`/playlist?g=${q}`);
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#F9A825] text-[#111111] font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground hover:shadow-brutal transition-all uppercase tracking-wide text-sm"
               >
                 View playlist ({slugs.length})
               </button>
@@ -176,7 +176,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
             {hasActiveFilters && (
               <button
                 onClick={clearAll}
-                className="mt-4 px-4 py-2 bg-[#E53935] text-white font-medium rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all"
+                className="mt-4 px-4 py-2 bg-revolution-red text-white font-medium rounded-lg border-2 border-foreground hover:shadow-brutal transition-all"
               >
                 Clear all filters
               </button>
@@ -185,7 +185,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
         )}
       </main>
 
-      <footer className="bg-[#111111] text-white py-6 px-4 mt-8">
+      <footer className="bg-foreground text-white py-6 px-4 mt-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm opacity-70">
             A collection of physical, social, and spontaneous games

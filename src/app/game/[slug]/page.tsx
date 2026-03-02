@@ -27,10 +27,10 @@ export default async function GamePage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAF7]">
+    <div className="min-h-screen bg-background">
       <main className="max-w-4xl mx-auto px-4 py-6">
         <article className="bg-white rounded-xl border-2 border-gray-200 p-6">
-          <h1 className="text-3xl font-bold text-[#111111] mb-4">
+          <h1 className="text-3xl font-bold text-foreground mb-4">
             {game.title}
           </h1>
 
@@ -60,7 +60,7 @@ export default async function GamePage({ params }: PageProps) {
 
           {game.resources.length > 0 && (
             <section className="mb-6">
-              <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">
+              <h2 className="text-2xl font-bold text-deep-blue mb-4">
                 Resources
               </h2>
               <ul className="list-disc list-inside space-y-1 text-gray-700">
@@ -77,11 +77,11 @@ export default async function GamePage({ params }: PageProps) {
         </article>
       </main>
 
-      <footer className="bg-[#111111] text-white py-6 px-4 mt-8">
+      <footer className="bg-foreground text-white py-6 px-4 mt-8">
         <div className="max-w-4xl mx-auto text-center">
           <Link
             href="/"
-            className="inline-block bg-[#E53935] text-white font-bold py-3 px-6 rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all"
+            className="inline-block bg-revolution-red text-white font-bold py-3 px-6 rounded-lg border-2 border-foreground hover:shadow-brutal transition-all"
           >
             Browse More Games
           </Link>
