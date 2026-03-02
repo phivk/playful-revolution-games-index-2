@@ -101,7 +101,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
           onClearAll={clearAll}
         />
 
-        <div className="mb-4 flex flex-wrap items-center gap-3">
+        <div className="mb-4 flex flex-wrap items-center gap-3 min-h-10">
           <h2 className="text-2xl font-bold text-[#111111]">
             Games ({filteredGames.length})
             {hasActiveFilters && (
@@ -119,7 +119,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
                   router.replace(`/?playlist=${q}`);
                   router.push(`/playlist?g=${q}`);
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#E53935] text-white font-bold rounded-lg border-2 border-[#111111] hover:bg-[#C62828] transition-colors uppercase tracking-wide text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#F9A825] text-[#111111] font-bold rounded-lg border-2 border-[#111111] hover:bg-[#F57F17] transition-colors uppercase tracking-wide text-sm"
               >
                 View playlist ({slugs.length})
               </button>

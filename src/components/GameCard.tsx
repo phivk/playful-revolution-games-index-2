@@ -24,7 +24,7 @@ export default function GameCard({
   return (
     <Link
       href={`/game/${game.slug}`}
-      className={`block bg-white rounded-xl border-3 border-[#111111] p-5 hover:border-[#E53935] hover:shadow-[4px_4px_0px_0px_#E53935] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100 ${inPlaylist ? 'ring-2 ring-[#43A047] ring-offset-2' : ''}`}
+      className="block bg-white rounded-xl border-3 border-[#111111] p-5 hover:border-[#E53935] hover:shadow-[4px_4px_0px_0px_#E53935] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100"
     >
       <div className="flex items-start justify-between gap-2 mb-2">
         <h3 className="text-2xl font-display font-bold text-[#111111] uppercase tracking-wide flex-1 min-w-0">
@@ -50,13 +50,22 @@ export default function GameCard({
                 else onAddToPlaylist?.();
               }
             }}
-            className={`shrink-0 text-sm font-bold px-3 py-1.5 rounded-lg border-2 border-[#111111] uppercase tracking-wide ${
+            className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-[#111111] transition-all duration-150 ${
               inPlaylist
-                ? 'bg-[#43A047] text-white'
-                : 'bg-[#FAFAF7] text-[#111111] hover:bg-gray-200'
+                ? 'bg-[#F9A825] text-[#111111] scale-110'
+                : 'bg-[#FAFAF7] text-[#111111] hover:bg-[#FFF8E1] hover:scale-110 hover:rotate-90'
             }`}
+            aria-label={inPlaylist ? 'Remove from playlist' : 'Add to playlist'}
           >
-            {inPlaylist ? 'In playlist' : 'Add to playlist'}
+            {inPlaylist ? (
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M2 7.5L5.5 11L12 3" />
+              </svg>
+            ) : (
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M7 1v12M1 7h12" />
+              </svg>
+            )}
           </span>
         )}
       </div>

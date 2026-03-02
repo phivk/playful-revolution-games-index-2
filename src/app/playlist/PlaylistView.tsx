@@ -149,7 +149,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
               onClick={copyLink}
               className={`inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-[#111111] uppercase tracking-wide text-sm transition-all duration-200 ${
                 linkCopied
-                  ? 'bg-[#43A047] text-white scale-105 shadow-[3px_3px_0_0_#111111]'
+                  ? 'bg-[#F9A825] text-[#111111] scale-105 shadow-[3px_3px_0_0_#111111]'
                   : 'bg-white hover:bg-gray-100 hover:shadow-[3px_3px_0_0_#111111] active:scale-[0.98]'
               }`}
             >
@@ -166,7 +166,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             </button>
             <Link
               href={addMoreHref}
-              className="inline-flex px-4 py-2 bg-[#43A047] text-white font-bold rounded-lg border-2 border-[#111111] hover:bg-[#2E7D32] transition-colors uppercase tracking-wide text-sm"
+              className="inline-flex px-4 py-2 bg-[#F9A825] text-[#111111] font-bold rounded-lg border-2 border-[#111111] hover:bg-[#F57F17] transition-colors uppercase tracking-wide text-sm"
             >
               Add more games
             </Link>
