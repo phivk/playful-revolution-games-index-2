@@ -126,7 +126,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             </p>
             <Link
               href="/"
-              className="inline-flex px-4 py-2 bg-[#E53935] text-white font-bold rounded-lg border-2 border-[#111111] hover:bg-[#C62828] transition-colors uppercase tracking-wide"
+              className="inline-flex px-4 py-2 bg-[#E53935] text-white font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide"
             >
               Browse games
             </Link>
@@ -150,7 +150,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
               className={`inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-[#111111] uppercase tracking-wide text-sm transition-all duration-200 ${
                 linkCopied
                   ? 'bg-[#F9A825] text-[#111111] scale-105 shadow-[3px_3px_0_0_#111111]'
-                  : 'bg-white hover:bg-gray-100 hover:shadow-[3px_3px_0_0_#111111] active:scale-[0.98]'
+                  : 'bg-white hover:shadow-[3px_3px_0_0_#111111] active:scale-[0.98]'
               }`}
             >
               {linkCopied ? (
@@ -166,14 +166,14 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             </button>
             <Link
               href={addMoreHref}
-              className="inline-flex px-4 py-2 bg-[#F9A825] text-[#111111] font-bold rounded-lg border-2 border-[#111111] hover:bg-[#F57F17] transition-colors uppercase tracking-wide text-sm"
+              className="inline-flex px-4 py-2 bg-[#F9A825] text-[#111111] font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
             >
               Add more games
             </Link>
             <button
               type="button"
               onClick={clearPlaylist}
-              className="inline-flex px-4 py-2 bg-white font-bold rounded-lg border-2 border-[#111111] hover:bg-gray-100 transition-colors uppercase tracking-wide text-sm"
+              className="inline-flex px-4 py-2 bg-white font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
             >
               Clear playlist
             </button>
@@ -201,7 +201,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
                   type="button"
                   onClick={() => move(index, 'up')}
                   disabled={index === 0}
-                  className="p-1 rounded border-2 border-[#111111] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100"
+                  className="p-1 rounded border-2 border-[#111111] disabled:opacity-40 disabled:cursor-not-allowed hover:border-[#E53935] hover:text-[#E53935] transition-colors"
                   aria-label="Move up"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,7 +212,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
                   type="button"
                   onClick={() => move(index, 'down')}
                   disabled={index === sequenceGames.length - 1}
-                  className="p-1 rounded border-2 border-[#111111] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100"
+                  className="p-1 rounded border-2 border-[#111111] disabled:opacity-40 disabled:cursor-not-allowed hover:border-[#E53935] hover:text-[#E53935] transition-colors"
                   aria-label="Move down"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -234,7 +234,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
               <button
                 type="button"
                 onClick={() => remove(game.slug)}
-                className="shrink-0 px-3 py-1.5 text-sm font-bold rounded-lg border-2 border-[#111111] bg-[#FAFAF7] hover:bg-red-50 hover:border-[#E53935] transition-colors uppercase"
+                className="shrink-0 px-3 py-1.5 text-sm font-bold rounded-lg border-2 border-[#111111] bg-[#FAFAF7] hover:border-[#E53935] hover:text-[#E53935] hover:shadow-[2px_2px_0_0_#E53935] transition-all uppercase"
               >
                 Remove
               </button>

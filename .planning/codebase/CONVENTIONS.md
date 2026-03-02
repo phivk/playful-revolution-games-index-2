@@ -130,6 +130,16 @@
 - Discriminated union types for domain types (e.g., `type Tag = '...' | '...'`)
 - Record types for color/icon mappings (e.g., `Record<string, string>`)
 
+## UI: Hover and Interactive States
+
+**Do not** use `hover:bg-*` for buttons, chips, or cards. Hover feedback should use **text color**, **border color**, and **shadow** only.
+
+- **Text/border:** `hover:text-[#E53935]`, `hover:border-[#E53935]` for accent.
+- **Shadow:** `hover:shadow-[3px_3px_0_0_#111111]` or `hover:shadow-[4px_4px_0px_0px_#E53935]` for emphasis. Use `active:translate-x-[2px] active:translate-y-[2px] active:shadow-none` for press feedback where appropriate.
+- **Transform:** Optional `hover:scale-105` for emphasis (e.g. RandomPicker, chip buttons).
+
+Reference implementations: `GameCard.tsx` (card link, add-to-playlist icon), `TagChip.tsx` / `EnergyChip.tsx` / `PillarChip.tsx` (inactive chip hover), `RandomPicker.tsx` (scale + active shadow).
+
 ## Client/Server Boundaries
 
 **Client Components:**

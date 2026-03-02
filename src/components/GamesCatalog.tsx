@@ -119,7 +119,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
                   router.replace(`/?playlist=${q}`);
                   router.push(`/playlist?g=${q}`);
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#F9A825] text-[#111111] font-bold rounded-lg border-2 border-[#111111] hover:bg-[#F57F17] transition-colors uppercase tracking-wide text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#F9A825] text-[#111111] font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
               >
                 View playlist ({slugs.length})
               </button>
@@ -129,7 +129,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
                   clear();
                   router.replace('/');
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white font-bold rounded-lg border-2 border-[#111111] hover:bg-gray-100 transition-colors uppercase tracking-wide text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white font-bold rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all uppercase tracking-wide text-sm"
               >
                 Clear playlist
               </button>
@@ -174,7 +174,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
             {hasActiveFilters && (
               <button
                 onClick={clearAll}
-                className="mt-4 px-4 py-2 bg-[#E53935] text-white font-medium rounded-lg hover:bg-[#C62828] transition-colors"
+                className="mt-4 px-4 py-2 bg-[#E53935] text-white font-medium rounded-lg border-2 border-[#111111] hover:shadow-[3px_3px_0_0_#111111] transition-all"
               >
                 Clear all filters
               </button>
