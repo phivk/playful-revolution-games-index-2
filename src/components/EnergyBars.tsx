@@ -28,7 +28,7 @@ export default function EnergyBars({
           key={i}
           className={`${iconClass} text-[#111111]`}
           strokeWidth={2}
-          fill={level > i ? "#FDD835" : "transparent"}
+          fill={level > i ? "#111111" : "white"}
         />
       ))}
     </span>
