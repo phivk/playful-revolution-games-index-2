@@ -1,6 +1,6 @@
 import EnergyBars from "@/components/EnergyBars";
+import PillarChip from "@/components/PillarChip";
 import { getGameBySlug, getGames } from "@/lib/games";
-import { Pillar } from "@/types/game";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
@@ -8,18 +8,6 @@ import ReactMarkdown from "react-markdown";
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
-
-const pillarColors: Record<Pillar, string> = {
-  intellectual: "bg-blue-100 text-blue-800",
-  social: "bg-green-100 text-green-800",
-  physical: "bg-orange-100 text-orange-800",
-};
-
-const pillarIcons: Record<Pillar, string> = {
-  intellectual: "🧠",
-  social: "💬",
-  physical: "🏃",
-};
 
 const tagColors: Record<string, string> = {
   theatre: "bg-purple-100 text-purple-800",
@@ -71,12 +59,7 @@ export default async function GamePage({ params }: PageProps) {
           <div className="flex flex-wrap gap-4 mb-8">
             <div className="flex gap-2">
               {game.pillars.map((pillar) => (
-                <span
-                  key={pillar}
-                  className={`text-sm px-3 py-1 rounded ${pillarColors[pillar]}`}
-                >
-                  {pillarIcons[pillar]} {pillar}
-                </span>
+                <PillarChip key={pillar} pillar={pillar} />
               ))}
             </div>
 

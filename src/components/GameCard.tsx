@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Game, Pillar } from '@/types/game';
+import { Game } from '@/types/game';
 import EnergyBars from '@/components/EnergyBars';
+import PillarChip from '@/components/PillarChip';
 
 interface GameCardProps {
   game: Game;
@@ -8,18 +9,6 @@ interface GameCardProps {
   onAddToPlaylist?: () => void;
   onRemoveFromPlaylist?: () => void;
 }
-
-const pillarColors: Record<Pillar, string> = {
-  intellectual: 'bg-[#1E3A8A] text-white',
-  social: 'bg-[#E53935] text-white',
-  physical: 'bg-[#43A047] text-white',
-};
-
-const pillarIcons: Record<Pillar, string> = {
-  intellectual: '🧠',
-  social: '💬',
-  physical: '🏃',
-};
 
 const tagColors: Record<string, string> = {
   theatre: 'bg-[#E53935] text-white',
@@ -99,13 +88,7 @@ export default function GameCard({
       <div className="flex items-center justify-between gap-3 border-t-2 border-gray-200 pt-4 min-w-0">
         <div className="flex flex-wrap gap-2 min-w-0 flex-1">
           {game.pillars.map((pillar) => (
-            <span
-              key={pillar}
-              className={`text-sm px-3 py-2 rounded-lg font-bold border-2 border-[#111111] ${pillarColors[pillar]}`}
-              title={pillar}
-            >
-              {pillarIcons[pillar]} {pillar}
-            </span>
+            <PillarChip key={pillar} pillar={pillar} />
           ))}
         </div>
 

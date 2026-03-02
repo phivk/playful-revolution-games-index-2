@@ -1,6 +1,7 @@
 "use client";
 
 import EnergyBars from "@/components/EnergyBars";
+import PillarChip from "@/components/PillarChip";
 import { Pillar, Tag } from "@/types/game";
 
 interface FilterChipsProps {
@@ -39,29 +40,27 @@ const TAG_COLORS: Record<string, string> = {
   social: "#E53935",
 };
 
-const PILLAR_COLORS: Record<Pillar, string> = {
-  intellectual: "#1E3A8A",
-  social: "#E53935",
-  physical: "#43A047",
-};
-
 function Chip({
   label,
   selected,
   onClick,
   color,
+  pill = false,
 }: {
   label: string;
   selected: boolean;
   onClick: () => void;
   color?: string;
+  pill?: boolean;
 }) {
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 rounded-lg text-sm font-bold uppercase tracking-wider transition-all duration-100 transform hover:scale-105 active:scale-95 min-h-[44px] ${
+      className={`font-bold uppercase tracking-wider transition-all duration-100 transform hover:scale-105 active:scale-95 min-h-[44px] ${
+        pill ? "px-3 py-1 rounded-full text-xs" : "px-4 py-2 rounded-lg text-sm"
+      } ${
         selected
-          ? "text-white shadow-[3px_3px_0px_0px_#111111] border-2 border-[#111111]"
+          ? "text-white shadow-[3px_3px_0px_0px_#111111] border-3 border-[#111111]"
           : "bg-transparent border-3 border-[#111111] text-[#111111] hover:border-[#E53935] hover:text-[#E53935]"
       }`}
       style={
@@ -81,12 +80,14 @@ function ChipGroup({
   selectedValues,
   onToggle,
   colors,
+  pill = false,
 }: {
   title: string;
   chips: readonly string[] | readonly number[];
   selectedValues: (string | number)[];
   onToggle: (value: string | number) => void;
   colors?: Record<string, string> | Record<number, string>;
+  pill?: boolean;
 }) {
   const count = selectedValues.length;
 
@@ -110,6 +111,7 @@ function ChipGroup({
             selected={selectedValues.includes(chip)}
             onClick={() => onToggle(chip)}
             color={colors?.[chip as keyof typeof colors] as string | undefined}
+            pill={pill}
           />
         ))}
       </div>
@@ -150,15 +152,31 @@ export default function FilterChips({
         selectedValues={selectedTags}
         onToggle={(tag) => onTagToggle(tag as Tag)}
         colors={TAG_COLORS}
+        pill
       />
 
-      <ChipGroup
-        title="Pillars"
-        chips={ALL_PILLARS}
-        selectedValues={selectedPillars}
-        onToggle={(pillar) => onPillarToggle(pillar as Pillar)}
-        colors={PILLAR_COLORS}
-      />
+      <div className="mb-6">
+        <div className="flex items-center gap-3 mb-3">
+          <h3 className="text-base font-display font-bold text-[#111111] uppercase tracking-wider">
+            Pillars
+          </h3>
+          {selectedPillars.length > 0 && (
+            <span className="bg-[#E53935] text-white text-xs font-bold px-3 py-1 rounded-full">
+              {selectedPillars.length}
+            </span>
+          )}
+        </div>
+        <div className="flex flex-wrap gap-3">
+          {ALL_PILLARS.map((pillar) => (
+            <PillarChip
+              key={pillar}
+              pillar={pillar}
+              selected={selectedPillars.includes(pillar)}
+              onClick={() => onPillarToggle(pillar)}
+            />
+          ))}
+        </div>
+      </div>
 
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-3">
@@ -180,7 +198,7 @@ export default function FilterChips({
                 onClick={() => onEnergyToggle(level)}
                 className={`px-4 py-2 rounded-lg flex items-center gap-2 font-bold uppercase tracking-wider text-sm transition-all duration-100 transform hover:scale-105 active:scale-95 min-h-[44px] ${
                   selected
-                    ? "bg-[#FDD835] text-[#111111] shadow-[3px_3px_0px_0px_#111111] border-2 border-[#111111]"
+                    ? "bg-[#FDD835] text-[#111111] shadow-[3px_3px_0px_0px_#111111] border-3 border-[#111111]"
                     : "bg-transparent border-3 border-[#111111] text-[#111111] hover:border-[#E53935] hover:text-[#E53935]"
                 }`}
               >
