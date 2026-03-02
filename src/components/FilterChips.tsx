@@ -1,11 +1,11 @@
 "use client";
 
-import { X } from "lucide-react";
 import DurationChip from "@/components/DurationChip";
 import EnergyChip from "@/components/EnergyChip";
 import PillarChip from "@/components/PillarChip";
 import TagChip from "@/components/TagChip";
 import { Pillar, Tag } from "@/types/game";
+import { X } from "lucide-react";
 
 interface FilterChipsProps {
   selectedTags: Tag[];
@@ -69,10 +69,10 @@ export default function FilterChips({
     selectedDurations.length > 0;
 
   return (
-    <div className="bg-white rounded-xl border-3 border-foreground p-5 mb-6 shadow-brutal-lg">
-      <div className="mb-6">
+    <div className="bg-white rounded-xl border-3 border-foreground p-4">
+      <div className="mb-5">
         <SectionHeader title="Tags" count={selectedTags.length} />
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           {ALL_TAGS.map((tag) => (
             <TagChip
               key={tag}
@@ -84,9 +84,9 @@ export default function FilterChips({
         </div>
       </div>
 
-      <div className="mb-6">
+      <div className="mb-5">
         <SectionHeader title="Pillars" count={selectedPillars.length} />
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           {ALL_PILLARS.map((pillar) => (
             <PillarChip
               key={pillar}
@@ -98,9 +98,9 @@ export default function FilterChips({
         </div>
       </div>
 
-      <div className="mb-6">
+      <div className="mb-5">
         <SectionHeader title="Energy" count={selectedEnergyLevels.length} />
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           {ALL_ENERGY_LEVELS.map((level) => (
             <EnergyChip
               key={level}
@@ -112,28 +112,27 @@ export default function FilterChips({
         </div>
       </div>
 
-      <div>
+      <div className="mb-4">
         <SectionHeader title="Duration" count={selectedDurations.length} />
-        <div className="flex items-end gap-3">
-          <div className="flex flex-wrap gap-3">
-            {ALL_DURATIONS.map((duration) => (
-              <DurationChip
-                key={duration}
-                duration={duration}
-                selected={selectedDurations.includes(duration)}
-                onClick={() => onDurationToggle(duration)}
-              />
-            ))}
-          </div>
-          <button
-            onClick={onClearAll}
-            className={`ml-auto shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg border-2 border-transparent hover:border-revolution-red text-sm font-bold uppercase tracking-wider whitespace-nowrap text-revolution-red ${hasAnyFilters ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-          >
-            <X size={14} strokeWidth={3} />
-            Clear all
-          </button>
+        <div className="flex flex-wrap gap-2">
+          {ALL_DURATIONS.map((duration) => (
+            <DurationChip
+              key={duration}
+              duration={duration}
+              selected={selectedDurations.includes(duration)}
+              onClick={() => onDurationToggle(duration)}
+            />
+          ))}
         </div>
       </div>
+
+      <button
+        onClick={onClearAll}
+        className={`w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border-2 border-transparent hover:border-revolution-red text-sm font-bold uppercase tracking-wider text-revolution-red ${hasAnyFilters ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      >
+        <X size={14} strokeWidth={3} />
+        Clear all
+      </button>
     </div>
   );
 }

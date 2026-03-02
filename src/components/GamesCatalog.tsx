@@ -1,11 +1,11 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
 import GameCard from '@/components/GameCard';
-import FilterChips from '@/components/FilterChips';
-import SearchBar from '@/components/SearchBar';
-import { X } from 'lucide-react';
+import FilterPanel from '@/components/FilterPanel';
+import FilterBottomSheet from '@/components/FilterBottomSheet';
+import { X, SlidersHorizontal } from 'lucide-react';
 import { usePlaylist } from '@/contexts/PlaylistContext';
 import { useGameFilters } from '@/hooks/useGameFilters';
 import { Game, Tag, Pillar } from '@/types/game';
@@ -31,7 +31,10 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
     removeDuration,
     setSearchQuery,
     clearAll,
+    activeFilterCount,
   } = useGameFilters(initialGames);
+
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     const playlistParam = searchParams.get('playlist');
@@ -83,110 +86,127 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
     filters.durations.length > 0 ||
     filters.searchQuery.trim() !== '';
 
+  const filterPanelProps = {
+    searchQuery: filters.searchQuery,
+    onSearchChange: setSearchQuery,
+    selectedTags: filters.tags,
+    selectedPillars: filters.pillars,
+    selectedEnergyLevels: filters.energyLevels,
+    selectedDurations: filters.durations,
+    onTagToggle: handleTagToggle,
+    onPillarToggle: handlePillarToggle,
+    onEnergyToggle: handleEnergyToggle,
+    onDurationToggle: handleDurationToggle,
+    onClearAll: clearAll,
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <main className="max-w-4xl mx-auto px-4 py-6">
-        <div className="mb-4">
-          <SearchBar value={filters.searchQuery} onChange={setSearchQuery} />
-        </div>
+      <div className="max-w-7xl mx-auto px-4 py-6 lg:flex lg:gap-6">
+        {/* Desktop sidebar */}
+        <aside className="hidden lg:block w-80 xl:w-96 shrink-0">
+          <div className="sticky top-6 max-h-[calc(100vh-3rem)] overflow-y-auto sidebar-scroll pr-1">
+            <FilterPanel {...filterPanelProps} />
+          </div>
+        </aside>
 
-        <FilterChips
-          selectedTags={filters.tags}
-          selectedPillars={filters.pillars}
-          selectedEnergyLevels={filters.energyLevels}
-          selectedDurations={filters.durations}
-          onTagToggle={handleTagToggle}
-          onPillarToggle={handlePillarToggle}
-          onEnergyToggle={handleEnergyToggle}
-          onDurationToggle={handleDurationToggle}
-          onClearAll={clearAll}
-        />
+        {/* Mobile filter bottom sheet */}
+        <FilterBottomSheet
+          open={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+          gameCount={filteredGames.length}
+        >
+          <FilterPanel {...filterPanelProps} />
+        </FilterBottomSheet>
 
-        <div className="mb-4 flex flex-wrap items-center gap-3 min-h-10">
-          <h2 className="text-2xl font-bold text-foreground">
-            Games ({filteredGames.length})
-            {hasActiveFilters && (
-              <span className="text-sm font-normal text-gray-500 ml-2">
-                (filtered from {initialGames.length})
-              </span>
+        {/* Main content */}
+        <main className="flex-1 min-w-0">
+          <div className="mb-4 flex flex-wrap items-center gap-3 min-h-10">
+            <h2 className="text-2xl font-bold text-foreground">
+              Games ({filteredGames.length})
+              {hasActiveFilters && (
+                <span className="text-sm font-normal text-gray-500 ml-2">
+                  (filtered from {initialGames.length})
+                </span>
+              )}
+            </h2>
+            {slugs.length > 0 && (
+              <div className="ml-auto flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    clear();
+                    router.replace('/');
+                  }}
+                  className="inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-transparent hover:border-foreground uppercase tracking-wide text-sm"
+                >
+                  <X className="w-4 h-4 shrink-0" strokeWidth={2.5} aria-hidden />
+                  Clear playlist
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const q = slugs.join(',');
+                    router.replace(`/?playlist=${q}`);
+                    router.push(`/playlist?g=${q}`);
+                  }}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm hover-btn"
+                >
+                  View playlist ({slugs.length})
+                </button>
+              </div>
             )}
-          </h2>
-          {slugs.length > 0 && (
-            <div className="ml-auto flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => {
-                  clear();
-                  router.replace('/');
-                }}
-                className="inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-transparent hover:border-foreground uppercase tracking-wide text-sm"
+          </div>
+
+          {filteredGames.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {filteredGames.map((game) => (
+                <GameCard
+                  key={game.slug}
+                  game={game}
+                  inPlaylist={slugs.includes(game.slug)}
+                  onAddToPlaylist={() => add(game.slug)}
+                  onRemoveFromPlaylist={() => remove(game.slug)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 bg-white rounded-lg border-2 border-dashed border-gray-300">
+              <svg
+                className="mx-auto h-12 w-12 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <X className="w-4 h-4 shrink-0" strokeWidth={2.5} aria-hidden />
-                Clear playlist
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  const q = slugs.join(',');
-                  router.replace(`/?playlist=${q}`);
-                  router.push(`/playlist?g=${q}`);
-                }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm hover-btn"
-              >
-                View playlist ({slugs.length})
-              </button>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <h3 className="mt-4 text-lg font-medium text-gray-900">
+                No games match your filters
+              </h3>
+              <p className="mt-2 text-gray-500">
+                Try adjusting your search or clearing some filters to see more
+                games.
+              </p>
+              {hasActiveFilters && (
+                <button
+                  onClick={clearAll}
+                  className="mt-4 px-4 py-2 bg-revolution-red text-white font-medium rounded-lg border-2 border-foreground hover-btn"
+                >
+                  Clear all filters
+                </button>
+              )}
             </div>
           )}
-        </div>
-
-        {filteredGames.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {filteredGames.map((game) => (
-              <GameCard
-                key={game.slug}
-                game={game}
-                inPlaylist={slugs.includes(game.slug)}
-                onAddToPlaylist={() => add(game.slug)}
-                onRemoveFromPlaylist={() => remove(game.slug)}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-12 bg-white rounded-lg border-2 border-dashed border-gray-300">
-            <svg
-              className="mx-auto h-12 w-12 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <h3 className="mt-4 text-lg font-medium text-gray-900">
-              No games match your filters
-            </h3>
-            <p className="mt-2 text-gray-500">
-              Try adjusting your search or clearing some filters to see more
-              games.
-            </p>
-            {hasActiveFilters && (
-              <button
-                onClick={clearAll}
-                className="mt-4 px-4 py-2 bg-revolution-red text-white font-medium rounded-lg border-2 border-foreground hover-btn"
-              >
-                Clear all filters
-              </button>
-            )}
-          </div>
-        )}
-      </main>
+        </main>
+      </div>
 
       <footer className="bg-foreground text-white py-6 px-4 mt-8">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm opacity-70">
             A collection of physical, social, and spontaneous games
           </p>
@@ -195,6 +215,23 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
           </p>
         </div>
       </footer>
+
+      {/* Mobile FAB - centered at bottom */}
+      {!drawerOpen && (
+        <button
+          type="button"
+          onClick={() => setDrawerOpen(true)}
+          className="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-40 inline-flex items-center gap-2 px-5 py-3 bg-foreground text-white font-bold rounded-full border-3 border-foreground uppercase tracking-wider text-sm shadow-brutal-lg hover:scale-105 active:scale-95"
+        >
+          <SlidersHorizontal size={18} strokeWidth={2.5} />
+          Filters
+          {activeFilterCount > 0 && (
+            <span className="bg-revolution-red text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+              {activeFilterCount}
+            </span>
+          )}
+        </button>
+      )}
     </div>
   );
 }

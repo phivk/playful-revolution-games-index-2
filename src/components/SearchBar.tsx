@@ -30,7 +30,7 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
   }, [onChange]);
 
   return (
-    <div className="relative mb-6">
+    <div className="relative">
       <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
         <svg
           className="h-6 w-6 text-revolution-red"

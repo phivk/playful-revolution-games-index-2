@@ -16,7 +16,7 @@ export default function NavBar({ games }: NavBarProps) {
 
   return (
     <header className="bg-revolution-red text-white py-4 px-4 shadow-md">
-      <div className="max-w-4xl mx-auto flex flex-wrap items-center gap-3 gap-y-2">
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center gap-3 gap-y-2">
         <Link
           href="/"
           className="font-bold tracking-tight hover:opacity-80 hover:scale-[1.02] flex items-center gap-3"
@@ -38,7 +38,7 @@ export default function NavBar({ games }: NavBarProps) {
         <RandomPicker games={games} variant="nav" />
       </div>
       {isHome && (
-        <p className="max-w-4xl mx-auto mt-2 px-4 text-lg opacity-90">
+        <p className="max-w-7xl mx-auto mt-2 px-4 text-lg opacity-90">
           Games for workshops, events, and community
         </p>
       )}
