@@ -126,7 +126,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             </p>
             <Link
               href="/"
-              className="inline-flex px-4 py-2 bg-revolution-red text-white font-bold rounded-lg border-2 border-foreground hover:shadow-brutal transition-all uppercase tracking-wide"
+              className="inline-flex px-4 py-2 bg-revolution-red text-white font-bold rounded-lg border-2 border-foreground uppercase tracking-wide hover-btn"
             >
               Browse games
             </Link>
@@ -147,10 +147,10 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             <button
               type="button"
               onClick={copyLink}
-              className={`inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm transition-all duration-200 ${
+              className={`inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm ${
                 linkCopied
                   ? 'bg-playlist-amber text-foreground scale-105 shadow-brutal'
-                  : 'bg-white hover:shadow-brutal active:scale-[0.98]'
+                  : 'bg-white hover-btn'
               }`}
             >
               {linkCopied ? (
@@ -166,14 +166,14 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             </button>
             <Link
               href={addMoreHref}
-              className="inline-flex px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground hover:shadow-brutal transition-all uppercase tracking-wide text-sm"
+              className="inline-flex px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm hover-btn"
             >
               Add more games
             </Link>
             <button
               type="button"
               onClick={clearPlaylist}
-              className="inline-flex px-4 py-2 bg-white font-bold rounded-lg border-2 border-foreground hover:shadow-brutal transition-all uppercase tracking-wide text-sm"
+              className="inline-flex px-4 py-2 bg-white font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm hover-btn"
             >
               Clear playlist
             </button>
@@ -201,7 +201,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
                   type="button"
                   onClick={() => move(index, 'up')}
                   disabled={index === 0}
-                  className="p-1 rounded border-2 border-foreground disabled:opacity-40 disabled:cursor-not-allowed hover:border-revolution-red hover:text-revolution-red transition-colors"
+                  className="p-1 rounded border-2 border-foreground disabled:opacity-40 disabled:cursor-not-allowed hover-icon"
                   aria-label="Move up"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,7 +212,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
                   type="button"
                   onClick={() => move(index, 'down')}
                   disabled={index === sequenceGames.length - 1}
-                  className="p-1 rounded border-2 border-foreground disabled:opacity-40 disabled:cursor-not-allowed hover:border-revolution-red hover:text-revolution-red transition-colors"
+                  className="p-1 rounded border-2 border-foreground disabled:opacity-40 disabled:cursor-not-allowed hover-icon"
                   aria-label="Move down"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -223,7 +223,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
               <div className="flex-1 min-w-0">
                 <Link
                   href={`/game/${game.slug}`}
-                  className="font-bold text-foreground hover:text-revolution-red uppercase tracking-wide"
+                  className="font-bold text-foreground uppercase tracking-wide hover-icon"
                 >
                   {game.title}
                 </Link>
@@ -234,7 +234,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
               <button
                 type="button"
                 onClick={() => remove(game.slug)}
-                className="shrink-0 px-3 py-1.5 text-sm font-bold rounded-lg border-2 border-foreground bg-background hover:border-revolution-red hover:text-revolution-red hover:shadow-brutal-accent-sm transition-all uppercase"
+                className="shrink-0 px-3 py-1.5 text-sm font-bold rounded-lg border-2 border-foreground bg-background uppercase hover-icon"
               >
                 Remove
               </button>

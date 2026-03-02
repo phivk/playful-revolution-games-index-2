@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Snappy transitions for all interactive elements */
 * {
-  transition-property: transform, box-shadow, background-color, border-color;
+  transition-property: transform, box-shadow, background-color, border-color, color, opacity;
   transition-duration: 100ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -62,4 +62,52 @@ h1, h2, h3, h4, h5, h6 {
 /* Disable smooth scrolling for snappier feel */
 html {
   scroll-behavior: auto;
+}
+
+/* ── Interaction patterns ── */
+
+@layer components {
+  /* Cards: border accent + large accent shadow on hover, press-down on active */
+  .hover-card {
+    &:hover {
+      border-color: var(--color-revolution-red);
+      box-shadow: var(--shadow-brutal-accent-lg);
+    }
+    &:active {
+      translate: 2px 2px;
+      box-shadow: none;
+    }
+  }
+
+  /* Bordered buttons: gain shadow on hover, subtle press-down on active */
+  .hover-btn {
+    &:hover {
+      box-shadow: var(--shadow-brutal);
+    }
+    &:active {
+      translate: 1px 1px;
+      box-shadow: none;
+    }
+  }
+
+  /* CTA buttons that already have a shadow: scale up on hover, press-down on active */
+  .hover-btn-scale {
+    &:hover {
+      scale: 1.05;
+    }
+    &:active {
+      translate: 2px 2px;
+      box-shadow: none;
+    }
+  }
+
+  /* Icon buttons and text actions: text turns red on hover, shrink on active */
+  .hover-icon {
+    &:hover {
+      color: var(--color-revolution-red);
+    }
+    &:active {
+      scale: 0.9;
+    }
+  }
 }

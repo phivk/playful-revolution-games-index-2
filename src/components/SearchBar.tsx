@@ -56,7 +56,7 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
       {localValue && (
         <button
           onClick={handleClear}
-          className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-revolution-red transition-colors"
+          className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover-icon"
         >
           <svg
             className="h-6 w-6"

@@ -19,7 +19,7 @@ export default function NavBar({ games }: NavBarProps) {
       <div className="max-w-4xl mx-auto flex flex-wrap items-center gap-3 gap-y-2">
         <Link
           href="/"
-          className="font-bold tracking-tight hover:opacity-90 transition-opacity flex items-center gap-3"
+          className="font-bold tracking-tight hover:opacity-80 hover:scale-[1.02] flex items-center gap-3"
         >
           <div className="w-10 h-10 shrink-0 rounded-full overflow-hidden border-2 border-white">
             <Image

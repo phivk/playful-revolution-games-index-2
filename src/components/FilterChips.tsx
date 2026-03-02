@@ -127,7 +127,7 @@ export default function FilterChips({
           </div>
           <button
             onClick={onClearAll}
-            className={`ml-auto shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider whitespace-nowrap text-revolution-red hover:ring-2 hover:ring-revolution-red transition-all ${hasAnyFilters ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+            className={`ml-auto shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg border-2 border-transparent hover:border-revolution-red text-sm font-bold uppercase tracking-wider whitespace-nowrap text-revolution-red ${hasAnyFilters ? "opacity-100" : "opacity-0 pointer-events-none"}`}
           >
             <X size={14} strokeWidth={3} />
             Clear all

@@ -24,7 +24,7 @@ export default function GameCard({
   return (
     <Link
       href={`/game/${game.slug}`}
-      className="block bg-white rounded-xl border-3 border-foreground p-5 hover:border-revolution-red hover:shadow-brutal-accent-lg active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100"
+      className="block bg-white rounded-xl border-3 border-foreground p-5 hover-card hover:border-revolution-red"
     >
       <div className="flex items-start justify-between gap-2 mb-2">
         <h3 className="text-2xl font-display font-bold text-foreground uppercase tracking-wide flex-1 min-w-0">
@@ -50,10 +50,10 @@ export default function GameCard({
                 else onAddToPlaylist?.();
               }
             }}
-            className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-foreground transition-all duration-150 ${
+            className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-foreground ${
               inPlaylist
                 ? 'bg-playlist-amber text-foreground scale-110'
-                : 'bg-background text-foreground hover:bg-amber-light hover:scale-110 hover:rotate-90'
+                : 'bg-background text-foreground hover-icon'
             }`}
             aria-label={inPlaylist ? 'Remove from playlist' : 'Add to playlist'}
           >

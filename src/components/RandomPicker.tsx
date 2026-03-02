@@ -10,8 +10,8 @@ interface RandomPickerProps {
 
 const buttonClass = {
   default:
-    'w-full sm:w-auto px-8 py-4 bg-joy-yellow text-foreground font-bold text-xl rounded-xl shadow-brutal-lg transform hover:scale-105 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100 border-3 border-foreground min-h-[56px]',
-  nav: 'px-4 py-2 bg-joy-yellow text-foreground font-bold text-sm rounded-lg shadow-brutal-sm hover:scale-105 active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all duration-100 border-2 border-foreground',
+    'w-full sm:w-auto px-8 py-4 bg-joy-yellow text-foreground font-bold text-xl rounded-xl shadow-brutal-lg border-3 border-foreground min-h-[56px] hover-btn-scale',
+  nav: 'px-4 py-2 bg-joy-yellow text-foreground font-bold text-sm rounded-lg shadow-brutal-sm border-2 border-foreground hover-btn-scale',
 };
 
 export default function RandomPicker({ games, variant = 'default' }: RandomPickerProps) {

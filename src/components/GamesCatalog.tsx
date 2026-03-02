@@ -119,7 +119,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
                   clear();
                   router.replace('/');
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white font-bold rounded-lg border-2 border-transparent hover:border-foreground hover:shadow-brutal transition-all uppercase tracking-wide text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-transparent hover:border-foreground uppercase tracking-wide text-sm"
               >
                 <X className="w-4 h-4 shrink-0" strokeWidth={2.5} aria-hidden />
                 Clear playlist
@@ -131,7 +131,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
                   router.replace(`/?playlist=${q}`);
                   router.push(`/playlist?g=${q}`);
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground hover:shadow-brutal transition-all uppercase tracking-wide text-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm hover-btn"
               >
                 View playlist ({slugs.length})
               </button>
@@ -176,7 +176,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
             {hasActiveFilters && (
               <button
                 onClick={clearAll}
-                className="mt-4 px-4 py-2 bg-revolution-red text-white font-medium rounded-lg border-2 border-foreground hover:shadow-brutal transition-all"
+                className="mt-4 px-4 py-2 bg-revolution-red text-white font-medium rounded-lg border-2 border-foreground hover-btn"
               >
                 Clear all filters
               </button>

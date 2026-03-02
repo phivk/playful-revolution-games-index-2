@@ -81,7 +81,7 @@ export default async function GamePage({ params }: PageProps) {
         <div className="max-w-4xl mx-auto text-center">
           <Link
             href="/"
-            className="inline-block bg-revolution-red text-white font-bold py-3 px-6 rounded-lg border-2 border-foreground hover:shadow-brutal transition-all"
+            className="inline-block bg-revolution-red text-white font-bold py-3 px-6 rounded-lg border-2 border-foreground hover-btn"
           >
             Browse More Games
           </Link>
