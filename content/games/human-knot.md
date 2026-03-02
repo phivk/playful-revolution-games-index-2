@@ -3,7 +3,7 @@ title: "Human Knot"
 slug: "human-knot"
 tags: ["collaborative"]
 pillars: ["physical", "social", "intellectual"]
-energy: 3
+energy: 2
 duration: 15
 resources: ["small space"]
 ---

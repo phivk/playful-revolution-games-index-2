@@ -3,7 +3,7 @@ title: "Spiral Mobilisation"
 slug: "spiral-mobilisation"
 tags: ["movement", "collaborative"]
 pillars: ["physical"]
-energy: 2
+energy: 1
 duration: 10
 resources: ["small space"]
 ---

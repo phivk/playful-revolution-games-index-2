@@ -3,7 +3,7 @@ title: "Medusa Arms"
 slug: "medusa-arms"
 tags: ["movement", "collaborative"]
 pillars: ["physical", "social"]
-energy: 3
+energy: 2
 duration: 10
 resources: ["small space"]
 ---

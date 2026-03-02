@@ -3,7 +3,7 @@ title: "Secret Handshake"
 slug: "secret-handshake"
 tags: ["social", "collaborative"]
 pillars: ["social", "intellectual"]
-energy: 2
+energy: 1
 duration: 10
 resources: ["medium space"]
 ---

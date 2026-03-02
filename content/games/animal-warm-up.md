@@ -3,7 +3,7 @@ title: "Animal Warm-up"
 slug: "animal-warm-up"
 tags: ["movement", "collaborative"]
 pillars: ["physical"]
-energy: 3
+energy: 2
 duration: 10
 resources: ["medium space"]
 ---

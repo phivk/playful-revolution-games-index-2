@@ -3,7 +3,7 @@ title: "Pass the Clap"
 slug: "pass-the-clap"
 tags: ["circle", "collaborative"]
 pillars: ["social", "physical"]
-energy: 3
+energy: 2
 duration: 5
 resources: ["small space"]
 ---

@@ -3,7 +3,7 @@ title: "Pass the Ball"
 slug: "pass-the-ball"
 tags: ["ball", "collaborative"]
 pillars: ["physical", "social"]
-energy: 3
+energy: 2
 duration: 10
 resources: ["medium space", "one or more balls"]
 ---

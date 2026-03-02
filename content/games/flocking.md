@@ -3,7 +3,7 @@ title: "Flocking"
 slug: "flocking"
 tags: ["social", "collaborative"]
 pillars: ["social", "physical"]
-energy: 4
+energy: 3
 duration: 10
 resources: ["large space"]
 ---

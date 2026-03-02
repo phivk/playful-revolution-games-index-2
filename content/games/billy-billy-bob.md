@@ -3,7 +3,7 @@ title: "Billy-Billy-Bob"
 slug: "billy-billy-bob"
 tags: ["theatre", "collaborative"]
 pillars: ["social", "intellectual", "physical"]
-energy: 4
+energy: 3
 duration: 15
 resources: ["small space"]
 ---

@@ -39,7 +39,7 @@
 **Type Layer:**
 - Purpose: Define domain types and interfaces
 - Location: `src/types/game.ts`
-- Contains: Game interface, Tag union type, Pillar union type, numeric energy (1–5)
+- Contains: Game interface, Tag union type, Pillar union type, numeric energy (1–3)
 - Depends on: None
 - Used by: All other layers for type safety
 

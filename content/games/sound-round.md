@@ -3,7 +3,7 @@ title: "Sound Round"
 slug: "sound-round"
 tags: ["social", "collaborative"]
 pillars: ["social", "physical"]
-energy: 3
+energy: 2
 duration: 10
 resources: ["small space"]
 ---

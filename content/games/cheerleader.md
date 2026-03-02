@@ -3,7 +3,7 @@ title: "Cheerleader"
 slug: "cheerleader"
 tags: ["social", "collaborative"]
 pillars: ["social", "intellectual"]
-energy: 3
+energy: 2
 duration: 15
 resources: ["small space"]
 ---

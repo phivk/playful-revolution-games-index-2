@@ -3,7 +3,7 @@ title: "Bubbling Spring (Yongquan)"
 slug: "bubbling-spring"
 tags: ["movement", "collaborative"]
 pillars: ["physical"]
-energy: 2
+energy: 1
 duration: 5
 resources: ["small space"]
 ---

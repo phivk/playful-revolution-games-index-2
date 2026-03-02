@@ -3,7 +3,7 @@ title: "Hold Hands Game"
 slug: "hold-hands-game"
 tags: ["social", "collaborative"]
 pillars: ["social", "physical"]
-energy: 2
+energy: 1
 duration: 5
 resources: ["medium space"]
 ---

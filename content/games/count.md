@@ -3,7 +3,7 @@ title: "Count"
 slug: "count"
 tags: ["social", "collaborative"]
 pillars: ["social", "intellectual"]
-energy: 2
+energy: 1
 duration: 5
 resources: ["small space"]
 ---

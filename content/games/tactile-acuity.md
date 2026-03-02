@@ -3,7 +3,7 @@ title: "Tactile Acuity"
 slug: "tactile-acuity"
 tags: ["movement", "collaborative"]
 pillars: ["physical", "social"]
-energy: 2
+energy: 1
 duration: 10
 resources: ["medium space"]
 ---

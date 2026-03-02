@@ -11,7 +11,7 @@ tags:
 pillars:
   - social
   - physical
-energy: 3
+energy: 2
 duration: 5
 ---
 Setup: Players stand in a circle and establish a steady beat (e.g., clapping, hitting knees).

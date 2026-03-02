@@ -3,7 +3,7 @@ title: "Pinky Promise"
 slug: "pinky-promise"
 tags: ["competitive"]
 pillars: ["physical", "social"]
-energy: 3
+energy: 2
 duration: 5
 resources: ["small space"]
 ---

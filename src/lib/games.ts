@@ -47,8 +47,8 @@ function ensureResources(value: unknown): string[] {
 
 function clampEnergy(n: number): number {
   const v = Number(n);
-  if (Number.isNaN(v)) return 3;
-  return Math.min(5, Math.max(1, Math.round(v)));
+  if (Number.isNaN(v)) return 2;
+  return Math.min(3, Math.max(1, Math.round(v)));
 }
 
 /** Derive short description from body: first paragraph, markdown stripped. */

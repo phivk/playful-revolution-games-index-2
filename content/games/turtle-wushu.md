@@ -3,7 +3,7 @@ title: "Turtle Wushu"
 slug: "turtle-wushu"
 tags: ["competitive"]
 pillars: ["physical", "social"]
-energy: 4
+energy: 3
 duration: 10
 resources: ["small space", "small objects to balance (coins, bottle caps, etc.)"]
 ---

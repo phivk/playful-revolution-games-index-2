@@ -3,7 +3,7 @@ title: "Shake It Off"
 slug: "shake-it-off"
 tags: ["movement", "collaborative"]
 pillars: ["physical"]
-energy: 4
+energy: 3
 duration: 5
 resources: ["small space"]
 ---

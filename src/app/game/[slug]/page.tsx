@@ -22,10 +22,8 @@ const pillarIcons: Record<Pillar, string> = {
 
 const energyColors: Record<number, string> = {
   1: 'bg-blue-500',
-  2: 'bg-blue-400',
-  3: 'bg-yellow-500',
-  4: 'bg-red-500',
-  5: 'bg-red-600',
+  2: 'bg-yellow-500',
+  3: 'bg-red-500',
 };
 
 const tagColors: Record<string, string> = {

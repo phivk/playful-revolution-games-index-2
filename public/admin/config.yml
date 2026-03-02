@@ -32,7 +32,7 @@ collections:
         widget: "select"
         multiple: true
         options: ["intellectual", "social", "physical"]
-      - { label: "Energy", name: "energy", widget: "number", min: 1, max: 5, value_type: "int" }
+      - { label: "Energy", name: "energy", widget: "number", min: 1, max: 3, value_type: "int" }
       - { label: "Duration (minutes)", name: "duration", widget: "number", value_type: "int" }
       - label: "Resources"
         name: "resources"

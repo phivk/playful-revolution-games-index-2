@@ -3,7 +3,7 @@ title: "Hi-Ha-Ho"
 slug: "hi-ha-ho"
 tags: ["theatre", "collaborative"]
 pillars: ["physical", "social"]
-energy: 4
+energy: 3
 duration: 10
 resources: ["small space"]
 ---

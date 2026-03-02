@@ -3,7 +3,7 @@ title: "Tag You're It"
 slug: "tag"
 tags: ["competitive"]
 pillars: ["physical"]
-energy: 5
+energy: 3
 duration: 15
 resources: ["large space"]
 ---

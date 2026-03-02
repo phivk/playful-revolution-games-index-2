@@ -3,7 +3,7 @@ title: "Ninja"
 slug: "ninja"
 tags: ["competitive"]
 pillars: ["physical", "social"]
-energy: 4
+energy: 3
 duration: 15
 resources: ["medium space"]
 ---

@@ -166,10 +166,10 @@ playful-revolution-games-index-2/
 - Layout: Share root layout from `src/app/layout.tsx` or create nested layout
 
 **New Game Data:**
-- Format: Add a new `.md` file in `content/games/` with YAML frontmatter (title, slug, tags, pillars, energy 1–5, duration, resources) and a markdown body (description + instructions)
+- Format: Add a new `.md` file in `content/games/` with YAML frontmatter (title, slug, tags, pillars, energy 1–3, duration, resources) and a markdown body (description + instructions)
 - Tags: Use only values from `src/types/game.ts` Tag type (e.g. theatre, collaborative, movement)
 - Pillars: Use only values from `src/types/game.ts` Pillar type (intellectual, social, physical)
-- Energy: Number 1–5
+- Energy: Number 1–3
 - Management: Edit via Decap CMS at `/admin` (preferred) or directly in `content/games/*.md`; app loads via `getGames()` from `src/lib/games.ts` at build/server time
 
 **Utilities/Helpers:**

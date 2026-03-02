@@ -3,7 +3,7 @@ title: "Sushi Hands"
 slug: "sushi-hands"
 tags: ["table", "collaborative"]
 pillars: ["social", "intellectual", "physical"]
-energy: 3
+energy: 2
 duration: 15
 resources: ["small space", "sushi hands menu card"]
 ---

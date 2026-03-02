@@ -17,6 +17,7 @@ export interface Game {
   body: string;
   tags: Tag[];
   pillars: Pillar[];
+  /** Energy level 1–3 (Low, Medium, High). */
   energy: number;
   duration: number;
   resources: string[];

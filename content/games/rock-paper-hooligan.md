@@ -3,7 +3,7 @@ title: "Rock Paper Hooligan"
 slug: "rock-paper-hooligan"
 tags: ["social", "competitive"]
 pillars: ["social", "physical"]
-energy: 4
+energy: 3
 duration: 10
 resources: ["medium space"]
 ---

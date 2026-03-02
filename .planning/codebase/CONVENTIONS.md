@@ -25,7 +25,7 @@
 
 **Types:**
 - Interfaces: PascalCase (e.g., `Game`, `GameCardProps`, `FilterState`)
-- Type unions: PascalCase (e.g., `Tag`, `Pillar`; energy is numeric 1–5)
+- Type unions: PascalCase (e.g., `Tag`, `Pillar`; energy is numeric 1–3)
 - Branded/discriminated types use string literals (e.g., `type Tag = 'theatre' | 'collaborative' | ...`)
 
 ## Code Style

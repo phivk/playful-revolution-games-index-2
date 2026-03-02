@@ -3,7 +3,7 @@ title: "Stop & Go"
 slug: "stop-and-go"
 tags: ["movement", "collaborative"]
 pillars: ["physical", "intellectual"]
-energy: 3
+energy: 2
 duration: 10
 resources: ["medium space"]
 ---

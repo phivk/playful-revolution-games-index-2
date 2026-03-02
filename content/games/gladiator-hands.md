@@ -3,7 +3,7 @@ title: "Gladiator Hands"
 slug: "gladiator-hands"
 tags: ["competitive"]
 pillars: ["physical"]
-energy: 4
+energy: 3
 duration: 10
 resources: ["small space"]
 ---

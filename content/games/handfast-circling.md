@@ -3,7 +3,7 @@ title: "Handfast Circling"
 slug: "handfast-circling"
 tags: ["collaborative"]
 pillars: ["physical", "social"]
-energy: 4
+energy: 3
 duration: 5
 resources: ["medium space"]
 ---

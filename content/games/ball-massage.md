@@ -3,7 +3,7 @@ title: "Ball Massage"
 slug: "ball-massage"
 tags: ["circle", "collaborative"]
 pillars: ["physical", "social"]
-energy: 2
+energy: 1
 duration: 10
 resources: ["small space", "tennis balls or massage balls"]
 ---

@@ -25,7 +25,7 @@ const ALL_TAGS: Tag[] = [
 
 const ALL_PILLARS: Pillar[] = ['intellectual', 'social', 'physical'];
 
-const ALL_ENERGY_LEVELS = [1, 2, 3, 4, 5] as const;
+const ALL_ENERGY_LEVELS = [1, 2, 3] as const;
 
 const TAG_COLORS: Record<string, string> = {
   theatre: '#E53935',
@@ -46,10 +46,8 @@ const PILLAR_COLORS: Record<Pillar, string> = {
 
 const ENERGY_COLORS: Record<number, string> = {
   1: '#1E3A8A',
-  2: '#2563EB',
-  3: '#FDD835',
-  4: '#E53935',
-  5: '#B71C1C',
+  2: '#FDD835',
+  3: '#E53935',
 };
 
 function Chip({

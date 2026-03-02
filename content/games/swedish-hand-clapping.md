@@ -3,7 +3,7 @@ title: "Swedish Hand-Clapping"
 slug: "swedish-hand-clapping"
 tags: ["collaborative"]
 pillars: ["physical", "social"]
-energy: 5
+energy: 3
 duration: 10
 resources: ["medium space"]
 ---
