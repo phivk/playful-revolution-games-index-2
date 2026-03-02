@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Game, Pillar } from '@/types/game';
+import EnergyBars from '@/components/EnergyBars';
 
 interface GameCardProps {
   game: Game;
@@ -18,12 +19,6 @@ const pillarIcons: Record<Pillar, string> = {
   intellectual: '🧠',
   social: '💬',
   physical: '🏃',
-};
-
-const energyColors: Record<number, string> = {
-  1: 'bg-[#1E3A8A]',
-  2: 'bg-[#FDD835]',
-  3: 'bg-[#E53935]',
 };
 
 const tagColors: Record<string, string> = {
@@ -101,8 +96,8 @@ export default function GameCard({
         ))}
       </div>
 
-      <div className="flex items-center justify-between border-t-2 border-gray-200 pt-4">
-        <div className="flex gap-2">
+      <div className="flex items-center justify-between gap-3 border-t-2 border-gray-200 pt-4 min-w-0">
+        <div className="flex flex-wrap gap-2 min-w-0 flex-1">
           {game.pillars.map((pillar) => (
             <span
               key={pillar}
@@ -114,14 +109,11 @@ export default function GameCard({
           ))}
         </div>
 
-        <div className="flex items-center gap-2" title={`Energy: ${game.energy}`}>
-          <span className="text-sm font-bold text-gray-600 uppercase tracking-wide">
-            Energy:
-          </span>
-          <span
-            className={`w-4 h-4 rounded-full border-2 border-[#111111] ${energyColors[game.energy] ?? 'bg-gray-300'}`}
+        <div className="shrink-0" title={`Energy: ${game.energy}`}>
+          <EnergyBars
+            level={(game.energy as 1 | 2 | 3) || 1}
+            size="md"
           />
-          <span className="text-sm font-bold text-gray-800">{game.energy}</span>
         </div>
       </div>
     </Link>

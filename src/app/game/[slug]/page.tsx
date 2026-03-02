@@ -1,40 +1,35 @@
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
-import { getGames, getGameBySlug } from '@/lib/games';
-import { Pillar } from '@/types/game';
+import EnergyBars from "@/components/EnergyBars";
+import { getGameBySlug, getGames } from "@/lib/games";
+import { Pillar } from "@/types/game";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 const pillarColors: Record<Pillar, string> = {
-  intellectual: 'bg-blue-100 text-blue-800',
-  social: 'bg-green-100 text-green-800',
-  physical: 'bg-orange-100 text-orange-800',
+  intellectual: "bg-blue-100 text-blue-800",
+  social: "bg-green-100 text-green-800",
+  physical: "bg-orange-100 text-orange-800",
 };
 
 const pillarIcons: Record<Pillar, string> = {
-  intellectual: '🧠',
-  social: '💬',
-  physical: '🏃',
-};
-
-const energyColors: Record<number, string> = {
-  1: 'bg-blue-500',
-  2: 'bg-yellow-500',
-  3: 'bg-red-500',
+  intellectual: "🧠",
+  social: "💬",
+  physical: "🏃",
 };
 
 const tagColors: Record<string, string> = {
-  theatre: 'bg-purple-100 text-purple-800',
-  collaborative: 'bg-emerald-100 text-emerald-800',
-  movement: 'bg-cyan-100 text-cyan-800',
-  circle: 'bg-indigo-100 text-indigo-800',
-  ball: 'bg-amber-100 text-amber-800',
-  table: 'bg-stone-100 text-stone-800',
-  competitive: 'bg-rose-100 text-rose-800',
-  social: 'bg-pink-100 text-pink-800',
+  theatre: "bg-purple-100 text-purple-800",
+  collaborative: "bg-emerald-100 text-emerald-800",
+  movement: "bg-cyan-100 text-cyan-800",
+  circle: "bg-indigo-100 text-indigo-800",
+  ball: "bg-amber-100 text-amber-800",
+  table: "bg-stone-100 text-stone-800",
+  competitive: "bg-rose-100 text-rose-800",
+  social: "bg-pink-100 text-pink-800",
 };
 
 export async function generateStaticParams() {
@@ -66,7 +61,7 @@ export default async function GamePage({ params }: PageProps) {
             {game.tags.map((tag) => (
               <span
                 key={tag}
-                className={`text-sm px-3 py-1 rounded-full ${tagColors[tag] ?? 'bg-gray-100 text-gray-800'}`}
+                className={`text-sm px-3 py-1 rounded-full ${tagColors[tag] ?? "bg-gray-100 text-gray-800"}`}
               >
                 {tag}
               </span>
@@ -87,10 +82,7 @@ export default async function GamePage({ params }: PageProps) {
 
             <div className="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded">
               <span className="text-sm text-gray-600">Energy:</span>
-              <span
-                className={`w-3 h-3 rounded-full ${energyColors[game.energy] ?? 'bg-gray-400'}`}
-              />
-              <span className="text-sm font-medium">{game.energy}</span>
+              <EnergyBars level={(game.energy as 1 | 2 | 3) || 1} size="sm" />
             </div>
 
             {game.duration > 0 && (
@@ -116,9 +108,7 @@ export default async function GamePage({ params }: PageProps) {
             </section>
           )}
 
-          <section
-            className="text-gray-700 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:mt-6 [&_h2]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:mt-4 [&_h3]:mb-2 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:mb-1 [&_strong]:font-bold"
-          >
+          <section className="text-gray-700 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:mt-6 [&_h2]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:mt-4 [&_h3]:mb-2 [&_p]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:mb-1 [&_strong]:font-bold">
             <ReactMarkdown>{game.body}</ReactMarkdown>
           </section>
         </article>
