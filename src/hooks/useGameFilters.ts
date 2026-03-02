@@ -5,6 +5,7 @@ export interface FilterState {
   tags: Tag[];
   pillars: Pillar[];
   energyLevels: number[];
+  durations: number[];
   searchQuery: string;
 }
 
@@ -17,6 +18,8 @@ export interface UseGameFiltersReturn {
   removePillar: (pillar: Pillar) => void;
   setEnergyLevel: (level: number) => void;
   removeEnergyLevel: (level: number) => void;
+  setDuration: (duration: number) => void;
+  removeDuration: (duration: number) => void;
   setSearchQuery: (query: string) => void;
   clearAll: () => void;
   hasActiveFilters: boolean;
@@ -28,6 +31,7 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
     tags: [],
     pillars: [],
     energyLevels: [],
+    durations: [],
     searchQuery: '',
   });
 
@@ -75,6 +79,22 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
     }));
   };
 
+  const setDuration = (duration: number) => {
+    setFilters((prev) => ({
+      ...prev,
+      durations: prev.durations.includes(duration)
+        ? prev.durations
+        : [...prev.durations, duration],
+    }));
+  };
+
+  const removeDuration = (duration: number) => {
+    setFilters((prev) => ({
+      ...prev,
+      durations: prev.durations.filter((d) => d !== duration),
+    }));
+  };
+
   const setSearchQuery = (query: string) => {
     setFilters((prev) => ({
       ...prev,
@@ -87,6 +107,7 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
       tags: [],
       pillars: [],
       energyLevels: [],
+      durations: [],
       searchQuery: '',
     });
   };
@@ -111,6 +132,12 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
         }
       }
 
+      if (filters.durations.length > 0) {
+        if (!filters.durations.includes(game.duration)) {
+          return false;
+        }
+      }
+
       if (filters.searchQuery.trim()) {
         const query = filters.searchQuery.toLowerCase().trim();
         const titleMatch = game.title.toLowerCase().includes(query);
@@ -123,7 +150,7 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
   }, [games, filters]);
 
   const activeFilterCount =
-    filters.tags.length + filters.pillars.length + filters.energyLevels.length;
+    filters.tags.length + filters.pillars.length + filters.energyLevels.length + filters.durations.length;
 
   const hasActiveFilters = activeFilterCount > 0 || filters.searchQuery.trim() !== '';
 
@@ -136,6 +163,8 @@ export function useGameFilters(games: Game[]): UseGameFiltersReturn {
     removePillar,
     setEnergyLevel,
     removeEnergyLevel,
+    setDuration,
+    removeDuration,
     setSearchQuery,
     clearAll,
     hasActiveFilters,

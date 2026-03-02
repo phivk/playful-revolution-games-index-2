@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Clock } from 'lucide-react';
 import { Game } from '@/types/game';
 import EnergyBars from '@/components/EnergyBars';
 import PillarChip from '@/components/PillarChip';
@@ -70,18 +71,26 @@ export default function GameCard({
         ))}
       </div>
 
-      <div className="flex items-center justify-between gap-3 border-t-2 border-gray-200 pt-4 min-w-0">
-        <div className="flex flex-wrap gap-2 min-w-0 flex-1">
+      <div className="border-t-2 border-gray-200 pt-4 space-y-6">
+        <div className="flex flex-wrap gap-2">
           {game.pillars.map((pillar) => (
             <PillarChip key={pillar} pillar={pillar} />
           ))}
         </div>
 
-        <div className="shrink-0" title={`Energy: ${game.energy}`}>
-          <EnergyBars
-            level={(game.energy as 1 | 2 | 3) || 1}
-            size="md"
-          />
+        <div className="flex items-center justify-between">
+          <div title={`Energy: ${game.energy}`}>
+            <EnergyBars
+              level={(game.energy as 1 | 2 | 3) || 1}
+              size="md"
+            />
+          </div>
+          {game.duration > 0 && (
+            <span className="inline-flex items-center gap-1.5 text-sm font-bold text-[#111111] uppercase tracking-wider ml-auto">
+              <Clock size={14} />
+              {game.duration} min
+            </span>
+          )}
         </div>
       </div>
     </Link>

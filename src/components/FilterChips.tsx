@@ -1,6 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
+import DurationChip from "@/components/DurationChip";
 import EnergyChip from "@/components/EnergyChip";
 import PillarChip from "@/components/PillarChip";
 import TagChip from "@/components/TagChip";
@@ -10,9 +11,11 @@ interface FilterChipsProps {
   selectedTags: Tag[];
   selectedPillars: Pillar[];
   selectedEnergyLevels: number[];
+  selectedDurations: number[];
   onTagToggle: (tag: Tag) => void;
   onPillarToggle: (pillar: Pillar) => void;
   onEnergyToggle: (level: number) => void;
+  onDurationToggle: (duration: number) => void;
   onClearAll: () => void;
 }
 
@@ -30,6 +33,8 @@ const ALL_TAGS: Tag[] = [
 const ALL_PILLARS: Pillar[] = ["intellectual", "social", "physical"];
 
 const ALL_ENERGY_LEVELS = [1, 2, 3] as const;
+
+const ALL_DURATIONS = [5, 10, 15] as const;
 
 function SectionHeader({ title, count }: { title: string; count: number }) {
   return (
@@ -50,15 +55,18 @@ export default function FilterChips({
   selectedTags,
   selectedPillars,
   selectedEnergyLevels,
+  selectedDurations,
   onTagToggle,
   onPillarToggle,
   onEnergyToggle,
+  onDurationToggle,
   onClearAll,
 }: FilterChipsProps) {
   const hasAnyFilters =
     selectedTags.length > 0 ||
     selectedPillars.length > 0 ||
-    selectedEnergyLevels.length > 0;
+    selectedEnergyLevels.length > 0 ||
+    selectedDurations.length > 0;
 
   return (
     <div className="bg-white rounded-xl border-3 border-[#111111] p-5 mb-6 shadow-[4px_4px_0px_0px_#111111]">
@@ -90,16 +98,30 @@ export default function FilterChips({
         </div>
       </div>
 
-      <div>
+      <div className="mb-6">
         <SectionHeader title="Energy" count={selectedEnergyLevels.length} />
+        <div className="flex flex-wrap gap-3">
+          {ALL_ENERGY_LEVELS.map((level) => (
+            <EnergyChip
+              key={level}
+              level={level}
+              selected={selectedEnergyLevels.includes(level)}
+              onClick={() => onEnergyToggle(level)}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <SectionHeader title="Duration" count={selectedDurations.length} />
         <div className="flex items-end gap-3">
           <div className="flex flex-wrap gap-3">
-            {ALL_ENERGY_LEVELS.map((level) => (
-              <EnergyChip
-                key={level}
-                level={level}
-                selected={selectedEnergyLevels.includes(level)}
-                onClick={() => onEnergyToggle(level)}
+            {ALL_DURATIONS.map((duration) => (
+              <DurationChip
+                key={duration}
+                duration={duration}
+                selected={selectedDurations.includes(duration)}
+                onClick={() => onDurationToggle(duration)}
               />
             ))}
           </div>

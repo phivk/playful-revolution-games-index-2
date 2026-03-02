@@ -26,6 +26,8 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
     removePillar,
     setEnergyLevel,
     removeEnergyLevel,
+    setDuration,
+    removeDuration,
     setSearchQuery,
     clearAll,
   } = useGameFilters(initialGames);
@@ -65,10 +67,19 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
     }
   };
 
+  const handleDurationToggle = (duration: number) => {
+    if (filters.durations.includes(duration)) {
+      removeDuration(duration);
+    } else {
+      setDuration(duration);
+    }
+  };
+
   const hasActiveFilters =
     filters.tags.length > 0 ||
     filters.pillars.length > 0 ||
     filters.energyLevels.length > 0 ||
+    filters.durations.length > 0 ||
     filters.searchQuery.trim() !== '';
 
   return (
@@ -82,9 +93,11 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
           selectedTags={filters.tags}
           selectedPillars={filters.pillars}
           selectedEnergyLevels={filters.energyLevels}
+          selectedDurations={filters.durations}
           onTagToggle={handleTagToggle}
           onPillarToggle={handlePillarToggle}
           onEnergyToggle={handleEnergyToggle}
+          onDurationToggle={handleDurationToggle}
           onClearAll={clearAll}
         />
 

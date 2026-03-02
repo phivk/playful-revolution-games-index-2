@@ -1,3 +1,4 @@
+import DurationChip from "@/components/DurationChip";
 import EnergyChip from "@/components/EnergyChip";
 import PillarChip from "@/components/PillarChip";
 import TagChip from "@/components/TagChip";
@@ -41,20 +42,17 @@ export default async function GamePage({ params }: PageProps) {
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-4 mb-8">
-            <div className="flex gap-2">
-              {game.pillars.map((pillar) => (
-                <PillarChip key={pillar} pillar={pillar} />
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {game.pillars.map((pillar) => (
+              <PillarChip key={pillar} pillar={pillar} />
+            ))}
+          </div>
 
+          <div className="flex flex-wrap gap-4 mb-8">
             <EnergyChip level={(game.energy as 1 | 2 | 3) || 1} />
 
             {game.duration > 0 && (
-              <div className="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded">
-                <span className="text-sm text-gray-600">Duration:</span>
-                <span className="text-sm font-medium">{game.duration} min</span>
-              </div>
+              <DurationChip duration={game.duration} />
             )}
           </div>
 
