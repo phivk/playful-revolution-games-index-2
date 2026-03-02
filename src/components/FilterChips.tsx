@@ -1,6 +1,7 @@
 "use client";
 
 import EnergyBars from "@/components/EnergyBars";
+import { X } from "lucide-react";
 import PillarChip from "@/components/PillarChip";
 import { Pillar, Tag } from "@/types/game";
 
@@ -135,17 +136,6 @@ export default function FilterChips({
 
   return (
     <div className="bg-white rounded-xl border-3 border-[#111111] p-5 mb-6 shadow-[4px_4px_0px_0px_#111111]">
-      {hasAnyFilters && (
-        <div className="flex justify-end mb-4">
-          <button
-            onClick={onClearAll}
-            className="text-sm font-bold uppercase tracking-wider text-[#E53935] hover:text-[#111111] transition-colors underline underline-offset-4"
-          >
-            Clear all
-          </button>
-        </div>
-      )}
-
       <ChipGroup
         title="Tags"
         chips={ALL_TAGS}
@@ -178,7 +168,7 @@ export default function FilterChips({
         </div>
       </div>
 
-      <div className="mb-6">
+      <div>
         <div className="flex items-center gap-3 mb-3">
           <h3 className="text-base font-display font-bold text-[#111111] uppercase tracking-wider">
             Energy
@@ -189,23 +179,32 @@ export default function FilterChips({
             </span>
           )}
         </div>
-        <div className="flex flex-wrap gap-3">
-          {ALL_ENERGY_LEVELS.map((level) => {
-            const selected = selectedEnergyLevels.includes(level);
-            return (
-              <button
-                key={level}
-                onClick={() => onEnergyToggle(level)}
-                className={`px-4 py-2 rounded-lg flex items-center gap-2 font-bold uppercase tracking-wider text-sm transition-all duration-100 transform hover:scale-105 active:scale-95 min-h-[44px] ${
-                  selected
-                    ? "bg-[#FDD835] text-[#111111] shadow-[3px_3px_0px_0px_#111111] border-3 border-[#111111]"
-                    : "bg-transparent border-3 border-[#111111] text-[#111111] hover:border-[#E53935] hover:text-[#E53935]"
-                }`}
-              >
-                <EnergyBars level={level as 1 | 2 | 3} size="md" />
-              </button>
-            );
-          })}
+        <div className="flex items-end gap-3">
+          <div className="flex flex-wrap gap-3">
+            {ALL_ENERGY_LEVELS.map((level) => {
+              const selected = selectedEnergyLevels.includes(level);
+              return (
+                <button
+                  key={level}
+                  onClick={() => onEnergyToggle(level)}
+                  className={`px-4 py-2 rounded-lg flex items-center gap-2 font-bold uppercase tracking-wider text-sm transition-all duration-100 transform hover:scale-105 active:scale-95 min-h-[44px] ${
+                    selected
+                      ? "bg-[#FDD835] text-[#111111] shadow-[3px_3px_0px_0px_#111111] border-3 border-[#111111]"
+                      : "bg-transparent border-3 border-[#111111] text-[#111111] hover:border-[#E53935] hover:text-[#E53935]"
+                  }`}
+                >
+                  <EnergyBars level={level as 1 | 2 | 3} size="md" />
+                </button>
+              );
+            })}
+          </div>
+          <button
+            onClick={onClearAll}
+            className={`ml-auto shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider whitespace-nowrap text-[#E53935] hover:ring-2 hover:ring-[#E53935] transition-all ${hasAnyFilters ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+          >
+            <X size={14} strokeWidth={3} />
+            Clear all
+          </button>
         </div>
       </div>
     </div>
