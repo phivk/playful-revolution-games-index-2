@@ -36,7 +36,7 @@ export default function PlaylistButton({
       className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-foreground ${
         inPlaylist
           ? 'bg-playlist-amber text-foreground scale-110'
-          : 'bg-background text-foreground hover-icon'
+          : 'bg-background text-foreground hover:text-revolution-red hover:border-revolution-red active:scale-90'
       }`}
       aria-label={inPlaylist ? 'Remove from playlist' : 'Add to playlist'}
     >
