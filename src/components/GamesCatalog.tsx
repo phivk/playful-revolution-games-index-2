@@ -120,7 +120,7 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
         {/* Desktop sidebar */}
         <aside className="hidden lg:block w-md xl:w-lg shrink-0">
           <div className="sticky top-6 max-h-[calc(100vh-3rem)] overflow-y-auto sidebar-scroll pr-1">
-            <FilterPanel {...filterPanelProps} />
+            <FilterPanel {...filterPanelProps} isAnimationTarget />
           </div>
         </aside>
 

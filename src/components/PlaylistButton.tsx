@@ -1,3 +1,6 @@
+import { usePlaylistAnimation } from '@/contexts/PlaylistAnimationContext';
+import { PLUS_ICON_PATH, PLUS_ICON_SIZE, PLUS_ICON_VIEWBOX } from '@/lib/constants';
+
 interface PlaylistButtonProps {
   inPlaylist: boolean;
   onAddToPlaylist: () => void;
@@ -9,12 +12,16 @@ export default function PlaylistButton({
   onAddToPlaylist,
   onRemoveFromPlaylist,
 }: PlaylistButtonProps) {
+  const { triggerAddAnimation } = usePlaylistAnimation();
+
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (inPlaylist) {
       onRemoveFromPlaylist();
     } else {
+      const rect = e.currentTarget.getBoundingClientRect();
+      triggerAddAnimation(rect);
       onAddToPlaylist();
     }
   };
@@ -22,8 +29,13 @@ export default function PlaylistButton({
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      if (inPlaylist) onRemoveFromPlaylist();
-      else onAddToPlaylist();
+      if (inPlaylist) {
+        onRemoveFromPlaylist();
+      } else {
+        const rect = e.currentTarget.getBoundingClientRect();
+        triggerAddAnimation(rect);
+        onAddToPlaylist();
+      }
     }
   };
 
@@ -42,9 +54,9 @@ export default function PlaylistButton({
     >
       <svg
         className="playlist-icon-morph"
-        width="14"
-        height="14"
-        viewBox="0 0 14 14"
+        width={PLUS_ICON_SIZE}
+        height={PLUS_ICON_SIZE}
+        viewBox={PLUS_ICON_VIEWBOX}
         fill="none"
         stroke="currentColor"
         strokeWidth="2.5"
@@ -52,7 +64,7 @@ export default function PlaylistButton({
         strokeLinejoin="round"
       >
         <path
-          d="M7 1v12M1 7h12"
+          d={PLUS_ICON_PATH}
           pathLength={1}
           strokeDasharray="1"
           strokeDashoffset={inPlaylist ? 1 : 0}
