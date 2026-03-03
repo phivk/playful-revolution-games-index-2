@@ -1,116 +1,32 @@
-# ROADMAP: Playful Revolution Games Index
+# Roadmap: Playful Revolution Games Index
 
-**Depth:** quick (3-5 phases)
-**Total Requirements:** 21 (v1)
+## Milestones
 
----
+- ✅ **v1.0 MVP** — Phases 1–4 (shipped 2026-03-03)
 
 ## Phases
 
-- [ ] **Phase 1: Core Display** - Game catalog and detail view
-- [ ] **Phase 2: Search & Filter** - Discovery features
-- [ ] **Phase 3: Design & CMS** - Brand styling and admin interface
-- [ ] **Phase 4: Deployment** - Static site and hosting
+<details>
+<summary>✅ v1.0 MVP (Phases 1–4) — SHIPPED 2026-03-03</summary>
+
+- [x] Phase 1: Core Display (1/1 plans) — Game catalog and detail view
+- [x] Phase 2: Search & Filter (1/1 plans) — Discovery features
+- [x] Phase 3: Design & CMS (2/2 plans) — Brand styling and admin interface
+- [x] Phase 4: Deployment (3/3 plans) — Static site and hosting
+
+Full archive: [milestones/v1.0-ROADMAP.md](milestones/v1.0-ROADMAP.md)
+
+</details>
+
+## Progress
+
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Core Display | v1.0 | 1/1 | Complete | 2026-02-20 |
+| 2. Search & Filter | v1.0 | 1/1 | Complete | 2026-02-20 |
+| 3. Design & CMS | v1.0 | 2/2 | Complete | 2026-02-20 |
+| 4. Deployment | v1.0 | 3/3 | Complete | 2026-02-22 |
 
 ---
 
-## Phase Details
-
-### Phase 1: Core Display
-
-**Goal:** Users can browse game catalog and view detailed facilitation instructions on mobile devices
-
-**Depends on:** Nothing (first phase)
-
-**Requirements:** CORE-01, CORE-02, CORE-03, CORE-04
-
-**Success Criteria** (what must be TRUE):
-1. Game catalog displays ~30 games in a scrollable list/grid on mobile
-2. Each game card shows title, tags, pillars, energy level at a glance
-3. Tapping a game opens detail view with full facilitation instructions (materials, setup, how to play)
-4. Detail view is readable on mobile without horizontal scrolling
-
-**Plans:** 1 plan
-- [ ] 01-01-PLAN.md — Set up Next.js with game catalog and detail views
-
----
-
-### Phase 2: Search & Filter
-
-**Goal:** Users can find specific games using filters, search, and random picker
-
-**Depends on:** Phase 1 (needs games to filter)
-
-**Requirements:** FILT-01, FILT-02, FILT-03, FILT-04, FILT-05
-
-**Success Criteria** (what must be TRUE):
-1. Users can filter by one or more tags (Social Spontaneity, Group Circle Games, Collaborative, Competitive, Ball Games, Theatre Sports, Movement, Table Games)
-2. Users can filter by pillars (Intellectual, Social, Physical)
-3. Users can filter by energy level (Low, Medium, High)
-4. Users can search by game name or keyword in description
-5. Users can tap "Surprise Me" to get a random game suggestion
-
-**Plans:** 1 plan
-- [ ] 02-01-PLAN.md — Search, filter chips, and random picker
-
----
-
-### Phase 3: Design & CMS
-
-**Goal:** Apply brand identity and enable admin game management via Decap CMS
-
-**Depends on:** Phase 1 (needs game display structure)
-
-**Requirements:** DESN-01, DESN-02, DESN-03, DESN-04, DESN-05, DESN-06, DESN-07, CMS-01, CMS-02, CMS-03
-
-**Success Criteria** (what must be TRUE):
-1. Brand colors (Revolution Red, Play Green, Joy Yellow, Deep Blue) appear as bold color blocks
-2. Typography uses bold condensed sans-serif headlines, readable body font
-3. Visual aesthetic feels like street poster / zine - bold, playful, slightly rough
-4. Buttons are big, bold with strong color contrast
-5. Interactions are snappy - buttons that jump, not fade
-6. Design has high contrast with large tap targets for accessibility
-7. Background uses paper-like off-white (#FAFAF7), not pure white
-8. Admin can add new games via Decap CMS
-9. Admin can edit existing games via Decap CMS
-10. Admin can delete games via Decap CMS
-
-**Plans:** 2 plans
-- [x] 03-01-PLAN.md — Apply brand identity (colors, typography, styling)
-- [x] 03-02-PLAN.md — Set up Decap CMS admin interface
-
----
-
-### Phase 4: Deployment
-
-**Goal:** Static site exported and live on Vercel or GH Pages
-
-**Depends on:** Phase 3 (needs CMS integration for content)
-
-**Requirements:** DEPL-01, DEPL-02
-
-**Success Criteria** (what must be TRUE):
-1. Running build command produces static HTML/CSS/JS files
-2. Site is accessible at a public URL on Vercel or GH Pages
-
-**Plans:** 2/3 plans executed
-
-Plans:
-- [x] 04-01-PLAN.md — Verify static build and create Vercel deployment config
-- [ ] 04-02-PLAN.md — GitHub OAuth serverless functions and Decap CMS config update
-- [ ] 04-03-PLAN.md — Manual Vercel setup and end-to-end deployment verification
-
----
-
-## Progress Table
-
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Core Display | 1/1 | Complete | - |
-| 2. Search & Filter | 1/1 | Complete | - |
-| 3. Design & CMS | 2/2 | Complete | 2026-02-20 |
-| 4. Deployment | 2/3 | In Progress|  |
-
----
-
-*Generated: 2026-02-20*
+*Next: `/gsd:new-milestone` to plan v1.1*

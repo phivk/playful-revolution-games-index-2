@@ -1,14 +1,15 @@
 # STATE: Playful Revolution Games Index
 
-**Last Updated:** 2026-02-22 (Quick Task 2 complete)
+**Last Updated:** 2026-03-03 (v1.0 milestone complete)
 
 ---
 
 ## Project Reference
 
-**Core Value:** Facilitators can quickly find and view game instructions on mobile devices during sessions.
+See: .planning/PROJECT.md (updated 2026-03-03)
 
-**Current Focus:** Phase 4 Plan 3 (Vercel deployment + CMS verification) — awaiting user manual steps
+**Core value:** Facilitators can quickly find and view game instructions on mobile devices during sessions.
+**Current focus:** Planning next milestone — run `/gsd:new-milestone`
 
 ---
 
@@ -16,23 +17,17 @@
 
 | Field | Value |
 |-------|-------|
-| Phase | 4 - Deployment |
-| Plan | 03 - Vercel Deployment & CMS Verification |
-| Status | Checkpoint — awaiting human-action |
-| Progress | In progress |
+| Phase | — |
+| Plan | — |
+| Status | Between milestones — v1.0 complete |
+| Progress | 100% |
 
 ---
 
 ## Roadmap Summary
 
-| Phase | Goal | Requirements |
-|-------|------|--------------|
-| 1 - Core Display | Game catalog and detail view | CORE-01, CORE-02, CORE-03, CORE-04 |
-| 2 - Search & Filter | Discovery features | FILT-01, FILT-02, FILT-03, FILT-04, FILT-05 |
-| 3 - Design & CMS | Brand styling and admin interface | DESN-01 to DESN-07, CMS-01 to CMS-03 |
-| 4 - Deployment | Static site and hosting | DEPL-01, DEPL-02 |
-
-**Total:** 4 phases, 21 requirements mapped
+✅ v1.0 MVP — 4 phases, 7 plans, all complete
+Archive: .planning/milestones/v1.0-ROADMAP.md
 
 ---
 
@@ -40,15 +35,10 @@
 
 | Metric | Value |
 |--------|-------|
-| Total v1 Requirements | 21 |
-| Requirements Mapped | 21 |
-| Coverage | 100% |
-| Phases Created | 4 |
-| Phase 1 Requirements Complete | 4/4 |
-| Phase 3 Requirements Complete | 3/10 |
-
----
-| Phase 04-deployment P02 | 1 | 2 tasks | 4 files |
+| v1.0 Requirements Delivered | 21/21 |
+| Phases Completed | 4 |
+| Plans Completed | 7 |
+| Quick Tasks Completed | 2 |
 
 ## Accumulated Context
 
@@ -86,9 +76,9 @@
 
 ## Session Continuity
 
-**Next Action:** Push vercel.json change (5ee3403) to trigger new Vercel deployment. Verify deployment log shows no routes-manifest.json error and site loads. If error persists, clear "Output Directory" in Vercel project dashboard Settings.
+**Next Action:** Run `/gsd:new-milestone` to plan v1.1
 
-**Stopped At:** Quick Task 2 checkpoint:human-verify — awaiting Vercel deployment confirmation
+**Stopped At:** v1.0 milestone archived and tagged
 
 ---
 
