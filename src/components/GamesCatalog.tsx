@@ -193,17 +193,6 @@ export default function GamesCatalog({ initialGames }: GamesCatalogProps) {
         </main>
       </div>
 
-      <footer className="bg-foreground text-white py-6 px-4 mt-8">
-        <div className="text-center">
-          <p className="text-sm opacity-70">
-            A collection of physical, social, and spontaneous games
-          </p>
-          <p className="text-xs opacity-50 mt-2">
-            Made with joy by Playful Revolution
-          </p>
-        </div>
-      </footer>
-
       {/* Mobile FAB - centered at bottom */}
       {!drawerOpen && (
         <button

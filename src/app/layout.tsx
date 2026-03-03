@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { getGames } from '@/lib/games';
 import NavBar from '@/components/NavBar';
+import Footer from '@/components/Footer';
 import PlaylistAnimations from '@/components/PlaylistAnimations';
 import { PlaylistProvider } from '@/contexts/PlaylistContext';
 import { PlaylistAnimationProvider } from '@/contexts/PlaylistAnimationContext';
@@ -25,6 +26,7 @@ export default async function RootLayout({
           <PlaylistAnimationProvider>
             <NavBar games={games} />
             {children}
+            <Footer />
             <PlaylistAnimations />
           </PlaylistAnimationProvider>
         </PlaylistProvider>

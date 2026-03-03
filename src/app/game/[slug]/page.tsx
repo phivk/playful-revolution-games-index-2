@@ -75,19 +75,14 @@ export default async function GamePage({ params }: PageProps) {
         </article>
       </main>
 
-      <footer className="bg-foreground text-white py-6 px-4 mt-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <Link
-            href="/"
-            className="inline-block bg-revolution-red text-white font-bold py-3 px-6 rounded-lg border-2 border-foreground hover-btn"
-          >
-            Browse More Games
-          </Link>
-          <p className="text-xs opacity-50 mt-4">
-            Made with joy by Playful Revolution
-          </p>
-        </div>
-      </footer>
+      <div className="max-w-4xl mx-auto px-4 mt-8 text-center">
+        <Link
+          href="/"
+          className="inline-block bg-revolution-red text-white font-bold py-3 px-6 rounded-lg border-2 border-foreground hover-btn"
+        >
+          Browse More Games
+        </Link>
+      </div>
     </div>
   );
 }
