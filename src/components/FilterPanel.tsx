@@ -62,7 +62,7 @@ export default function FilterPanel({
           ref={isAnimationTarget ? targetRef : undefined}
           type="button"
           onClick={playlistCount > 0 ? onViewPlaylist : undefined}
-          className={`relative w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 font-bold rounded-lg border-2 uppercase tracking-wide text-sm ${
+          className={`relative w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 font-bold rounded-lg border-3 uppercase tracking-wide text-sm ${
             playlistCount > 0
               ? 'bg-playlist-amber text-foreground border-foreground hover-btn'
               : 'bg-gray-100 text-gray-400 border-gray-200 cursor-default'
@@ -82,7 +82,7 @@ export default function FilterPanel({
           <button
             type="button"
             onClick={onClearPlaylist}
-            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-transparent hover:border-foreground uppercase tracking-wide text-sm"
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-lg border-3 border-transparent hover:border-foreground uppercase tracking-wide text-sm"
           >
             <X className="w-4 h-4 shrink-0" strokeWidth={2.5} aria-hidden />
             Clear playlist
