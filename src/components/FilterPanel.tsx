@@ -4,7 +4,7 @@ import SearchBar from '@/components/SearchBar';
 import FilterChips from '@/components/FilterChips';
 import { usePlaylistAnimation } from '@/contexts/PlaylistAnimationContext';
 import { Tag, Pillar } from '@/types/game';
-import { ListMusic, X } from 'lucide-react';
+import { Route, X } from 'lucide-react';
 
 interface FilterPanelProps {
   searchQuery: string;
@@ -69,7 +69,7 @@ export default function FilterPanel({
           }`}
           aria-label={`Playlist: ${playlistCount} games`}
         >
-          <ListMusic size={16} strokeWidth={2.5} />
+          <Route size={16} strokeWidth={2.5} />
           {playlistCount > 0 ? 'View playlist ' : 'Playlist '}
           <span
             key={playlistCount}
