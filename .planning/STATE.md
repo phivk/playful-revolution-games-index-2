@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: About Page
 status: unknown
-stopped_at: Completed 05-about-page-01-PLAN.md
-last_updated: "2026-03-04T14:34:32.399Z"
+stopped_at: Completed 05-about-page-02-PLAN.md
+last_updated: "2026-03-04T14:37:49.258Z"
 progress:
   total_phases: 2
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # STATE: Playful Revolution Games Index
@@ -59,6 +59,7 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 
 ---
 | Phase 05-about-page P01 | 1 | 3 tasks | 3 files |
+| Phase 05-about-page P02 | 1 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -72,6 +73,9 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 - [Phase 05-about-page]: getAboutPage() returns null (not throws) on missing/malformed file — page component handles null gracefully
 - [Phase 05-about-page]: Validate each socialLink entry at runtime before including to survive malformed CMS edits
 - [Phase 05-about-page]: content/about.md committed to Git before Decap CMS file collection configured — pre-existence requirement satisfied
+- [Phase 05-about-page]: Used react-markdown (already in package.json) for about page body rendering instead of dangerouslySetInnerHTML
+- [Phase 05-about-page]: About page is a server component — data fetched at build time via getAboutPage(), no client-side hydration
+- [Phase 05-about-page]: Globe icon as fallback for unrecognised social platform names in SocialLinks component
 
 ### Blockers
 - INST-01: Instagram feed implementation approach unknown — third-party widget vs oEmbed vs other; must be researched before Phase 6 begins. Static export constraint is key: no server-side API calls at runtime.
@@ -90,7 +94,7 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 
 **Next Action:** Run `/gsd:plan-phase 5` to plan Phase 5 (About Page)
 
-**Stopped At:** Completed 05-about-page-01-PLAN.md
+**Stopped At:** Completed 05-about-page-02-PLAN.md
 
 ---
 
