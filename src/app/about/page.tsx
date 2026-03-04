@@ -1,7 +1,6 @@
 import { getAboutPage } from '@/lib/about';
 import SocialLinks from '@/components/SocialLinks';
 import InstagramFeed from '@/components/InstagramFeed';
-import NewsletterSignup from '@/components/NewsletterSignup';
 import ReactMarkdown from 'react-markdown';
 import type { Metadata } from 'next';
 
@@ -44,11 +43,6 @@ export default async function AboutPage() {
           </section>
         )}
         <InstagramFeed posts={about.instagramPosts} />
-        <section className="border-t border-gray-200 pt-8 mt-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Join the Playful Revolution</h2>
-          <p className="text-gray-600 mb-6">Get updates on games, workshops, and events</p>
-          <NewsletterSignup />
-        </section>
       </div>
     </main>
   );

@@ -2,19 +2,19 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: About Page
-status: unknown
-stopped_at: Completed 06-third-party-integrations-02-PLAN.md
-last_updated: "2026-03-04T20:07:03.591Z"
+status: complete
+stopped_at: Phase 6 complete via direct commits
+last_updated: "2026-03-04T21:45:00.000Z"
 progress:
   total_phases: 2
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 6
-  completed_plans: 4
+  completed_plans: 6
 ---
 
 # STATE: Playful Revolution Games Index
 
-**Last Updated:** 2026-03-04 (v1.1 roadmap revised — INST-01 added to Phase 6)
+**Last Updated:** 2026-03-04 (v1.1 complete — Phase 6 done via direct commits)
 
 ---
 
@@ -23,7 +23,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-04)
 
 **Core value:** Facilitators can quickly find and view game instructions on mobile devices during sessions.
-**Current focus:** v1.1 About Page — Phase 5 ready to plan
+**Current focus:** v1.1 About Page — COMPLETE
 
 ---
 
@@ -31,18 +31,18 @@ See: .planning/PROJECT.md (updated 2026-03-04)
 
 | Field | Value |
 |-------|-------|
-| Phase | 5 of 6 (About Page) |
-| Plan | — |
-| Status | Ready to plan |
-| Progress | 0% of v1.1 |
-| Last activity | 2026-03-04 — v1.1 roadmap revised (INST-01 added, Phase 6 now covers 2 requirements, 9/9 mapped) |
+| Phase | 6 of 6 (Third-Party Integrations) |
+| Plan | Complete |
+| Status | v1.1 milestone complete |
+| Progress | 100% of v1.1 |
+| Last activity | 2026-03-04 — Phase 6 complete: manual Instagram embeds + Sender.net skipped |
 
 ---
 
 ## Roadmap Summary
 
 ✅ v1.0 MVP — 4 phases, 7 plans, all complete
-🚧 v1.1 About Page — 2 phases, planning not started
+✅ v1.1 About Page — 2 phases, all complete
 Archive: .planning/milestones/v1.0-ROADMAP.md
 
 ---
@@ -68,10 +68,7 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 ### Decisions Made
 - Singleton file collection pattern in Decap CMS for about page (`/content/about.md`)
 - No new npm dependencies required for v1.1 core — existing stack sufficient
-- Newsletter form via Next.js Script component (`strategy="afterInteractive"`) in client component
 - Social links grouped with about page content (same CMS file, same phase)
-- Instagram feed (INST-01) and newsletter (NWSL-01) grouped into Phase 6 as both are third-party embeds with similar technical risk profile
-- Instagram implementation approach NOT yet decided — must be researched during Phase 6 planning (HIGH research flag)
 - [Phase 05-about-page]: getAboutPage() returns null (not throws) on missing/malformed file — page component handles null gracefully
 - [Phase 05-about-page]: Validate each socialLink entry at runtime before including to survive malformed CMS edits
 - [Phase 05-about-page]: content/about.md committed to Git before Decap CMS file collection configured — pre-existence requirement satisfied
@@ -81,28 +78,24 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 - [Phase 05-about-page]: File collection uses files: list (not folder:) for about page singleton pattern — points to fixed content/about.md
 - [Phase 05-about-page]: Platform select options restricted to known icon set matching SocialLinks.tsx to prevent unsupported platform entries
 - [Phase 05-about-page]: URL pattern validation in CMS widget (^https?://) prevents invalid social link URLs
-- [Phase 06-third-party-integrations]: force-dynamic on feed route prevents route-level caching; upstream fetch uses revalidate: 3600 for 1-hour server-side cache
-- [Phase 06-third-party-integrations]: Feed endpoint always returns 200 with { posts: [] } on failure — graceful degradation, never 500
-- [Phase 06-third-party-integrations]: Token refresh cron cannot update Vercel env vars at runtime — daily run extends the 60-day TTL window of the original token
+- [Phase 06-third-party-integrations]: Instagram approach switched to official embed blockquotes (embed.js) — no API credentials required; post URLs managed in CMS via instagramPosts list field
+- [Phase 06-third-party-integrations]: InstagramFeed renders null when posts array is empty
+- [Phase 06-third-party-integrations]: NWSL-01 (Sender.net newsletter) skipped — deferred to future milestone
 
 ### Blockers
-- INST-01: Instagram feed implementation approach unknown — third-party widget vs oEmbed vs other; must be researched before Phase 6 begins. Static export constraint is key: no server-side API calls at runtime.
-- NWSL-01: Sender.net form ID / embed script URL not yet known — must retrieve from Sender.net dashboard before Phase 6 implementation
-- `/content/about.md` must be committed to Git before Decap CMS file collection works
+(none)
 
 ### Notes
-- Phase 5 depends on: Decap CMS file pre-existing in Git before CMS can manage it
-- Phase 6 research flag (INST-01): HIGH — Instagram approach must be determined first; options include Curator.io or similar widget, oEmbed (limited to public posts without app review), or Basic Display API (requires app review). Static export means no server-side token refresh.
-- Phase 6 research flag (NWSL-01): HIGH — test script loading on slow networks and after client-side navigation
 - Static rebuild on CMS edits requires Vercel GitHub integration auto-deploy (already configured in v1.0)
+- NWSL-01 (newsletter signup) deferred — can be added in a future milestone when Sender.net integration is ready
 
 ---
 
 ## Session Continuity
 
-**Next Action:** Run `/gsd:plan-phase 5` to plan Phase 5 (About Page)
+**Next Action:** v1.1 milestone complete — ready for `/gsd:complete-milestone` or start of v1.2
 
-**Stopped At:** Completed 06-third-party-integrations-02-PLAN.md
+**Stopped At:** Phase 6 complete. Removed Sender.net from about page (NWSL-01 deferred). Uncommitted styling tweaks in NavBar + SocialLinks.
 
 ---
 

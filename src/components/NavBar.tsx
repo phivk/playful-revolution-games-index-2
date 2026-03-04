@@ -39,8 +39,8 @@ export default function NavBar({ games }: NavBarProps) {
           href="/about"
           className={
             pathname === "/about"
-              ? "text-white font-medium underline text-sm"
-              : "text-white font-medium hover:opacity-80 transition-opacity text-sm"
+              ? "text-white font-medium underline text-sm mr-4"
+              : "text-white font-medium hover:opacity-80 transition-opacity text-sm mr-4"
           }
         >
           About

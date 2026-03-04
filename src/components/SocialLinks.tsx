@@ -27,7 +27,7 @@ export default function SocialLinks({ links }: SocialLinksProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={link.platform}
-            className="flex items-center gap-2 px-4 py-2 bg-revolution-red text-white rounded hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 px-4 py-2 bg-revolution-red text-white rounded-lg border-2 border-foreground hover-btn"
           >
             <IconComponent size={20} />
             <span className="capitalize text-sm font-medium">{link.platform}</span>

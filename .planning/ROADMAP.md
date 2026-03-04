@@ -24,7 +24,7 @@ Full archive: [milestones/v1.0-ROADMAP.md](milestones/v1.0-ROADMAP.md)
 **Milestone Goal:** Add a CMS-managed about page with organisation info and third-party integrations (Instagram feed, Sender.net newsletter signup) so visitors can learn about Playful Revolution and connect.
 
 - [x] **Phase 5: About Page** — CMS-managed about page with organisation info, social links, and site navigation (completed 2026-03-04)
-- [ ] **Phase 6: Third-Party Integrations** — Instagram feed preview and Sender.net newsletter signup form embedded on the about page
+- [x] **Phase 6: Third-Party Integrations** — Instagram feed preview embedded on the about page via manual CMS-managed post list (completed 2026-03-04)
 
 ## Phase Details
 
@@ -46,23 +46,17 @@ Plans:
 - [ ] 05-03-PLAN.md — CMS file collection config and NavBar About link
 
 ### Phase 6: Third-Party Integrations
-**Goal**: Visitors can view recent Instagram posts from @playrevolution and submit their email to subscribe to the newsletter, both directly from the about page
+**Goal**: Visitors can view recent Instagram posts from @playrevolution on the about page
 **Depends on**: Phase 5
-**Requirements**: INST-01, NWSL-01
-**Research Flags**:
-  - INST-01 [HIGH]: Resolved — use Instagram Graph API via Next.js Route Handler proxy; client component fetches /api/instagram/feed; long-lived token in Vercel env var; daily Vercel cron job refreshes token
-  - NWSL-01 [HIGH]: Resolved — use Sender.net two-part embed (universal.js + form div) in 'use client' component via next/script with strategy="afterInteractive" and onReady
+**Requirements**: INST-01 (NWSL-01 deferred to future milestone)
+**Approach**: Official Instagram embed blockquotes (`embed.js`) rendered from a CMS-managed list of post URLs — no API credentials required
 **Success Criteria** (what must be TRUE):
   1. Visitor can see a preview of recent Instagram posts from @playrevolution on the about page on both mobile and desktop
-  2. Visitor can see a newsletter signup form on the about page on both mobile and desktop
-  3. Visitor can submit their email address via the form and receive confirmation that signup succeeded
-  4. Submitted email appears in the Sender.net dashboard subscriber list
-**Plans**: 3 plans
+**Completed**: 2026-03-04 via direct commits (2edbd1a, 64b5417, 73563ad)
 
 Plans:
-- [ ] 06-01-PLAN.md — Wave 0: External service prerequisites (Instagram API credentials and Sender.net form ID)
-- [ ] 06-02-PLAN.md — Instagram API infrastructure (Route Handler proxy, token refresh cron, next.config.ts, vercel.json)
-- [ ] 06-03-PLAN.md — Client components (InstagramFeed, NewsletterSignup) wired into about page with human verification
+- [x] 06-02-PLAN.md — Instagram API infrastructure (superseded — approach changed to manual embeds)
+- [x] 06-03 — InstagramFeed client component wired into about page (implemented directly)
 
 ## Progress
 
@@ -73,7 +67,7 @@ Plans:
 | 3. Design & CMS | v1.0 | 2/2 | Complete | 2026-02-20 |
 | 4. Deployment | v1.0 | 3/3 | Complete | 2026-02-22 |
 | 5. About Page | v1.1 | 3/3 | Complete | 2026-03-04 |
-| 6. Third-Party Integrations | 1/3 | In Progress|  | - |
+| 6. Third-Party Integrations | v1.1 | — | Complete | 2026-03-04 |
 
 ---
 
