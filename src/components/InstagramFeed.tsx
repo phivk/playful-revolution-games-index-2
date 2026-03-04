@@ -2,7 +2,6 @@
 
 import Script from 'next/script';
 import { useEffect } from 'react';
-import instagramPostUrls from '@/lib/instagram-posts';
 
 declare global {
   interface Window {
@@ -12,15 +11,18 @@ declare global {
   }
 }
 
-export default function InstagramFeed() {
-  // Re-process embeds on SPA navigation when script is already loaded
+interface Props {
+  posts: string[];
+}
+
+export default function InstagramFeed({ posts }: Props) {
   useEffect(() => {
     if (window.instgrm) {
       window.instgrm.Embeds.process();
     }
   }, []);
 
-  if (instagramPostUrls.length === 0) return null;
+  if (posts.length === 0) return null;
 
   return (
     <section className="border-t border-gray-200 pt-8 mt-8">
@@ -31,7 +33,7 @@ export default function InstagramFeed() {
         onLoad={() => window.instgrm?.Embeds.process()}
       />
       <div className="flex flex-col gap-4 items-center">
-        {instagramPostUrls.map((url) => {
+        {posts.map((url) => {
           const embedUrl = `${url.replace(/\/$/, '')}/?utm_source=ig_embed&utm_campaign=loading`;
           return (
             <blockquote

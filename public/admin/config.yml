@@ -47,8 +47,7 @@ collections:
         label: "About Page"
         file: "content/about.md"
         fields:
-          - { label: "Organisation Name", name: "organisationName", widget: "string" }
-          - { label: "Description (short)", name: "description", widget: "text" }
+          - { label: "Title", name: "title", widget: "string" }
           - label: "Social Links"
             name: "socialLinks"
             widget: "list"
@@ -61,4 +60,8 @@ collections:
                 name: "url"
                 widget: "string"
                 pattern: ["^https?://", "Must start with http:// or https://"]
+          - label: "Instagram Posts"
+            name: "instagramPosts"
+            widget: "list"
+            field: { label: "Post URL", name: "url", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }

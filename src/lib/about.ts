@@ -22,13 +22,17 @@ export async function getAboutPage(): Promise<AboutPageData | null> {
           .map((link) => ({ platform: link.platform, url: link.url }))
       : [];
 
+    const instagramPosts: string[] = Array.isArray(data.instagramPosts)
+      ? data.instagramPosts.filter((url): url is string => typeof url === 'string')
+      : [];
+
     return {
-      organisationName:
-        typeof data.organisationName === 'string' && data.organisationName.trim()
-          ? data.organisationName.trim()
+      title:
+        typeof data.title === 'string' && data.title.trim()
+          ? data.title.trim()
           : 'Playful Revolution',
-      description: typeof data.description === 'string' ? data.description.trim() : '',
       socialLinks,
+      instagramPosts,
       body: content.trim(),
     };
   } catch (err) {

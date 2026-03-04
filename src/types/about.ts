@@ -4,8 +4,8 @@ export interface SocialLink {
 }
 
 export interface AboutPageData {
-  organisationName: string;
-  description: string;
+  title: string;
   socialLinks: SocialLink[];
+  instagramPosts: string[];
   body: string; // raw markdown body from the file (not parsed to HTML)
 }
