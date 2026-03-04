@@ -35,6 +35,16 @@ export default function NavBar({ games }: NavBarProps) {
           </h1>
         </Link>
         <div className="flex-1" />
+        <Link
+          href="/about"
+          className={
+            pathname === "/about"
+              ? "text-white font-medium underline text-sm"
+              : "text-white font-medium hover:opacity-80 transition-opacity text-sm"
+          }
+        >
+          About
+        </Link>
         <RandomPicker games={games} variant="nav" />
       </div>
       {isHome && (
