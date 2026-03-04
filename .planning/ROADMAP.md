@@ -23,7 +23,7 @@ Full archive: [milestones/v1.0-ROADMAP.md](milestones/v1.0-ROADMAP.md)
 
 **Milestone Goal:** Add a CMS-managed about page with organisation info and third-party integrations (Instagram feed, Sender.net newsletter signup) so visitors can learn about Playful Revolution and connect.
 
-- [ ] **Phase 5: About Page** — CMS-managed about page with organisation info, social links, and site navigation
+- [x] **Phase 5: About Page** — CMS-managed about page with organisation info, social links, and site navigation (completed 2026-03-04)
 - [ ] **Phase 6: Third-Party Integrations** — Instagram feed preview and Sender.net newsletter signup form embedded on the about page
 
 ## Phase Details
@@ -67,7 +67,7 @@ Plans:
 | 2. Search & Filter | v1.0 | 1/1 | Complete | 2026-02-20 |
 | 3. Design & CMS | v1.0 | 2/2 | Complete | 2026-02-20 |
 | 4. Deployment | v1.0 | 3/3 | Complete | 2026-02-22 |
-| 5. About Page | 2/3 | In Progress|  | - |
+| 5. About Page | 3/3 | Complete   | 2026-03-04 | - |
 | 6. Third-Party Integrations | v1.1 | 0/? | Not started | - |
 
 ---

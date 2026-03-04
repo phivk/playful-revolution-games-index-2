@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: About Page
 status: unknown
-stopped_at: Completed 05-about-page-02-PLAN.md
-last_updated: "2026-03-04T14:37:49.258Z"
+stopped_at: Completed 05-about-page-03-PLAN.md
+last_updated: "2026-03-04T18:03:04.410Z"
 progress:
   total_phases: 2
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
-  completed_plans: 2
+  completed_plans: 3
 ---
 
 # STATE: Playful Revolution Games Index
@@ -60,6 +60,7 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 ---
 | Phase 05-about-page P01 | 1 | 3 tasks | 3 files |
 | Phase 05-about-page P02 | 1 | 2 tasks | 2 files |
+| Phase 05-about-page P03 | 20 | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,9 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 - [Phase 05-about-page]: Used react-markdown (already in package.json) for about page body rendering instead of dangerouslySetInnerHTML
 - [Phase 05-about-page]: About page is a server component — data fetched at build time via getAboutPage(), no client-side hydration
 - [Phase 05-about-page]: Globe icon as fallback for unrecognised social platform names in SocialLinks component
+- [Phase 05-about-page]: File collection uses files: list (not folder:) for about page singleton pattern — points to fixed content/about.md
+- [Phase 05-about-page]: Platform select options restricted to known icon set matching SocialLinks.tsx to prevent unsupported platform entries
+- [Phase 05-about-page]: URL pattern validation in CMS widget (^https?://) prevents invalid social link URLs
 
 ### Blockers
 - INST-01: Instagram feed implementation approach unknown — third-party widget vs oEmbed vs other; must be researched before Phase 6 begins. Static export constraint is key: no server-side API calls at runtime.
@@ -94,7 +98,7 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 
 **Next Action:** Run `/gsd:plan-phase 5` to plan Phase 5 (About Page)
 
-**Stopped At:** Completed 05-about-page-02-PLAN.md
+**Stopped At:** Completed 05-about-page-03-PLAN.md
 
 ---
 

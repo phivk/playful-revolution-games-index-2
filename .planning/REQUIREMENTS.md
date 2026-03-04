@@ -17,8 +17,8 @@ Requirements for About Page milestone. Each maps to roadmap phases.
 ### Social (SOCL)
 
 - [x] **SOCL-01**: Visitor can click through to social media profiles via links on the about page
-- [ ] **SOCL-02**: Admin can add, edit, and remove social media links (platform + URL) via Decap CMS
-- [ ] **SOCL-03**: Visitor can navigate to the about page from the site navigation
+- [x] **SOCL-02**: Admin can add, edit, and remove social media links (platform + URL) via Decap CMS
+- [x] **SOCL-03**: Visitor can navigate to the about page from the site navigation
 
 ### Instagram (INST)
 
@@ -60,8 +60,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ABUT-03 | Phase 5 | Complete |
 | ABUT-04 | Phase 5 | Complete |
 | SOCL-01 | Phase 5 | Complete |
-| SOCL-02 | Phase 5 | Pending |
-| SOCL-03 | Phase 5 | Pending |
+| SOCL-02 | Phase 5 | Complete |
+| SOCL-03 | Phase 5 | Complete |
 | INST-01 | Phase 6 | Pending |
 | NWSL-01 | Phase 6 | Pending |
 
