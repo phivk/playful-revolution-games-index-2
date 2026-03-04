@@ -3,8 +3,6 @@
 import Script from 'next/script';
 
 export default function NewsletterSignup() {
-  const formId = process.env.NEXT_PUBLIC_SENDER_FORM_ID;
-
   return (
     <div>
       <Script
@@ -16,7 +14,7 @@ export default function NewsletterSignup() {
           }
         }}
       />
-      <div className="sender-form-field" data-sender-form-id={formId} />
+      <div className="sender-form-field" data-sender-form-id="av2RoM" />
     </div>
   );
 }
