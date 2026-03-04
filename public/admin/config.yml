@@ -39,3 +39,26 @@ collections:
         widget: "list"
         field: { label: "Resource", name: "resource", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "about"
+    label: "About Page"
+    files:
+      - name: "about"
+        label: "About Page"
+        file: "content/about.md"
+        fields:
+          - { label: "Organisation Name", name: "organisationName", widget: "string" }
+          - { label: "Description (short)", name: "description", widget: "text" }
+          - label: "Social Links"
+            name: "socialLinks"
+            widget: "list"
+            fields:
+              - label: "Platform"
+                name: "platform"
+                widget: "select"
+                options: ["instagram", "twitter", "facebook", "linkedin", "youtube"]
+              - label: "URL"
+                name: "url"
+                widget: "string"
+                pattern: ["^https?://", "Must start with http:// or https://"]
+          - { label: "Body", name: "body", widget: "markdown" }
