@@ -26,9 +26,20 @@ Facilitators can quickly find and view game instructions on mobile devices durin
 - ✓ Static site export — v1.0
 - ✓ Vercel deployment with security headers — v1.0
 
+## Current Milestone: v1.1 About Page
+
+**Goal:** Add a CMS-managed about page with organization info and Sender.net newsletter signup.
+
+**Target features:**
+- About page with short descriptive text (CMS-editable)
+- Organization name and social media links (CMS-editable)
+- Newsletter signup form embedded from Sender.net
+
 ### Active
 
-(None — plan next milestone with `/gsd:new-milestone`)
+- [ ] About page with CMS-managed content (text, name, social links)
+- [ ] Sender.net newsletter signup form embedded on about page
+- [ ] Navigation link to about page
 
 ### Out of Scope
 
@@ -65,4 +76,4 @@ Facilitators can quickly find and view game instructions on mobile devices durin
 | Combined Design & CMS into single phase | Both depend on core display structure | ✓ Good — efficient delivery |
 
 ---
-*Last updated: 2026-03-03 after v1.0 milestone*
+*Last updated: 2026-03-04 after v1.1 milestone start*

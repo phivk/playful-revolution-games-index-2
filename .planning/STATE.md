@@ -9,7 +9,7 @@
 See: .planning/PROJECT.md (updated 2026-03-03)
 
 **Core value:** Facilitators can quickly find and view game instructions on mobile devices during sessions.
-**Current focus:** Planning next milestone — run `/gsd:new-milestone`
+**Current focus:** v1.1 About Page — defining requirements
 
 ---
 
@@ -17,10 +17,11 @@ See: .planning/PROJECT.md (updated 2026-03-03)
 
 | Field | Value |
 |-------|-------|
-| Phase | — |
+| Phase | Not started (defining requirements) |
 | Plan | — |
-| Status | Between milestones — v1.0 complete |
-| Progress | 100% |
+| Status | Defining requirements |
+| Progress | 0% |
+| Last activity | 2026-03-04 — Milestone v1.1 started |
 
 ---
 
@@ -76,9 +77,9 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 
 ## Session Continuity
 
-**Next Action:** Run `/gsd:new-milestone` to plan v1.1
+**Next Action:** Run `/gsd:plan-phase [N]` to plan first phase
 
-**Stopped At:** v1.0 milestone archived and tagged
+**Stopped At:** Milestone v1.1 initialized — roadmap pending
 
 ---
 
