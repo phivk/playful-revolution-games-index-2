@@ -1,11 +1,5 @@
 {
   "buildCommand": "npm run build",
-  "crons": [
-    {
-      "path": "/api/instagram/refresh-token",
-      "schedule": "0 3 * * *"
-    }
-  ],
   "headers": [
     {
       "source": "/admin/(.*)",

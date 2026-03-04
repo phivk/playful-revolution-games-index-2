@@ -1,12 +1,16 @@
 import { getAboutPage } from '@/lib/about';
 import SocialLinks from '@/components/SocialLinks';
+import InstagramFeed from '@/components/InstagramFeed';
+import NewsletterSignup from '@/components/NewsletterSignup';
 import ReactMarkdown from 'react-markdown';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'About | Playful Revolution Games',
-  description: 'Learn about Playful Revolution and how to connect with us.',
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const about = await getAboutPage();
+  return {
+    title: about ? `${about.title} | Playful Revolution Games` : 'About | Playful Revolution Games',
+  };
+}
 
 export default async function AboutPage() {
   const about = await getAboutPage();
@@ -26,13 +30,10 @@ export default async function AboutPage() {
     <main className="min-h-screen bg-revolution-paper">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <h1 className="text-5xl font-bold text-revolution-red mb-6">
-          {about.organisationName}
+          {about.title}
         </h1>
-        {about.description && (
-          <p className="text-xl text-gray-700 mb-8">{about.description}</p>
-        )}
         {about.body && (
-          <article className="prose prose-lg max-w-none mb-12 text-gray-800">
+          <article className="[&_p]:my-6 [&_p]:text-lg [&_p]:leading-relaxed mb-12 text-gray-800">
             <ReactMarkdown>{about.body}</ReactMarkdown>
           </article>
         )}
@@ -42,6 +43,12 @@ export default async function AboutPage() {
             <SocialLinks links={about.socialLinks} />
           </section>
         )}
+        <InstagramFeed />
+        <section className="border-t border-gray-200 pt-8 mt-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Join the Playful Revolution</h2>
+          <p className="text-gray-600 mb-6">Get updates on games, workshops, and events</p>
+          <NewsletterSignup />
+        </section>
       </div>
     </main>
   );
