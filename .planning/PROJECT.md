@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A mobile-first game catalog with 30 physical, social, and spontaneous games and their facilitation instructions. Facilitators can find games through multi-dimensional filters (tags, pillars, energy levels), keyword search, or random pick. Admins manage games via Decap CMS with GitHub OAuth. The site is a static Next.js export hosted on Vercel.
+A mobile-first game catalog with 30 physical, social, and spontaneous games and their facilitation instructions. Facilitators can find games through multi-dimensional filters (tags, pillars, energy levels), keyword search, or random pick. Admins manage games via Decap CMS with GitHub OAuth. The site includes a CMS-managed about page with org info, social links, and an Instagram feed. It is a static Next.js export hosted on Vercel.
 
 ## Core Value
 
@@ -25,21 +25,13 @@ Facilitators can quickly find and view game instructions on mobile devices durin
 - ✓ GitHub OAuth authentication for CMS admin — v1.0
 - ✓ Static site export — v1.0
 - ✓ Vercel deployment with security headers — v1.0
-
-## Current Milestone: v1.1 About Page
-
-**Goal:** Add a CMS-managed about page with organization info and Sender.net newsletter signup.
-
-**Target features:**
-- About page with short descriptive text (CMS-editable)
-- Organization name and social media links (CMS-editable)
-- Newsletter signup form embedded from Sender.net
+- ✓ About page with CMS-managed content (org name, description, social links) — v1.1
+- ✓ Navigation link to about page in site header — v1.1
+- ✓ Instagram feed preview on about page (official embed, CMS-managed post URLs) — v1.1
 
 ### Active
 
-- [ ] About page with CMS-managed content (text, name, social links)
-- [ ] Sender.net newsletter signup form embedded on about page
-- [ ] Navigation link to about page
+- [ ] Sender.net newsletter signup form on about page (NWSL-01 — deferred from v1.1)
 
 ### Out of Scope
 
@@ -47,14 +39,18 @@ Facilitators can quickly find and view game instructions on mobile devices durin
 - User-submitted games — admin-only for now to ensure quality
 - Game ratings/reviews — possible future feature
 - Interactive game running (timer, scoring) — viewing instructions only
+- Multi-language about page — defer until validated need
+- Contact form — email link sufficient for now
+- Multi-step newsletter signup — single email field is sufficient
 
 ## Context
 
 - Playful Revolution is a movement to re-kindle playfulness in daily life
 - Games can be used anywhere but mostly in playful settings (workshops, events, classrooms, community)
 - v1.0 shipped 2026-03-03: full MVP live on Vercel
+- v1.1 shipped 2026-03-04: about page with Instagram feed
 
-**Current codebase:** ~2,161 TypeScript LOC, 250 files, Next.js + Tailwind + Decap CMS
+**Current codebase:** ~2,161 TypeScript LOC (v1.0 baseline), Next.js + Tailwind + Decap CMS + Instagram embeds
 **Tech stack:** Next.js (static export), Tailwind CSS, Decap CMS (GitHub backend), Vercel serverless for OAuth
 
 ## Constraints
@@ -74,6 +70,10 @@ Facilitators can quickly find and view game instructions on mobile devices durin
 | outputDirectory set to .next in vercel.json | Fixes routes-manifest.json error on Vercel | ✓ Good — resolved deployment issue |
 | Mobile-first | Facilitators need to view on phones during sessions | ✓ Good — core use case |
 | Combined Design & CMS into single phase | Both depend on core display structure | ✓ Good — efficient delivery |
+| Singleton file collection for about page (files: not folder:) | Single fixed file, not a directory of entries | ✓ Good — clean Decap CMS pattern |
+| Instagram embed blockquotes (not Graph API) | No API credentials required, works with static export | ✓ Good — simpler, more robust |
+| Post URLs managed in CMS (instagramPosts list) | Admin can update feed without code changes | ✓ Good — full CMS control |
+| NWSL-01 deferred — Sender.net not wired in | Sender.net integration not ready during v1.1 | — Pending (v1.2 candidate) |
 
 ---
-*Last updated: 2026-03-04 after v1.1 milestone start*
+*Last updated: 2026-03-04 after v1.1 milestone complete*
