@@ -9,10 +9,10 @@ Requirements for About Page milestone. Each maps to roadmap phases.
 
 ### About Page (ABUT)
 
-- [ ] **ABUT-01**: Visitor can view short descriptive text about Playful Revolution on the about page
-- [ ] **ABUT-02**: Admin can edit the about page text via Decap CMS
-- [ ] **ABUT-03**: Visitor can view the organisation name on the about page
-- [ ] **ABUT-04**: Admin can edit the organisation name via Decap CMS
+- [x] **ABUT-01**: Visitor can view short descriptive text about Playful Revolution on the about page
+- [x] **ABUT-02**: Admin can edit the about page text via Decap CMS
+- [x] **ABUT-03**: Visitor can view the organisation name on the about page
+- [x] **ABUT-04**: Admin can edit the organisation name via Decap CMS
 
 ### Social (SOCL)
 
@@ -55,10 +55,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ABUT-01 | Phase 5 | Pending |
-| ABUT-02 | Phase 5 | Pending |
-| ABUT-03 | Phase 5 | Pending |
-| ABUT-04 | Phase 5 | Pending |
+| ABUT-01 | Phase 5 | Complete |
+| ABUT-02 | Phase 5 | Complete |
+| ABUT-03 | Phase 5 | Complete |
+| ABUT-04 | Phase 5 | Complete |
 | SOCL-01 | Phase 5 | Pending |
 | SOCL-02 | Phase 5 | Pending |
 | SOCL-03 | Phase 5 | Pending |
