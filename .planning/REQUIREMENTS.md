@@ -20,6 +20,13 @@ Requirements for About Page milestone. Each maps to roadmap phases.
 - [ ] **SOCL-02**: Admin can add, edit, and remove social media links (platform + URL) via Decap CMS
 - [ ] **SOCL-03**: Visitor can navigate to the about page from the site navigation
 
+### Instagram (INST)
+
+- [ ] **INST-01** [research: HIGH]: Visitor can view a preview of recent Instagram posts from @playrevolution on the about page
+  - Implementation approach must be researched during Phase 6 planning before any code is written.
+  - Key constraint: static export (no server-side API calls at runtime).
+  - Options to evaluate: third-party widget (e.g. Curator.io), Instagram oEmbed, Instagram Basic Display API, or other approach.
+
 ### Newsletter (NWSL)
 
 - [ ] **NWSL-01**: Visitor can submit their email address via a Sender.net signup form on the about page
@@ -48,20 +55,21 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ABUT-01 | — | Pending |
-| ABUT-02 | — | Pending |
-| ABUT-03 | — | Pending |
-| ABUT-04 | — | Pending |
-| SOCL-01 | — | Pending |
-| SOCL-02 | — | Pending |
-| SOCL-03 | — | Pending |
-| NWSL-01 | — | Pending |
+| ABUT-01 | Phase 5 | Pending |
+| ABUT-02 | Phase 5 | Pending |
+| ABUT-03 | Phase 5 | Pending |
+| ABUT-04 | Phase 5 | Pending |
+| SOCL-01 | Phase 5 | Pending |
+| SOCL-02 | Phase 5 | Pending |
+| SOCL-03 | Phase 5 | Pending |
+| INST-01 | Phase 6 | Pending |
+| NWSL-01 | Phase 6 | Pending |
 
 **Coverage:**
-- v1.1 requirements: 8 total
-- Mapped to phases: 0
-- Unmapped: 8 ⚠️
+- v1.1 requirements: 9 total
+- Mapped to phases: 9
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-04*
-*Last updated: 2026-03-04 after initial definition*
+*Last updated: 2026-03-04 after adding INST-01 (Instagram feed preview) and mapping to Phase 6*
