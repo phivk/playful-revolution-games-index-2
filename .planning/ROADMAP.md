@@ -50,14 +50,19 @@ Plans:
 **Depends on**: Phase 5
 **Requirements**: INST-01, NWSL-01
 **Research Flags**:
-  - INST-01 [HIGH]: Implementation approach for Instagram feed preview must be researched before building. Unknown whether to use a third-party widget, Instagram oEmbed API, or another approach. Each has different constraints with static export (no server-side API calls at runtime). Research must determine: (1) which approach works with Next.js static export, (2) whether an API token or OAuth is required, (3) rate limit implications, (4) visual embed vs. scraped data. Do not begin implementation until approach is decided.
-  - NWSL-01 [HIGH]: Sender.net form ID and embed script URL must be retrieved from Sender.net dashboard before implementation. Test script loading on slow networks and after client-side navigation.
+  - INST-01 [HIGH]: Resolved — use Instagram Graph API via Next.js Route Handler proxy; client component fetches /api/instagram/feed; long-lived token in Vercel env var; daily Vercel cron job refreshes token
+  - NWSL-01 [HIGH]: Resolved — use Sender.net two-part embed (universal.js + form div) in 'use client' component via next/script with strategy="afterInteractive" and onReady
 **Success Criteria** (what must be TRUE):
   1. Visitor can see a preview of recent Instagram posts from @playrevolution on the about page on both mobile and desktop
   2. Visitor can see a newsletter signup form on the about page on both mobile and desktop
   3. Visitor can submit their email address via the form and receive confirmation that signup succeeded
   4. Submitted email appears in the Sender.net dashboard subscriber list
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Wave 0: External service prerequisites (Instagram API credentials and Sender.net form ID)
+- [ ] 06-02-PLAN.md — Instagram API infrastructure (Route Handler proxy, token refresh cron, next.config.ts, vercel.json)
+- [ ] 06-03-PLAN.md — Client components (InstagramFeed, NewsletterSignup) wired into about page with human verification
 
 ## Progress
 
@@ -67,9 +72,9 @@ Plans:
 | 2. Search & Filter | v1.0 | 1/1 | Complete | 2026-02-20 |
 | 3. Design & CMS | v1.0 | 2/2 | Complete | 2026-02-20 |
 | 4. Deployment | v1.0 | 3/3 | Complete | 2026-02-22 |
-| 5. About Page | 3/3 | Complete   | 2026-03-04 | - |
-| 6. Third-Party Integrations | v1.1 | 0/? | Not started | - |
+| 5. About Page | v1.1 | 3/3 | Complete | 2026-03-04 |
+| 6. Third-Party Integrations | v1.1 | 0/3 | Not started | - |
 
 ---
 
-*Last updated: 2026-03-04 after Phase 5 planning complete (3 plans created)*
+*Last updated: 2026-03-04 after Phase 6 planning complete (3 plans created)*
