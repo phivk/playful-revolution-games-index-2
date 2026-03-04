@@ -5,6 +5,8 @@ socialLinks:
     url: "https://www.instagram.com/playrevolution"
 instagramPosts:
   - "https://www.instagram.com/reel/DVQfcyKiJV-/"
+  - "https://www.instagram.com/reel/DUqal-oiCZl/"
+  - "https://www.instagram.com/p/DQmO3_DjEbP/"
 ---
 
 Playful Revolution is a collective dedicated to bringing spontaneous, joyful play to workshops, events, and communities.
