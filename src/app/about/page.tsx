@@ -42,6 +42,8 @@ export default async function AboutPage() {
             <SocialLinks links={about.socialLinks} />
           </section>
         )}
+      </div>
+      <div className="max-w-7xl mx-auto px-4 pb-12">
         <InstagramFeed posts={about.instagramPosts} />
       </div>
     </main>
