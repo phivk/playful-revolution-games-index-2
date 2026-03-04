@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: About Page
 status: unknown
-stopped_at: Phase 6 context gathered
-last_updated: "2026-03-04T18:15:13.596Z"
+stopped_at: Completed 06-third-party-integrations-02-PLAN.md
+last_updated: "2026-03-04T20:07:03.591Z"
 progress:
   total_phases: 2
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 6
+  completed_plans: 4
 ---
 
 # STATE: Playful Revolution Games Index
@@ -61,6 +61,7 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 | Phase 05-about-page P01 | 1 | 3 tasks | 3 files |
 | Phase 05-about-page P02 | 1 | 2 tasks | 2 files |
 | Phase 05-about-page P03 | 20 | 3 tasks | 2 files |
+| Phase 06-third-party-integrations P02 | 2 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -80,6 +81,9 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 - [Phase 05-about-page]: File collection uses files: list (not folder:) for about page singleton pattern — points to fixed content/about.md
 - [Phase 05-about-page]: Platform select options restricted to known icon set matching SocialLinks.tsx to prevent unsupported platform entries
 - [Phase 05-about-page]: URL pattern validation in CMS widget (^https?://) prevents invalid social link URLs
+- [Phase 06-third-party-integrations]: force-dynamic on feed route prevents route-level caching; upstream fetch uses revalidate: 3600 for 1-hour server-side cache
+- [Phase 06-third-party-integrations]: Feed endpoint always returns 200 with { posts: [] } on failure — graceful degradation, never 500
+- [Phase 06-third-party-integrations]: Token refresh cron cannot update Vercel env vars at runtime — daily run extends the 60-day TTL window of the original token
 
 ### Blockers
 - INST-01: Instagram feed implementation approach unknown — third-party widget vs oEmbed vs other; must be researched before Phase 6 begins. Static export constraint is key: no server-side API calls at runtime.
@@ -98,7 +102,7 @@ Archive: .planning/milestones/v1.0-ROADMAP.md
 
 **Next Action:** Run `/gsd:plan-phase 5` to plan Phase 5 (About Page)
 
-**Stopped At:** Phase 6 context gathered
+**Stopped At:** Completed 06-third-party-integrations-02-PLAN.md
 
 ---
 

@@ -22,7 +22,7 @@ Requirements for About Page milestone. Each maps to roadmap phases.
 
 ### Instagram (INST)
 
-- [ ] **INST-01** [research: HIGH]: Visitor can view a preview of recent Instagram posts from @playrevolution on the about page
+- [x] **INST-01** [research: HIGH]: Visitor can view a preview of recent Instagram posts from @playrevolution on the about page
   - Implementation approach must be researched during Phase 6 planning before any code is written.
   - Key constraint: static export (no server-side API calls at runtime).
   - Options to evaluate: third-party widget (e.g. Curator.io), Instagram oEmbed, Instagram Basic Display API, or other approach.
@@ -62,7 +62,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SOCL-01 | Phase 5 | Complete |
 | SOCL-02 | Phase 5 | Complete |
 | SOCL-03 | Phase 5 | Complete |
-| INST-01 | Phase 6 | Pending |
+| INST-01 | Phase 6 | Complete |
 | NWSL-01 | Phase 6 | Pending |
 
 **Coverage:**

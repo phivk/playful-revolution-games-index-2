@@ -73,7 +73,7 @@ Plans:
 | 3. Design & CMS | v1.0 | 2/2 | Complete | 2026-02-20 |
 | 4. Deployment | v1.0 | 3/3 | Complete | 2026-02-22 |
 | 5. About Page | v1.1 | 3/3 | Complete | 2026-03-04 |
-| 6. Third-Party Integrations | v1.1 | 0/3 | Not started | - |
+| 6. Third-Party Integrations | 1/3 | In Progress|  | - |
 
 ---
 
