@@ -17,13 +17,13 @@ export default function DurationChip({ duration, selected, onClick }: DurationCh
   return (
     <Element
       {...(isInteractive ? { onClick, type: "button" as const } : {})}
-      className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg font-bold uppercase tracking-wider text-sm border-3 border-foreground transition-all duration-100 ${
+      className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-100 ${
         isInteractive
-          ? "transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
+          ? "border-3 border-foreground transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
           : ""
       } ${
         isActive
-          ? "bg-duration-purple text-white shadow-brutal"
+          ? `bg-duration-purple text-white${isInteractive ? " shadow-brutal" : ""}`
           : "bg-transparent text-foreground hover:border-revolution-red hover:text-revolution-red"
       }`}
       title={`Duration: ${duration} min`}

@@ -17,13 +17,13 @@ export default function EnergyChip({ level, selected, onClick }: EnergyChipProps
   return (
     <Element
       {...(isInteractive ? { onClick, type: "button" as const } : {})}
-      className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-bold uppercase tracking-wider text-sm border-3 border-foreground transition-all duration-100 ${
+      className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-100 ${
         isInteractive
-          ? "transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
+          ? "border-3 border-foreground transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
           : ""
       } ${
         isActive
-          ? "bg-joy-yellow text-foreground shadow-brutal"
+          ? `bg-joy-yellow text-foreground${isInteractive ? " shadow-brutal" : ""}`
           : "bg-transparent text-foreground hover:border-revolution-red hover:text-revolution-red"
       }`}
       title={`Energy: ${level}`}

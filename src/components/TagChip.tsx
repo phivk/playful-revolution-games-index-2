@@ -17,10 +17,9 @@ interface TagChipProps {
   tag: Tag;
   selected?: boolean;
   onClick?: () => void;
-  flat?: boolean;
 }
 
-export default function TagChip({ tag, selected, onClick, flat }: TagChipProps) {
+export default function TagChip({ tag, selected, onClick }: TagChipProps) {
   const { bg, text } = TAG_CONFIG[tag];
   const isInteractive = typeof onClick === "function";
   const isActive = isInteractive ? !!selected : true;
@@ -31,14 +30,14 @@ export default function TagChip({ tag, selected, onClick, flat }: TagChipProps) 
     <Element
       {...(isInteractive ? { onClick, type: "button" as const } : {})}
       className={`inline-flex items-center text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider transition-all duration-100 ${
-        flat ? "border-0" : "border-3 border-foreground"
+        isInteractive ? "border-3 border-foreground" : "border-0"
       } ${
         isInteractive
           ? "transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
           : ""
       } ${
         isActive
-          ? flat ? "" : "shadow-brutal"
+          ? isInteractive ? "shadow-brutal" : ""
           : "bg-transparent text-foreground hover:border-revolution-red hover:text-revolution-red"
       }`}
       style={

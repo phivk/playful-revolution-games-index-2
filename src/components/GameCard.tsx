@@ -46,7 +46,7 @@ export default function GameCard({
 
       <div className="flex flex-wrap gap-2 mb-4">
         {game.tags.map((tag) => (
-          <TagChip key={tag} tag={tag} flat />
+          <TagChip key={tag} tag={tag} />
         ))}
       </div>
 
