@@ -96,6 +96,17 @@ html {
     }
   }
 
+  /* Filled buttons (coloured background): larger shadow on hover, deeper press on active */
+  .hover-btn-filled {
+    &:hover {
+      box-shadow: var(--shadow-brutal-lg);
+    }
+    &:active {
+      translate: 2px 2px;
+      box-shadow: none;
+    }
+  }
+
   /* CTA buttons that already have a shadow: scale up on hover, press-down on active */
   .hover-btn-scale {
     &:hover {

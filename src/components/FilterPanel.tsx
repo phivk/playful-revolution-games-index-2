@@ -82,7 +82,7 @@ export default function FilterPanel({
           <button
             type="button"
             onClick={onClearPlaylist}
-            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-lg border-3 border-transparent hover:border-foreground uppercase tracking-wide text-sm"
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 font-bold rounded-lg border-3 border-foreground hover:border-revolution-red hover:text-revolution-red uppercase tracking-wide text-sm"
           >
             <X className="w-4 h-4 shrink-0" strokeWidth={2.5} aria-hidden />
             Clear playlist

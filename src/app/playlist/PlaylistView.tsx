@@ -126,7 +126,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             </p>
             <Link
               href="/"
-              className="inline-flex px-4 py-2 bg-revolution-red text-white font-bold rounded-lg border-2 border-foreground uppercase tracking-wide hover-btn"
+              className="inline-flex px-4 py-2 bg-revolution-red text-white font-bold rounded-lg border-3 border-foreground uppercase tracking-wide hover-btn-filled"
             >
               Browse games
             </Link>
@@ -147,9 +147,9 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             <button
               type="button"
               onClick={copyLink}
-              className={`inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm ${
+              className={`inline-flex items-center gap-2 px-4 py-2 font-bold rounded-lg border-3 border-foreground uppercase tracking-wide text-sm ${
                 linkCopied
-                  ? 'bg-playlist-amber text-foreground scale-105 shadow-brutal'
+                  ? 'bg-playlist-amber text-foreground shadow-brutal'
                   : 'bg-white hover-btn'
               }`}
             >
@@ -166,14 +166,14 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
             </button>
             <Link
               href={addMoreHref}
-              className="inline-flex px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm hover-btn"
+              className="inline-flex px-4 py-2 bg-playlist-amber text-foreground font-bold rounded-lg border-3 border-foreground uppercase tracking-wide text-sm hover-btn-filled"
             >
               Add more games
             </Link>
             <button
               type="button"
               onClick={clearPlaylist}
-              className="inline-flex px-4 py-2 bg-white font-bold rounded-lg border-2 border-foreground uppercase tracking-wide text-sm hover-btn"
+              className="inline-flex px-4 py-2 bg-white font-bold rounded-lg border-3 border-foreground uppercase tracking-wide text-sm hover-btn"
             >
               Clear playlist
             </button>
@@ -234,7 +234,7 @@ export default function PlaylistView({ initialSlugs, games }: PlaylistViewProps)
               <button
                 type="button"
                 onClick={() => remove(game.slug)}
-                className="shrink-0 px-3 py-1.5 text-sm font-bold rounded-lg border-2 border-foreground bg-background uppercase hover-icon"
+                className="shrink-0 px-3 py-1.5 text-sm font-bold rounded-lg border-3 border-foreground bg-background uppercase hover:border-revolution-red hover:text-revolution-red"
               >
                 Remove
               </button>
