@@ -4,7 +4,7 @@
 
 - ✅ **v1.0 MVP** — Phases 1–4 (shipped 2026-03-03)
 - ✅ **v1.1 About Page** — Phases 5–6 (shipped 2026-03-04)
-- 🚧 **v1.2 UI Consistency** — Phases 7–8 (in progress)
+- ✅ **v1.2 UI Consistency** — Phases 7–8 (shipped 2026-03-14)
 
 ## Phases
 
@@ -30,12 +30,12 @@ Full archive: [milestones/v1.1-ROADMAP.md](milestones/v1.1-ROADMAP.md)
 
 </details>
 
-### 🚧 v1.2 UI Consistency (In Progress)
+### ✅ v1.2 UI Consistency (Complete — 2026-03-14)
 
 **Milestone Goal:** Establish a unified visual language for all interactive chip and button components.
 
 - [x] **Phase 7: UI Consistency** — Unified border, inactive state, hover effect, and sizing across all chips and buttons (completed 2026-03-14)
-- [ ] **Phase 8: Component Showcase** — Dev-only `/components` page listing all interactive components and their variants
+- [x] **Phase 8: Component Showcase** — Dev-only `/components` page listing all interactive components and their variants (completed 2026-03-14)
 
 ## Phase Details
 
@@ -65,7 +65,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 08-01-PLAN.md — Create `/components` showcase page with all interactive component variants
+- [x] 08-01-PLAN.md — Create `/components` showcase page with all interactive component variants
 
 ## Progress
 
@@ -78,8 +78,8 @@ Plans:
 | 5. About Page | v1.1 | 3/3 | Complete | 2026-03-04 |
 | 6. Third-Party Integrations | v1.1 | — | Complete | 2026-03-04 |
 | 7. UI Consistency | v1.2 | 2/2 | Complete | 2026-03-14 |
-| 8. Component Showcase | v1.2 | 0/1 | Not started | - |
+| 8. Component Showcase | v1.2 | 1/1 | Complete | 2026-03-14 |
 
 ---
 
-*Last updated: 2026-03-14 after Phase 8 planned (1 plan)*
+*Last updated: 2026-03-14 after Phase 8 plan 01 complete*

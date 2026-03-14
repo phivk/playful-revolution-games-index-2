@@ -14,9 +14,9 @@
 
 ### Component Showcase
 
-- [ ] **SHOW-01**: A `/components` page exists in the Next.js app listing all interactive components and their variants
-- [ ] **SHOW-02**: Each component section shows all variants (interactive, non-interactive, selected, icon-only, etc.) side by side
-- [ ] **SHOW-03**: The page is not linked from the public site navigation (dev-only reference)
+- [x] **SHOW-01**: A `/components` page exists in the Next.js app listing all interactive components and their variants
+- [x] **SHOW-02**: Each component section shows all variants (interactive, non-interactive, selected, icon-only, etc.) side by side
+- [x] **SHOW-03**: The page is not linked from the public site navigation (dev-only reference)
 
 ## Future Requirements
 
@@ -40,9 +40,9 @@
 | UI-02 | Phase 7 | Complete |
 | UI-03 | Phase 7 | Complete |
 | UI-04 | Phase 7 | Complete |
-| SHOW-01 | Phase 8 | Pending |
-| SHOW-02 | Phase 8 | Pending |
-| SHOW-03 | Phase 8 | Pending |
+| SHOW-01 | Phase 8 | Complete |
+| SHOW-02 | Phase 8 | Complete |
+| SHOW-03 | Phase 8 | Complete |
 
 **Coverage:**
 - v1.2 requirements: 7 total
@@ -51,4 +51,4 @@
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-03-14 after roadmap created (traceability confirmed)*
+*Last updated: 2026-03-14 after Phase 8 plan 01 complete (v1.2 all requirements met)*
