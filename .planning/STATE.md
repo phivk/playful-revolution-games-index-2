@@ -70,7 +70,7 @@ Archive: .planning/milestones/v1.1-ROADMAP.md
 
 ## Session Continuity
 
-**Next Action:** `/gsd:plan-phase 7` — plan UI Consistency phase
+**Next Action:** Execute 07-02 (next plan in phase 7)
 
 ---
 
