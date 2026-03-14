@@ -48,11 +48,11 @@ Full archive: [milestones/v1.1-ROADMAP.md](milestones/v1.1-ROADMAP.md)
   2. Every button (PlaylistButton, "Clear all" in FilterChips) displays the same `border-3 border-foreground` border as the chips
   3. Hovering over any interactive chip or button shifts color to revolution-red with no scale transform
   4. All interactive chips and buttons have consistent padding and meet the `min-h-[44px]` touch target minimum
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 07-01: Apply unified border and inactive state to all chips and buttons
-- [ ] 07-02: Standardise hover/active effects and padding across all interactive elements
+- [ ] 07-01-PLAN.md — Remove scale transforms from all four interactive chip components (TagChip, PillarChip, EnergyChip, DurationChip)
+- [ ] 07-02-PLAN.md — Update PlaylistButton and FilterChips "Clear all" to border-3 border-foreground with colour-shift hover
 
 ### Phase 8: Component Showcase
 **Goal**: A dev-only `/components` page exists where all interactive components and their variants can be inspected side by side
@@ -82,4 +82,4 @@ Plans:
 
 ---
 
-*Last updated: 2026-03-14 after v1.2 roadmap created*
+*Last updated: 2026-03-14 after Phase 7 planned (2 plans)*
