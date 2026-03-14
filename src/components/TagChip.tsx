@@ -33,7 +33,7 @@ export default function TagChip({ tag, selected, onClick }: TagChipProps) {
         isInteractive ? "border-3 border-foreground" : "border-0"
       } ${
         isInteractive
-          ? "transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
+          ? "min-h-[44px] cursor-pointer"
           : ""
       } ${
         isActive
