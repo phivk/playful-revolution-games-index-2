@@ -45,10 +45,10 @@ export default function PlaylistButton({
       role="button"
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-2 border-foreground ${
+      className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-full border-3 border-foreground ${
         inPlaylist
-          ? 'bg-playlist-amber text-foreground scale-110'
-          : 'bg-background text-foreground hover:text-revolution-red hover:border-revolution-red active:scale-90'
+          ? 'bg-playlist-amber text-foreground'
+          : 'bg-background text-foreground hover:text-revolution-red hover:border-revolution-red'
       }`}
       aria-label={inPlaylist ? 'Remove from playlist' : 'Add to playlist'}
     >
