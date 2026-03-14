@@ -34,7 +34,7 @@ Full archive: [milestones/v1.1-ROADMAP.md](milestones/v1.1-ROADMAP.md)
 
 **Milestone Goal:** Establish a unified visual language for all interactive chip and button components.
 
-- [ ] **Phase 7: UI Consistency** — Unified border, inactive state, hover effect, and sizing across all chips and buttons
+- [x] **Phase 7: UI Consistency** — Unified border, inactive state, hover effect, and sizing across all chips and buttons (completed 2026-03-14)
 - [ ] **Phase 8: Component Showcase** — Dev-only `/components` page listing all interactive components and their variants
 
 ## Phase Details
@@ -77,7 +77,7 @@ Plans:
 | 4. Deployment | v1.0 | 3/3 | Complete | 2026-02-22 |
 | 5. About Page | v1.1 | 3/3 | Complete | 2026-03-04 |
 | 6. Third-Party Integrations | v1.1 | — | Complete | 2026-03-04 |
-| 7. UI Consistency | v1.2 | 0/2 | Not started | - |
+| 7. UI Consistency | 2/2 | Complete   | 2026-03-14 | - |
 | 8. Component Showcase | v1.2 | 0/1 | Not started | - |
 
 ---
