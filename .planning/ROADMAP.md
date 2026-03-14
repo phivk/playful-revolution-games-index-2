@@ -62,10 +62,10 @@ Plans:
   1. Visiting `/components` in the browser renders a page listing every interactive component used in the app
   2. Each component section shows all variants (inactive, selected, interactive, non-interactive, icon-only where applicable) side by side
   3. The `/components` page is not linked from the public site navigation and does not appear in any user-facing nav
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 08-01: Create `/components` showcase page with all interactive component variants
+- [ ] 08-01-PLAN.md — Create `/components` showcase page with all interactive component variants
 
 ## Progress
 
@@ -77,9 +77,9 @@ Plans:
 | 4. Deployment | v1.0 | 3/3 | Complete | 2026-02-22 |
 | 5. About Page | v1.1 | 3/3 | Complete | 2026-03-04 |
 | 6. Third-Party Integrations | v1.1 | — | Complete | 2026-03-04 |
-| 7. UI Consistency | 2/2 | Complete   | 2026-03-14 | - |
+| 7. UI Consistency | v1.2 | 2/2 | Complete | 2026-03-14 |
 | 8. Component Showcase | v1.2 | 0/1 | Not started | - |
 
 ---
 
-*Last updated: 2026-03-14 after Phase 7 planned (2 plans)*
+*Last updated: 2026-03-14 after Phase 8 planned (1 plan)*
