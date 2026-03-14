@@ -1,29 +1,29 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.1
-milestone_name: About Page
-status: archived
-stopped_at: v1.1 milestone complete and archived
-last_updated: "2026-03-04T23:00:00.000Z"
+milestone: v1.2
+milestone_name: UI Consistency
+status: planning
+stopped_at: Defining requirements
+last_updated: "2026-03-14T00:00:00.000Z"
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # STATE: Playful Revolution Games Index
 
-**Last Updated:** 2026-03-04 (v1.1 archived — ready for next milestone)
+**Last Updated:** 2026-03-14 — Milestone v1.2 started
 
 ---
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-04)
+See: .planning/PROJECT.md (updated 2026-03-14)
 
 **Core value:** Facilitators can quickly find and view game instructions on mobile devices during sessions.
-**Current focus:** Planning next milestone (v1.2 candidate)
+**Current focus:** v1.2 UI Consistency — defining requirements
 
 ---
 
@@ -31,11 +31,11 @@ See: .planning/PROJECT.md (updated 2026-03-04)
 
 | Field | Value |
 |-------|-------|
-| Phase | — (between milestones) |
+| Phase | Not started (defining requirements) |
 | Plan | — |
-| Status | v1.1 archived — ready for v1.2 planning |
-| Progress | v1.1 complete |
-| Last activity | 2026-03-04 — v1.1 milestone archived |
+| Status | Defining requirements |
+| Progress | v1.2 not started |
+| Last activity | 2026-03-14 — Milestone v1.2 started |
 
 ---
 
@@ -43,6 +43,7 @@ See: .planning/PROJECT.md (updated 2026-03-04)
 
 ✅ v1.0 MVP — 4 phases, 7 plans, all complete
 ✅ v1.1 About Page — 2 phases, all complete
+◆ v1.2 UI Consistency — planning
 Archive: .planning/milestones/v1.1-ROADMAP.md
 
 ---
@@ -54,19 +55,21 @@ Archive: .planning/milestones/v1.1-ROADMAP.md
 - v1.1: NWSL-01 (Sender.net newsletter) deferred to future milestone
 - v1.1: Singleton CMS file collection pattern for about page
 - v1.1: InstagramFeed renders null when posts array is empty
+- v1.2: Chips are the structural reference for UI consistency; button hover pattern (color shift, no scale) applied to all interactive elements
 
 ### Blockers
 (none)
 
 ### Notes
-- NWSL-01 is the primary carried-over requirement for v1.2 consideration
-- `NewsletterSignup.tsx` component exists but is not wired into any page
+- NWSL-01 deferred again to future milestone (not in v1.2 scope)
+- Interactive chips: TagChip, PillarChip, EnergyChip, DurationChip
+- Buttons in scope: PlaylistButton, FilterChips "Clear all", any other action buttons
 
 ---
 
 ## Session Continuity
 
-**Next Action:** `/gsd:new-milestone` — start v1.2 milestone planning
+**Next Action:** `/gsd:plan-phase [N]` — plan first phase of v1.2
 
 ---
 

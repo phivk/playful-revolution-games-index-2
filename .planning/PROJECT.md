@@ -29,8 +29,22 @@ Facilitators can quickly find and view game instructions on mobile devices durin
 - ✓ Navigation link to about page in site header — v1.1
 - ✓ Instagram feed preview on about page (official embed, CMS-managed post URLs) — v1.1
 
+## Current Milestone: v1.2 UI Consistency
+
+**Goal:** Establish a unified visual language for all interactive chip and button components.
+
+**Target features:**
+- Consistent border weight across all chips and buttons (chips as reference: border-3)
+- Unified inactive state (visible border on all interactive elements)
+- Consistent hover/active effects (button pattern: color shift to revolution-red, no scale transform)
+- Consistent size/padding across chips and buttons
+
 ### Active
 
+- [ ] All interactive chips and buttons use border-3 border-foreground (UI-01)
+- [ ] All interactive elements show consistent inactive border state (UI-02)
+- [ ] All interactive elements use unified hover/active color effects (no scale transforms) (UI-03)
+- [ ] Size and padding is consistent across chips and buttons (UI-04)
 - [ ] Sender.net newsletter signup form on about page (NWSL-01 — deferred from v1.1)
 
 ### Out of Scope
@@ -76,4 +90,4 @@ Facilitators can quickly find and view game instructions on mobile devices durin
 | NWSL-01 deferred — Sender.net not wired in | Sender.net integration not ready during v1.1 | — Pending (v1.2 candidate) |
 
 ---
-*Last updated: 2026-03-04 after v1.1 milestone complete*
+*Last updated: 2026-03-14 after v1.2 milestone started*
