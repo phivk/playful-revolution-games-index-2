@@ -19,7 +19,7 @@ export default function EnergyChip({ level, selected, onClick }: EnergyChipProps
       {...(isInteractive ? { onClick, type: "button" as const } : {})}
       className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-bold uppercase tracking-wider text-sm transition-all duration-100 ${
         isInteractive
-          ? "border-3 border-foreground transform hover:scale-105 active:scale-95 min-h-[44px] cursor-pointer"
+          ? "border-3 border-foreground min-h-[44px] cursor-pointer"
           : ""
       } ${
         isActive
