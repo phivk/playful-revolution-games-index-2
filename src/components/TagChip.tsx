@@ -29,7 +29,7 @@ export default function TagChip({ tag, selected, onClick }: TagChipProps) {
   return (
     <Element
       {...(isInteractive ? { onClick, type: "button" as const } : {})}
-      className={`inline-flex items-center text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider transition-all duration-100 ${
+      className={`inline-flex items-center text-xs px-3 py-2 rounded-full font-bold uppercase tracking-wider transition-all duration-100 ${
         isInteractive ? "border-3 border-foreground" : "border-0"
       } ${
         isInteractive
