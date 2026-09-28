@@ -5,6 +5,8 @@ tags: ["table", "collaborative"]
 pillars: ["social", "intellectual", "physical"]
 energy: 2
 duration: 15
+minPlayers: 3
+maxPlayers: 10
 resources: ["small space", "sushi hands menu card"]
 ---
 

@@ -5,6 +5,7 @@ tags: ["ball", "collaborative"]
 pillars: ["physical", "social"]
 energy: 2
 duration: 10
+minPlayers: 4
 resources: ["medium space", "one or more balls"]
 ---
 

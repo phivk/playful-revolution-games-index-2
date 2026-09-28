@@ -13,6 +13,8 @@ pillars:
   - physical
 energy: 2
 duration: 5
+minPlayers: 5
+maxPlayers: 20
 ---
 Setup: Players stand in a circle and establish a steady beat (e.g., clapping, hitting knees).
 

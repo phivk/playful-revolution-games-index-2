@@ -5,6 +5,7 @@ tags: ["social", "collaborative"]
 pillars: ["social", "physical"]
 energy: 2
 duration: 10
+minPlayers: 2
 resources: ["medium space"]
 ---
 

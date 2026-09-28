@@ -5,6 +5,7 @@ tags: ["competitive"]
 pillars: ["physical"]
 energy: 3
 duration: 10
+minPlayers: 2
 resources: ["small space"]
 ---
 

@@ -5,6 +5,7 @@ tags: ["circle", "collaborative"]
 pillars: ["physical", "social"]
 energy: 1
 duration: 10
+minPlayers: 4
 resources: ["small space", "tennis balls or massage balls"]
 ---
 

@@ -5,6 +5,8 @@ tags: ["competitive"]
 pillars: ["physical", "social"]
 energy: 3
 duration: 10
+minPlayers: 3
+maxPlayers: 12
 resources: ["small space", "small objects to balance (coins, bottle caps, etc.)"]
 ---
 

@@ -5,6 +5,8 @@ tags: ["social", "collaborative"]
 pillars: ["social", "intellectual"]
 energy: 1
 duration: 5
+minPlayers: 4
+maxPlayers: 20
 resources: ["small space"]
 ---
 

@@ -5,6 +5,7 @@ tags: ["theatre", "collaborative"]
 pillars: ["social", "intellectual", "physical"]
 energy: 3
 duration: 15
+minPlayers: 6
 resources: ["small space"]
 ---
 

@@ -5,6 +5,8 @@ tags: ["competitive"]
 pillars: ["physical", "social"]
 energy: 3
 duration: 15
+minPlayers: 4
+maxPlayers: 20
 resources: ["medium space"]
 ---
 

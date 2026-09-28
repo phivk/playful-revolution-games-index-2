@@ -5,6 +5,7 @@ tags: ["circle", "collaborative"]
 pillars: ["social", "physical"]
 energy: 2
 duration: 5
+minPlayers: 4
 resources: ["small space"]
 ---
 
