@@ -1,6 +1,7 @@
 import DurationChip from "@/components/DurationChip";
 import EnergyChip from "@/components/EnergyChip";
 import PillarChip from "@/components/PillarChip";
+import PlayersChip from "@/components/PlayersChip";
 import TagChip from "@/components/TagChip";
 import { getGameBySlug, getGames } from "@/lib/games";
 import Link from "next/link";
@@ -52,6 +53,11 @@ export default async function GamePage({ params }: PageProps) {
             <EnergyChip level={(game.energy as 1 | 2 | 3) || 1} />
 
             {game.duration > 0 && <DurationChip duration={game.duration} />}
+
+            <PlayersChip
+              minPlayers={game.minPlayers}
+              maxPlayers={game.maxPlayers}
+            />
           </div>
 
           <hr className="my-6 border-gray-200" />

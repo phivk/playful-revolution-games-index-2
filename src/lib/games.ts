@@ -45,6 +45,11 @@ function ensureResources(value: unknown): string[] {
   return [];
 }
 
+function optionalPositiveInt(value: unknown): number | undefined {
+  const n = Number(value);
+  return Number.isInteger(n) && n > 0 ? n : undefined;
+}
+
 function clampEnergy(n: number): number {
   const v = Number(n);
   if (Number.isNaN(v)) return 2;
@@ -73,6 +78,8 @@ function normalizeFrontmatter(data: Record<string, unknown>, content: string): G
   const pillars = rawPillars.map((p) => p.toLowerCase()).filter(isPillar);
   const energy = clampEnergy(Number(data.energy));
   const duration = typeof data.duration === 'number' ? data.duration : Number(data.duration) || 0;
+  const minPlayers = optionalPositiveInt(data.minPlayers);
+  const maxPlayers = optionalPositiveInt(data.maxPlayers);
   const resources = ensureResources(data.resources);
   const description = deriveDescription(content, data.description as string | undefined);
 
@@ -85,6 +92,8 @@ function normalizeFrontmatter(data: Record<string, unknown>, content: string): G
     pillars,
     energy,
     duration,
+    ...(minPlayers !== undefined && { minPlayers }),
+    ...(maxPlayers !== undefined && { maxPlayers }),
     resources,
   };
 }

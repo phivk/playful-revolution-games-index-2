@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Clock } from 'lucide-react';
-import { Game } from '@/types/game';
+import { Clock, Users } from 'lucide-react';
+import { Game, formatPlayers } from '@/types/game';
 import EnergyBars from '@/components/EnergyBars';
 import PillarChip from '@/components/PillarChip';
 import PlaylistButton from '@/components/PlaylistButton';
@@ -19,6 +19,7 @@ export default function GameCard({
   onAddToPlaylist,
   onRemoveFromPlaylist,
 }: GameCardProps) {
+  const players = formatPlayers(game.minPlayers, game.maxPlayers);
   const hasPlaylistActions =
     typeof onAddToPlaylist === 'function' || typeof onRemoveFromPlaylist === 'function';
 
@@ -64,12 +65,23 @@ export default function GameCard({
               size="md"
             />
           </div>
-          {game.duration > 0 && (
-            <span className="inline-flex items-center gap-1.5 text-sm font-bold text-foreground uppercase tracking-wider ml-auto">
-              <Clock size={14} />
-              {game.duration} min
-            </span>
-          )}
+          <div className="flex items-center gap-4 ml-auto">
+            {players && (
+              <span
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-foreground uppercase tracking-wider"
+                title={`Players: ${players}`}
+              >
+                <Users size={14} />
+                {players}
+              </span>
+            )}
+            {game.duration > 0 && (
+              <span className="inline-flex items-center gap-1.5 text-sm font-bold text-foreground uppercase tracking-wider">
+                <Clock size={14} />
+                {game.duration} min
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </Link>

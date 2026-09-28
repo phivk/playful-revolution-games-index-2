@@ -6,6 +6,7 @@ import TagChip from "@/components/TagChip";
 import PillarChip from "@/components/PillarChip";
 import EnergyChip from "@/components/EnergyChip";
 import DurationChip from "@/components/DurationChip";
+import PlayersChip from "@/components/PlayersChip";
 import PlaylistButton from "@/components/PlaylistButton";
 import { PlaylistAnimationProvider } from "@/contexts/PlaylistAnimationContext";
 
@@ -131,6 +132,29 @@ export default function ComponentShowcasePage() {
               selected={durationSelected}
               onClick={() => setDurationSelected((v) => !v)}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* PlayersChip */}
+      <section className="mb-10">
+        <h2 className="text-xl font-semibold mb-4">PlayersChip</h2>
+        <div className="flex flex-wrap gap-4 items-center">
+          <div>
+            <p className="text-xs text-gray-400 mb-1">Min and max</p>
+            <PlayersChip minPlayers={2} maxPlayers={8} />
+          </div>
+          <div>
+            <p className="text-xs text-gray-400 mb-1">Exact</p>
+            <PlayersChip minPlayers={2} maxPlayers={2} />
+          </div>
+          <div>
+            <p className="text-xs text-gray-400 mb-1">Minimum only</p>
+            <PlayersChip minPlayers={4} />
+          </div>
+          <div>
+            <p className="text-xs text-gray-400 mb-1">Maximum only</p>
+            <PlayersChip maxPlayers={6} />
           </div>
         </div>
       </section>
